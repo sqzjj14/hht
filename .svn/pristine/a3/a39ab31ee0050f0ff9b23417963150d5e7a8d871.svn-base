@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CIDR_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libc++.dylib">
+      <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libc++.dylib" isTestSource="false" />
+    </content>
+    <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libsqlite3.0.dylib">
+      <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libsqlite3.0.dylib" isTestSource="false" />
+    </content>
+    <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libz.dylib">
+      <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libz.dylib" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFHTTPSessionManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFURLRequestSerialization.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFHTTPRequestOperationManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFURLResponseSerialization.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFURLConnectionOperation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFHTTPRequestOperation.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFURLResponseSerialization.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFURLConnectionOperation.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFNetworkReachabilityManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFURLSessionManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFSecurityPolicy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFHTTPRequestOperationManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFURLSessionManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFSecurityPolicy.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFHTTPSessionManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFHTTPRequestOperation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFNetworkReachabilityManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AFNetworking/AFURLRequestSerialization.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWGridCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWPhoto.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWGridCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWCommon.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWPhotoProtocol.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWPhoto.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWPhotoBrowser.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/UIImage+MWPhotoBrowser.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWPhotoBrowserPrivate.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/UIImage+MWPhotoBrowser.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWTapDetectingImageView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWTapDetectingImageView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWGridViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWZoomingScrollView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWTapDetectingView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWZoomingScrollView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWGridViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWPhotoBrowser.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWCaptionView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWTapDetectingView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MWPhotoBrowser/MWCaptionView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/UITabBarItem+CustomBadge.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/ImagePlayerView/ImagePlayerView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/ImagePlayerView/ImagePlayerView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImagePrefetcher.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIImage+MultiFormat.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageCompat.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageCompat.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIImageView+WebCache.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageDownloader.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIImageView+HighlightedWebCache.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageDownloader.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIImageView+HighlightedWebCache.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIImage+WebP.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIImage+WebP.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageOperation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/MKAnnotationView+WebCache.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIImageView+WebCache.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/MKAnnotationView+WebCache.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImagePrefetcher.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIImage+MultiFormat.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIButton+WebCache.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/NSData+ImageContentType.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIButton+WebCache.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageDownloaderOperation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageDecoder.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageDownloaderOperation.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIView+WebCacheOperation.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDImageCache.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDWebImageDecoder.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/NSData+ImageContentType.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIImage+GIF.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIView+WebCacheOperation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/SDImageCache.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SDWebImage/UIImage+GIF.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/Unionpay/UnionpayRSA.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/Unionpay/UPPaymentControl.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/Unionpay/libPaymentControl.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/Unionpay/UnionpayRSA.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/Wechat/libWeChatSDK.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/Wechat/WXApiObject.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/Wechat/WXApi.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MBProgressHUD/MBProgressHUD.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MBProgressHUD/MBProgressHUD.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/UIView+MJExtension.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/UIScrollView+MJRefresh.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/UIScrollView+MJExtension.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/UIScrollView+MJExtension.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/UIScrollView+MJRefresh.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/MJRefresh.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Header/MJRefreshStateHeader.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Header/MJRefreshNormalHeader.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Header/MJRefreshStateHeader.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Header/MJRefreshGifHeader.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Header/MJRefreshNormalHeader.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Custom/Header/MJRefreshGifHeader.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Base/MJRefreshFooter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Base/MJRefreshHeader.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Base/MJRefreshHeader.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Base/MJRefreshAutoFooter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Base/MJRefreshBackFooter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Base/MJRefreshComponent.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Base/MJRefreshAutoFooter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Base/MJRefreshFooter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Base/MJRefreshBackFooter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/Base/MJRefreshComponent.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/MJRefreshConst.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/MJRefreshConst.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/UIView+MJExtension.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MJRefresh/MJRefresh.bundle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/DACircularProgress/DACircularProgressView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/DACircularProgress/DALabeledCircularProgressView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/DACircularProgress/DALabeledCircularProgressView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/DACircularProgress/DACircularProgressView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MSSlidingPanelController/MSSlidingPanelController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MSSlidingPanelController/MSViewControllerSlidingPanel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MSSlidingPanelController/MSSlidingPanelController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MSSlidingPanelController/MSViewControllerSlidingPanel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/Menu.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/CellView/MultilevelTableViewCell.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/CellView/CollectionHeader.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/CellView/CollectionHeader.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/CellView/MultilevelTableViewCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/CellView/CollectionHeader.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/CellView/MultilevelCollectionViewCell.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/CellView/MultilevelTableViewCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/CellView/MultilevelCollectionViewCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/CellView/MultilevelCollectionViewCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/MultilevelMenu.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/Menu.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/MultilevelMenu/MultilevelMenu.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/APAuthV2Info.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/openssl_wrapper.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/base64.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/openssl_wrapper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/RSADataSigner.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/config.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/DataVerifier.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/RSADataSigner.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/DataSigner.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/RSADataVerifier.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/DataSigner.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/RSADataVerifier.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/DataVerifier.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/MD5DataSigner.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/NSDataEx.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/APAuthV2Info.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/MD5DataSigner.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/NSDataEx.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/Util/base64.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/err.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/whrlpool.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/kssl.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/conf.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/seed.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/camellia.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ssl.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/md4.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/blowfish.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/rc2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/x509.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/idea.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/aes.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/md5.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/rand.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/crypto.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/dsa.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/cmac.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/hmac.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ecdh.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ssl2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/sha.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/dtls1.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/conf_api.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ecdsa.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/asn1.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/stack.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/rsa.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/pqueue.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/modes.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/buffer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ui_compat.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/lhash.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ec.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/cast.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/krb5_asn.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/des_old.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/pem2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/asn1t.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ssl23.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/srtp.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/tls1.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ripemd.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ts.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/dso.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/evp.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/opensslconf.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ssl3.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/dh.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/engine.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/safestack.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/pkcs7.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/txt_db.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/e_os2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ui.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ossl_typ.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/des.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/cms.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/asn1_mac.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/x509_vfy.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ebcdic.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/bio.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/mdc2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/bn.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/obj_mac.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/opensslv.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/pem.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/symhacks.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/x509v3.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/ocsp.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/srp.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/comp.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/objects.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/rc4.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/AlipayMobile/openssl/pkcs12.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SVProgressHUD/SVIndefiniteAnimatedView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SVProgressHUD/SVProgressHUD.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SVProgressHUD/SVIndefiniteAnimatedView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SVProgressHUD/SVProgressHUD.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SVProgressHUD/SVProgressHUD.bundle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/SVProgressHUD/SVProgressHUD-Prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/WebViewJavascriptBridge/WebViewJavascriptBridge.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/WebViewJavascriptBridge/WebViewJavascriptBridge.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/3rd/UITabBarItem+CustomBadge.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/AdViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/CheckoutViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/AdViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/PersonViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/GoodsListViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/GoodsListViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/AddressEditViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MyOrderViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MainTabBarController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MobileRegisterViewController1.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/AddressEditViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/CartViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Delegate/CartReloadDelegate.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Delegate/SearchDelegate.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/PaymentViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Model/AlipayOrder.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Model/AlipayOrder.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/PersonEditViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/PasswordViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MobileRegisterViewController2.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/AddressViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/FindPassViewController1.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Defines.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/CategoryViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/AddressViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/FindPassViewController1.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/ApiXml.mm" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/WechatPayment.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/WXUtil.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/WechatPayment.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/StringHelper.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/WXUtil.mm" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/DateHelper.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/FontHelper.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/StringHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/DateHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/FontHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Helper/ApiXml.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/CategoryViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/GoodsViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/HomeViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/GoodsViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/HomeViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/ReceiptViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/RegisterViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Base.lproj/LaunchScreen.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Base.lproj/Main.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Images.xcassets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/ReceiptViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/GoodsNavigationViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/CartCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/MyFavoriteCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/MyOrderCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/MyOrderCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/CartCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/GoodsListCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/GoodsListCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/GoodsCommentCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/GoodsCommentCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/AddressCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/SearchHistoryCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/MyFavoriteCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/SearchHistoryCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Cell/AddressCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/GoodsCommentViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/GoodsNavigationViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/CheckoutSuccessViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/FindPassViewController3.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/GoodsCommentViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MobileRegisterViewController1.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MyFavoriteViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/FindPassViewController3.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/PaymentViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/AlipayPaymentHelper.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/tabBar_category_normal@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/my_password@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/jshop_searchbar_search@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/tabBar_person_press@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/sort_down_price_icon@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/jshop_searchbar_search@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/address_edit@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/sort_price_icon@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/sort_down_price_icon@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/edit_person@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/sort_price_icon@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/ico_star1@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/checkout_success@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/cartNoContentIcon@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/my_order@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/ico_star1@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/back_bt_7@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/pd_cart@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/my_head_background_login@2x.jpg" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/seckill@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/cart_round_check2@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/seckill@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/address_delete@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/my_head_default@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/cart_round_check2@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/syncart_middle_btn_enable@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/unionpay@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/pd_collected@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/jshop_list_back@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/syncart_more_btn_enable@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/Button_A@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/image_empty@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/Default-667h@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/wechat@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/my_favorite@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/tabBar_home_normal@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/Default@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/address_info_bg@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/address_name_icon@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/home.js" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/ico_star2@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/ico_star2@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/jshop_list_back@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/test.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/Default-736h@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/tabBar_cart_press@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/tabBar_cart_normal@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/radio_select@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/Default-568h@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/tabBar_home_press@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/address_phone_icon@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/syncart_less_btn_enable@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/Button_B@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/tabBar_category_press@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/radio_select@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/sort_up_price_icon@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/alipay@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/my_address@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/sort_up_price_icon@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/pd_collect@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/order_address_edit@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/cartNoContentIcon@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/cart_round_check1@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/Default.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/cart_round_check1@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/home_logo@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/tabBar_person_normal@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/tabBar_bg@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/my_login_button@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Resources/back_bt_7@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/BaseViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Constants.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/AlipayPaymentHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/LoginViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/BaseViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/FindPassViewController2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Constants.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/PersonViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/LoginViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/RegisterViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MyOrderViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/SearchViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MobileRegisterViewController2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/GoodsDetailViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/GoodsDetailViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/SearchViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/SpecViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/UI/SpecButton.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/UI/SpecButton.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MobileRegisterViewController3.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/CartViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/PaymentDeliveryViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MobileRegisterViewController3.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Framework/libcrypto.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Framework/AlipaySDK.bundle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Framework/libssl.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/PasswordViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MainTabBarController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/AppDelegate.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/SpecViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/CheckoutSuccessViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/main.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/HttpClient.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/PersonEditViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/PaymentDeliveryViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/OrderDetailViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/HttpClient.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/MyFavoriteViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/OrderDetailViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Category/UIColor+HexString.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Category/UIColor+HexString.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/FindPassViewController2.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/AppDelegate.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JavaMall/CheckoutViewController.m" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/JavaMall/Framework/AlipaySDK.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/InterfaceBuilderKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/DTPerformanceSession.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HealthKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PassKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreAudioKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MultipeerConnectivity.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchConnectivity.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreVideo.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/StoreKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/OpenGLES.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CFNetwork.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AddressBookUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GSS.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AudioUnit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreSpotlight.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/LocalAuthentication.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKitUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Contacts.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/QuickLook.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SafariServices.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WebKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AVFoundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/JavaScriptCore.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PushKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreTelephony.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ReplayKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SpriteKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Twitter.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreAudio.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreData.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MapKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ContactsUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMedia.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaAccessibility.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ExternalAccessory.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GLKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HomeKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameController.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AVKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreBluetooth.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AdSupport.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMIDI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Social.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SystemConfiguration.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accounts.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/OpenAL.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NotificationCenter.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ImageIO.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MobileCoreServices.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AddressBook.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NewsstandKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MessageUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreLocation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/QuartzCore.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/iAd.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMotion.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.2/include" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/JavaMall/Framework/AlipaySDK.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/InterfaceBuilderKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/DTPerformanceSession.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HealthKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PassKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreAudioKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MultipeerConnectivity.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchConnectivity.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreVideo.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/StoreKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/OpenGLES.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CFNetwork.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AddressBookUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GSS.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AudioUnit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreSpotlight.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/LocalAuthentication.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKitUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Contacts.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/QuickLook.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SafariServices.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WebKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AVFoundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/JavaScriptCore.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PushKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreTelephony.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ReplayKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SpriteKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Twitter.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreAudio.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreData.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MapKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ContactsUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMedia.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaAccessibility.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ExternalAccessory.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GLKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HomeKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameController.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AVKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreBluetooth.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AdSupport.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMIDI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Social.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SystemConfiguration.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accounts.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/OpenAL.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NotificationCenter.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ImageIO.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MobileCoreServices.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AddressBook.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NewsstandKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MessageUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreLocation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/QuartzCore.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/iAd.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMotion.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.2/include" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>

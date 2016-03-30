@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "926acfcb-504f-5747-8fce-2f3b8b4669c4++2647",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "926acfcb-504f-5747-8fce-2f3b8b4669c4++2647" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "926acfcb-504f-5747-8fce-2f3b8b4669c4++2647" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C75F35F0-F28A-4ABC-B3B9-343F4400676F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "926acfcb-504f-5747-8fce-2f3b8b4669c4++2647" : "JavaMall_ios"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "JavaMall",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "JavaMall.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/svn.enationsoft.com\/product",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "926acfcb-504f-5747-8fce-2f3b8b4669c4++2647"
+    }
+  ]
+}
