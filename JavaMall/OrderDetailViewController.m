@@ -95,7 +95,7 @@
     [self initAddress];
     [self initProduct];
     [self initPayment];
-    [self initReceipt];
+    //[self initReceipt];
     [self initAmount];
     [self.view addSubview:scrollView];
     

@@ -60,7 +60,7 @@
     //绑定通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectAddressCompletion:) name:nSelectAddress object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectPaymentDeliveryCompletion:) name:nSelectPaymentDelivery object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectReceiptCompletion:) name:nSelectReceipt object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectReceiptCompletion:) name:nSelectReceipt object:nil];
     
     self.scrollView.backgroundColor = [UIColor colorWithHexString:@"#f3f4f6"];
     [self initCheckoutView];
@@ -376,7 +376,7 @@
     [super setBorderWithView:paymnetView top:YES left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#edeef0"] borderWidth:0.5f];
     [self.scrollView addSubview:paymnetView];
     
-    [self initReceiptView];
+    //[self initReceiptView];
     [self initRemarkView];
     
     [SVProgressHUD dismiss];
@@ -422,7 +422,7 @@
     
     UITapGestureRecognizer *specTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectReceipt:)];
     [specTapGesture setNumberOfTapsRequired:1];
-    [receiptView addGestureRecognizer:specTapGesture];
+    //[receiptView addGestureRecognizer:specTapGesture];
 
     
     [super setBorderWithView:receiptView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#edeef0"] borderWidth:0.5f];
