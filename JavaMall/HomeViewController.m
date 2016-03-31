@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     self.webview.delegate = self;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE_URL, @"/mobile/index.html"]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -54,8 +55,10 @@
     
     NSString *filePath=[[NSBundle mainBundle] pathForResource:@"home" ofType:@"js"];
     homeJavaScript = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
 }
 
+    
 /**
  *  点击手势
  *

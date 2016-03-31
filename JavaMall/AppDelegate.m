@@ -28,12 +28,20 @@
     [SVProgressHUD setFont:[UIFont fontWithName:@"Helvetica Neue" size:14]];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
     if(AD_ENABLE){
         [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"Ad"]];
-    }else{
-        [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"Main"]];
-//        [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"Payment"]];
     }
+    
+    else{
+        if ([self isLogined] == NO) {
+            [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"Login"]];
+            }
+        else{
+            [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"Main"]];
+        }
+    }
+//        [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"Payment"]];
     
     //向微信注册
     if(![WECHAT_APP_ID isEqualToString:@""]){
@@ -41,6 +49,13 @@
     }
     
     return YES;
+}
+- (BOOL) isLogined{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([[defaults objectForKey:@"username"] isKindOfClass:[NSString class]] && [[defaults objectForKey:@"username"] length] > 0) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
