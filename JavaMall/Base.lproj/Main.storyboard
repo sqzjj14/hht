@@ -2005,7 +2005,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhi-6d-WUi">
                                         <rect key="frame" x="90" y="4" width="285" height="51"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名/邮箱/手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qz6-T1-qSD">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qz6-T1-qSD">
                                                 <rect key="frame" x="0.0" y="11" width="263" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next"/>
@@ -2047,8 +2047,8 @@
                                             <constraint firstAttribute="height" constant="51" id="fG6-Wl-3bx"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNq-zr-mV2">
-                                        <rect key="frame" x="40" y="19" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNq-zr-mV2">
+                                        <rect key="frame" x="26" y="19" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="WIA-Ro-STc"/>
                                         </constraints>
@@ -2066,14 +2066,14 @@
                                     <constraint firstItem="I1V-Wn-lud" firstAttribute="trailing" secondItem="Mhi-6d-WUi" secondAttribute="trailing" id="MRH-Zs-eAQ"/>
                                     <constraint firstAttribute="trailing" secondItem="gwr-QM-PTi" secondAttribute="trailing" constant="21" id="Mkm-yI-iBZ"/>
                                     <constraint firstItem="RNq-zr-mV2" firstAttribute="top" secondItem="ARF-rV-6WC" secondAttribute="top" constant="19" id="OUM-bd-3hB"/>
-                                    <constraint firstItem="RNq-zr-mV2" firstAttribute="leading" secondItem="c8Y-26-azM" secondAttribute="leading" constant="19" id="QNW-0m-2Xv"/>
+                                    <constraint firstItem="RNq-zr-mV2" firstAttribute="leading" secondItem="c8Y-26-azM" secondAttribute="leading" constant="5" id="QNW-0m-2Xv"/>
                                     <constraint firstItem="Mhi-6d-WUi" firstAttribute="leading" secondItem="RNq-zr-mV2" secondAttribute="trailing" constant="8" symbolic="YES" id="RvR-6b-z2j"/>
                                     <constraint firstItem="Mhi-6d-WUi" firstAttribute="top" secondItem="ARF-rV-6WC" secondAttribute="top" constant="4" id="WCW-XU-RA8"/>
-                                    <constraint firstItem="6Hu-iJ-ypj" firstAttribute="leading" secondItem="RNq-zr-mV2" secondAttribute="leading" id="f2s-1T-niJ"/>
+                                    <constraint firstItem="6Hu-iJ-ypj" firstAttribute="leading" secondItem="RNq-zr-mV2" secondAttribute="leading" constant="14" id="f2s-1T-niJ"/>
                                     <constraint firstItem="gwr-QM-PTi" firstAttribute="top" secondItem="I1V-Wn-lud" secondAttribute="bottom" constant="13" id="kcP-6m-gey"/>
                                     <constraint firstAttribute="bottom" secondItem="gwr-QM-PTi" secondAttribute="bottom" constant="20" id="mw5-Wt-jA4"/>
                                     <constraint firstItem="I1V-Wn-lud" firstAttribute="leading" secondItem="6Hu-iJ-ypj" secondAttribute="trailing" constant="8" symbolic="YES" id="oL6-Aw-C5P"/>
-                                    <constraint firstItem="RNq-zr-mV2" firstAttribute="leading" secondItem="ARF-rV-6WC" secondAttribute="leading" constant="40" id="sNH-ok-5Vp"/>
+                                    <constraint firstItem="RNq-zr-mV2" firstAttribute="leading" secondItem="ARF-rV-6WC" secondAttribute="leading" constant="26" id="sNH-ok-5Vp"/>
                                     <constraint firstAttribute="trailing" secondItem="Mhi-6d-WUi" secondAttribute="trailing" id="tMJ-eG-BDB"/>
                                     <constraint firstItem="gwr-QM-PTi" firstAttribute="top" secondItem="Mhi-6d-WUi" secondAttribute="bottom" constant="64" id="zaK-mb-xWH"/>
                                 </constraints>
