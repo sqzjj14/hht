@@ -34,7 +34,7 @@
     [self.webview loadRequest:request];
     
     //StatusBar背景色
-    [super setStatusBarBackgroudColor:[UIColor colorWithHexString:@"#CC0033"]];
+    [super setStatusBarBackgroudColor:[UIColor colorWithRed:176/255.0 green:245/255.0 blue:43/255.0 alpha:1]];
     
     //下拉刷新
     __weak UIScrollView *scrollView = self.webview.scrollView;
@@ -43,7 +43,7 @@
     }];
     
     //搜索框设置
-    searchView.layer.borderColor = [UIColor colorWithHexString:@"#be161a"].CGColor;
+   // searchView.layer.borderColor = [UIColor colorWithRed:51/255.0 green:166/255.0 blue:0/255.0 alpha:1].CGColor;
     searchView.layer.borderWidth = 1.0;
     searchView.layer.masksToBounds = YES;
     searchView.layer.cornerRadius = 3.0;
