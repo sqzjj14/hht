@@ -13,6 +13,7 @@
 #import "HttpClient.h"
 #import "MobileRegisterViewController1.h"
 #import "FindPassViewController1.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIView *usernameView;
@@ -141,7 +142,21 @@
                            
                            [SVProgressHUD setErrorImage:nil];
                            [SVProgressHUD showErrorWithStatus:@"登录成功！" maskType:SVProgressHUDMaskTypeBlack];
-                           [self dismissViewControllerAnimated:YES completion:nil];
+                           
+                           
+                          
+                           
+                            [self presentViewController:[super controllerFromMainStroryBoard:@"Main"] animated:YES completion:nil];
+                           
+                          UIApplication *app = [UIApplication sharedApplication];
+                           AppDelegate *appdelegate = app.delegate;
+                          if( appdelegate.window.rootViewController == self)
+                          {
+                              [self presentViewController:[super controllerFromMainStroryBoard:@"Main"] animated:YES completion:nil];
+                          }
+                          else{
+                               [self dismissViewControllerAnimated:YES completion:nil];
+                          }
                        });
                    });
     
