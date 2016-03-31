@@ -12,6 +12,8 @@
 		942452461CACB23400A9EC30 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452451CACB23400A9EC30 /* libc++.tbd */; };
 		942452481CACB26600A9EC30 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452471CACB26600A9EC30 /* libsqlite3.0.tbd */; };
 		9424524A1CACB26F00A9EC30 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452491CACB26F00A9EC30 /* libz.tbd */; };
+		9424524C1CACB94A00A9EC30 /* LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 9424524B1CACB94A00A9EC30 /* LOGO.png */; };
+		9424524E1CACB96900A9EC30 /* hht_head_background_login@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9424524D1CACB96900A9EC30 /* hht_head_background_login@2x.jpg */; };
 		D91059661B4EDE2D00451BFC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D91059611B4EDE2D00451BFC /* Default-568h@2x.png */; };
 		D91059671B4EDE2D00451BFC /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D91059621B4EDE2D00451BFC /* Default-667h@2x.png */; };
 		D91059681B4EDE2D00451BFC /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D91059631B4EDE2D00451BFC /* Default-736h@3x.png */; };
@@ -251,6 +253,8 @@
 		942452451CACB23400A9EC30 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		942452471CACB26600A9EC30 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		942452491CACB26F00A9EC30 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9424524B1CACB94A00A9EC30 /* LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO.png; sourceTree = "<group>"; };
+		9424524D1CACB96900A9EC30 /* hht_head_background_login@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hht_head_background_login@2x.jpg"; sourceTree = "<group>"; };
 		D91059611B4EDE2D00451BFC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		D91059621B4EDE2D00451BFC /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-667h@2x.png"; path = "Resources/Default-667h@2x.png"; sourceTree = "<group>"; };
 		D91059631B4EDE2D00451BFC /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-736h@3x.png"; path = "Resources/Default-736h@3x.png"; sourceTree = "<group>"; };
@@ -1185,6 +1189,8 @@
 		D9B08FCD1B19CC0E00F7F003 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9424524D1CACB96900A9EC30 /* hht_head_background_login@2x.jpg */,
+				9424524B1CACB94A00A9EC30 /* LOGO.png */,
 				D9AAFD651CA50DA800CCF6D5 /* unionpay@2x.png */,
 				D9AAFD661CA50DA800CCF6D5 /* wechat@2x.png */,
 				D9853ED21C996710005E8765 /* edit_person@2x.png */,
@@ -1513,6 +1519,7 @@
 				D98AD2911B3FCB1500658441 /* sort_price_icon@2x.png in Resources */,
 				D95AE2D61B440072003821EE /* address_phone_icon@2x.png in Resources */,
 				D91059671B4EDE2D00451BFC /* Default-667h@2x.png in Resources */,
+				9424524C1CACB94A00A9EC30 /* LOGO.png in Resources */,
 				D9132C6A1B3C51F500509ECB /* WebViewJavascriptBridge.js.txt in Resources */,
 				D9A5F4E61B4B8D54002B57F6 /* checkout_success@2x.png in Resources */,
 				D95AE2CC1B43DB3E003821EE /* cart_round_check2@2x.png in Resources */,
@@ -1566,6 +1573,7 @@
 				D95AE2B21B42B3FF003821EE /* ico_star1@2x.png in Resources */,
 				D99E65691B3AF5940030383F /* jshop_searchbar_search@3x.png in Resources */,
 				D9132C4A1B3C51F500509ECB /* MJRefresh.bundle in Resources */,
+				9424524E1CACB96900A9EC30 /* hht_head_background_login@2x.jpg in Resources */,
 				D9AF8C921B47FD3A00D22811 /* order_address_edit@2x.png in Resources */,
 				D95AE2A21B4167EF003821EE /* syncart_middle_btn_enable@2x.png in Resources */,
 				D9B08FB21B19CB8900F7F003 /* Images.xcassets in Resources */,

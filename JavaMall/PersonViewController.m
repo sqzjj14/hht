@@ -55,7 +55,7 @@
     [super setStatusBarBackgroudColor:[UIColor colorWithHexString:@"#FAFAFA"]];
     
     UIGraphicsBeginImageContext(loginView.frame.size);
-    [[UIImage imageNamed:@"my_head_background_login.jpg"] drawInRect:loginView.bounds];
+    [[UIImage imageNamed:@"hht_head_background_login.jpg"] drawInRect:loginView.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     loginView.backgroundColor = [UIColor colorWithPatternImage:image];
