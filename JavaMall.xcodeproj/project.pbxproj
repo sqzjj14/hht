@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3EC21910C1F4CFEEBBB91A4B /* AlipayPaymentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC216173AEA3BAA74B95B22 /* AlipayPaymentHelper.m */; };
 		3EC21A40F8F676D6CEF19AC3 /* MobileRegisterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC210C4B668CF04AE1122CF /* MobileRegisterViewController1.m */; };
+		942452461CACB23400A9EC30 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452451CACB23400A9EC30 /* libc++.tbd */; };
+		942452481CACB26600A9EC30 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452471CACB26600A9EC30 /* libsqlite3.0.tbd */; };
+		9424524A1CACB26F00A9EC30 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452491CACB26F00A9EC30 /* libz.tbd */; };
 		D91059661B4EDE2D00451BFC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D91059611B4EDE2D00451BFC /* Default-568h@2x.png */; };
 		D91059671B4EDE2D00451BFC /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D91059621B4EDE2D00451BFC /* Default-667h@2x.png */; };
 		D91059681B4EDE2D00451BFC /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D91059631B4EDE2D00451BFC /* Default-736h@3x.png */; };
@@ -202,9 +205,6 @@
 		D9B08FF21B1C646B00F7F003 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B08FF11B1C646B00F7F003 /* UIColor+HexString.m */; };
 		D9D434741B7361F300111460 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D434731B7361F300111460 /* PaymentViewController.m */; };
 		D9E5D8951B95555F004D0C7D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E5D8941B95555F004D0C7D /* SystemConfiguration.framework */; };
-		D9E5D8991B9555A9004D0C7D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E5D8961B9555A9004D0C7D /* libc++.dylib */; };
-		D9E5D89A1B9555A9004D0C7D /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E5D8971B9555A9004D0C7D /* libsqlite3.0.dylib */; };
-		D9E5D89B1B9555A9004D0C7D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E5D8981B9555A9004D0C7D /* libz.dylib */; };
 		D9E5D8B41B96A757004D0C7D /* MWCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E5D89F1B96A757004D0C7D /* MWCaptionView.m */; };
 		D9E5D8B51B96A757004D0C7D /* MWGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E5D8A21B96A757004D0C7D /* MWGridCell.m */; };
 		D9E5D8B61B96A757004D0C7D /* MWGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E5D8A41B96A757004D0C7D /* MWGridViewController.m */; };
@@ -248,6 +248,9 @@
 		3EC2141D2CC7E2A06BDCFD31 /* AlipayPaymentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlipayPaymentHelper.h; sourceTree = "<group>"; };
 		3EC214F7BA1FDBB49C2D7104 /* MobileRegisterViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileRegisterViewController1.h; sourceTree = "<group>"; };
 		3EC216173AEA3BAA74B95B22 /* AlipayPaymentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlipayPaymentHelper.m; sourceTree = "<group>"; };
+		942452451CACB23400A9EC30 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		942452471CACB26600A9EC30 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		942452491CACB26F00A9EC30 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D91059611B4EDE2D00451BFC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		D91059621B4EDE2D00451BFC /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-667h@2x.png"; path = "Resources/Default-667h@2x.png"; sourceTree = "<group>"; };
 		D91059631B4EDE2D00451BFC /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-736h@3x.png"; path = "Resources/Default-736h@3x.png"; sourceTree = "<group>"; };
@@ -558,9 +561,6 @@
 		D9E5D8911B95553E004D0C7D /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		D9E5D8921B95553E004D0C7D /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		D9E5D8941B95555F004D0C7D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D9E5D8961B9555A9004D0C7D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		D9E5D8971B9555A9004D0C7D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		D9E5D8981B9555A9004D0C7D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D9E5D89E1B96A757004D0C7D /* MWCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCaptionView.h; sourceTree = "<group>"; };
 		D9E5D89F1B96A757004D0C7D /* MWCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCaptionView.m; sourceTree = "<group>"; };
 		D9E5D8A01B96A757004D0C7D /* MWCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCommon.h; sourceTree = "<group>"; };
@@ -695,13 +695,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9424524A1CACB26F00A9EC30 /* libz.tbd in Frameworks */,
+				942452481CACB26600A9EC30 /* libsqlite3.0.tbd in Frameworks */,
+				942452461CACB23400A9EC30 /* libc++.tbd in Frameworks */,
 				D9AAFD6E1CA51BE200CCF6D5 /* CFNetwork.framework in Frameworks */,
 				D9AAFD6C1CA51B8900CCF6D5 /* libPaymentControl.a in Frameworks */,
 				D9669BAA1B9D949D00AFB821 /* libssl.a in Frameworks */,
-				D9E5D8991B9555A9004D0C7D /* libc++.dylib in Frameworks */,
 				D9669BB41B9D97D400AFB821 /* libWeChatSDK.a in Frameworks */,
-				D9E5D89A1B9555A9004D0C7D /* libsqlite3.0.dylib in Frameworks */,
-				D9E5D89B1B9555A9004D0C7D /* libz.dylib in Frameworks */,
 				D9E5D8951B95555F004D0C7D /* SystemConfiguration.framework in Frameworks */,
 				D9480B4C1B67C7FC007F811F /* AlipaySDK.bundle in Frameworks */,
 				D9480B4D1B67C7FC007F811F /* AlipaySDK.framework in Frameworks */,
@@ -948,11 +948,11 @@
 		D9480B501B67C809007F811F /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				942452491CACB26F00A9EC30 /* libz.tbd */,
+				942452471CACB26600A9EC30 /* libsqlite3.0.tbd */,
+				942452451CACB23400A9EC30 /* libc++.tbd */,
 				D9669BA71B9D949D00AFB821 /* libcrypto.a */,
 				D9669BA81B9D949D00AFB821 /* libssl.a */,
-				D9E5D8961B9555A9004D0C7D /* libc++.dylib */,
-				D9E5D8971B9555A9004D0C7D /* libsqlite3.0.dylib */,
-				D9E5D8981B9555A9004D0C7D /* libz.dylib */,
 				D9E5D8941B95555F004D0C7D /* SystemConfiguration.framework */,
 				D9480B481B67C7FC007F811F /* AlipaySDK.bundle */,
 				D9480B491B67C7FC007F811F /* AlipaySDK.framework */,
