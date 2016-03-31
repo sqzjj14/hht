@@ -34,7 +34,7 @@
     [self.webview loadRequest:request];
     
     //StatusBar背景色
-    [super setStatusBarBackgroudColor:[UIColor colorWithRed:176/255.0 green:245/255.0 blue:43/255.0 alpha:1]];
+    [super setStatusBarBackgroudColor:[UIColor colorWithRed:176/255.0 green:245/255.0 blue:43/255.0 alpha:0.9]];
     
     //下拉刷新
     __weak UIScrollView *scrollView = self.webview.scrollView;

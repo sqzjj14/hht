@@ -155,8 +155,10 @@
                            if(_type == 0){
                                if(provinceArray.count > 0){
                                    NSDictionary *provice = [provinceArray objectAtIndex:0];
-                                   [self loadData:[[provice objectForKey:@"region_id"] intValue] type:1];
-                               }else{
+                                   
+                                   //根据所选的省 如广东的region_id为20，再请求出市的[data]
+                                   //[self loadData:[[provice objectForKey:@"region_id"] intValue] type:1];
+                                   [self loadData:20 type:1];
                                    [SVProgressHUD dismiss];
                                }
                            }
@@ -250,7 +252,8 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if (component == 0) {
-        return provinceArray.count;
+        //return provinceArray.count;
+        return 1;
     } else if (component == 1) {
         return cityArray.count;
     } else {
@@ -260,7 +263,7 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (component == 0) {
-        NSDictionary *province = [provinceArray objectAtIndex:row];
+        NSDictionary *province = [provinceArray objectAtIndex:19];
         return [province objectForKey:@"local_name"];
     } else if (component == 1) {
         NSDictionary *city = [cityArray objectAtIndex:row];
@@ -276,13 +279,14 @@
 }
 
 - (void)pickerView:(UIPickerView *)_pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (component == 0) {
-        NSDictionary *province = [provinceArray objectAtIndex:row];
-        [self loadData:[[province objectForKey:@"region_id"] intValue] type:1];
-        [_pickerView selectedRowInComponent:1];
-        [_pickerView selectedRowInComponent:2];
-        return;
-    }
+    //选中对应的省份，重载pickerView刷新省市。
+    //    if (component == 0) {
+    //        NSDictionary *province = [provinceArray objectAtIndex:row];
+    //        [self loadData:[[province objectForKey:@"region_id"] intValue] type:1];
+    //        [_pickerView selectedRowInComponent:1];
+    //        [_pickerView selectedRowInComponent:2];
+    //        return;
+    //    }
     if (component == 1) {
         NSDictionary *city = [cityArray objectAtIndex:row];
         [self loadData:[[city objectForKey:@"region_id"] intValue] type:2];
@@ -290,24 +294,24 @@
     }
 }
 
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
-    UILabel *myView = nil;
-    myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 100, 30)];
-    myView.textAlignment = NSTextAlignmentCenter;
-    myView.font = [UIFont systemFontOfSize:14];
-    myView.backgroundColor = [UIColor clearColor];
-    if (component == 0) {
-        NSDictionary *province = [provinceArray objectAtIndex:row];
-        myView.text = [province objectForKey:@"local_name"];
-    } else if (component == 1) {
-        NSDictionary *city = [cityArray objectAtIndex:row];
-        myView.text = [city objectForKey:@"local_name"];
-    } else {
-        NSDictionary *county = [countyArray objectAtIndex:row];
-        myView.text = [county objectForKey:@"local_name"];
-    }
-    return myView;
-}
+//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+//    UILabel *myView = nil;
+//    myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 100, 30)];
+//    myView.textAlignment = NSTextAlignmentCenter;
+//    myView.font = [UIFont systemFontOfSize:14];
+//    myView.backgroundColor = [UIColor clearColor];
+//    if (component == 0) {
+//        NSDictionary *province = [provinceArray objectAtIndex:row];
+//        myView.text = [province objectForKey:@"local_name"];
+//    } else if (component == 1) {
+//        NSDictionary *city = [cityArray objectAtIndex:row];
+//        myView.text = [city objectForKey:@"local_name"];
+//    } else {
+//        NSDictionary *county = [countyArray objectAtIndex:row];
+//        myView.text = [county objectForKey:@"local_name"];
+//    }
+//    return myView;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -374,7 +378,8 @@
     countyRegion = [countyArray objectAtIndex:[pickerView selectedRowInComponent:2]];
     NSString *region = @"";
     if(provinceRegion != nil){
-        region = [region stringByAppendingString:[provinceRegion objectForKey:@"local_name"]];
+         // region = [region stringByAppendingString:[provinceRegion objectForKey:@"local_name"]];
+      region = @"广东";
     }
     if(cityRegion != nil){
         region = [region stringByAppendingString:[cityRegion objectForKey:@"local_name"]];
@@ -420,7 +425,9 @@
                    ^{
                        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:6];
                        [params setValue:name.text forKey:@"name"];
-                       [params setValue:[provinceRegion objectForKey:@"region_id"] forKey:@"province_id"];
+                      // [params setValue:[provinceRegion objectForKey:@"region_id"]
+                                 //forKey:@"province_id"];
+                       [params setValue:@"20" forKey:@"province_id"];
                        [params setValue:[cityRegion objectForKey:@"region_id"] forKey:@"city_id"];
                        [params setValue:[countyRegion objectForKey:@"region_id"] forKey:@"region_id"];
                        [params setValue:address.text forKey:@"addr"];
