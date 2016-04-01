@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 - (IBAction)registerUser:(id)sender;
 - (IBAction)back:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *registView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headConstraints;
 
 //需要部分－滚动视图 与 验证码
 @property (weak, nonatomic) IBOutlet ImagePlayerView *playView;
@@ -63,11 +65,14 @@
     username.delegate = self;
     password.delegate = self;
     repassword.delegate = self;
+    _identifyingCodeTF.delegate = self;
+    
     
     //注册键盘响应事件方法
     [username addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [password addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [repassword addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
+     [_identifyingCodeTF addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
     
     //添加手势，点击屏幕其他区域关闭键盘的操作
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
@@ -125,6 +130,7 @@
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
 {
     NSLog(@"did tap index = %d", (int)index);
+    [self hidenKeyboard];
 }
 
 /**
@@ -141,6 +147,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark textfield delegate
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    CGRect frame = [textField convertRect:textField.frame toView:self.view];
+    int i = 32;
+    int offset = frame.origin.y + i + frame.size.height - (self.view.frame.size.height - 250.0);
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    if (offset > 0) {
+        //_registView.frame = CGRectMake(0, -offset, self.view.frame.size.width,self.view.frame.size.height
+        _headConstraints.constant = -offset;
+        [UIView commitAnimations];
+    }
+}
 
 //点击键盘上的Return按钮响应的方法
 -(IBAction)returnOnKeyboard:(UITextField *)sender{
@@ -149,9 +170,13 @@
     }else if (sender == password) {
         [self.repassword becomeFirstResponder];
     }else if (sender == self.password){
+        [self.repassword becomeFirstResponder];
+    }
+    else if (sender == _identifyingCodeTF){
         [self hidenKeyboard];
         [self registerUser:nil];
     }
+    
 }
 
 //隐藏键盘的方法
@@ -159,6 +184,12 @@
     [self.username resignFirstResponder];
     [self.password resignFirstResponder];
     [self.repassword resignFirstResponder];
+    [self.identifyingCodeTF resignFirstResponder];
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    _headConstraints.constant = 0;
+    [UIView commitAnimations];
 }
 
 

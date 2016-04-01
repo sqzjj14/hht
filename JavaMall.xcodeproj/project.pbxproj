@@ -1492,7 +1492,7 @@
 				TargetAttributes = {
 					D9B08F9D1B19CB8900F7F003 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = DY2E58UL2Q;
+						DevelopmentTeam = 9Z92Q2DDAJ;
 					};
 				};
 			};
@@ -1883,6 +1883,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1903,6 +1904,7 @@
 					"$(PROJECT_DIR)/JavaMall/3rd/Unionpay",
 				);
 				PRODUCT_NAME = javamall;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1912,6 +1914,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1932,6 +1935,7 @@
 					"$(PROJECT_DIR)/JavaMall/3rd/Unionpay",
 				);
 				PRODUCT_NAME = javamall;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

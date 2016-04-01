@@ -15,6 +15,7 @@
 #import "FindPassViewController1.h"
 #import "AppDelegate.h"
 #import "ImagePlayerView.h"
+#import "Constants.h"
 
 @interface LoginViewController ()<ImagePlayerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *usernameView;
@@ -28,6 +29,13 @@
 - (IBAction)register:(id)sender;
 - (IBAction)back:(id)sender;
 - (IBAction)findpass:(id)sender;
+//imagePlayView;
+@property (weak, nonatomic) IBOutlet ImagePlayerView *playView;
+@property (nonatomic,strong) NSArray *imageArr;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headConstrains;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *LoginHeadconstraints;
+//记录原约束的数值
+@property (nonatomic,assign)CGFloat ConstraintsRemark;
 
 @end
 
@@ -66,16 +74,55 @@
     gesture.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:gesture];
     
-    [self initImagePlayerView];
+    //创建滚动视图
+    [self initPlayView];
     
 }
-#pragma mark ImagePlayerView
--(void)initImagePlayerView
-{
+- (void)initPlayView{
+    self.playView.imagePlayerViewDelegate = (id)self;
+    self.imageArr = @[[UIImage imageNamed:@"loginAD_1"],
+                      [UIImage imageNamed:@"loginAD_2"],
+                      [UIImage imageNamed:@"loginAD_3"]];
+    // set auto scroll interval to x seconds
+    self.playView.scrollInterval = 3.0f;
+    
+    // adjust pageControl position
+    self.playView
+    .pageControlPosition = ICPageControlPosition_BottomCenter;
+    
+    // hide pageControl or not
+    self.playView.hidePageControl = NO;
+    
+    
+    // adjust edgeInset
+    //    self.imagePlayerView.edgeInsets = UIEdgeInsetsMake(10, 20, 30, 40);
+    
+    [self.playView reloadData];
     
 }
-#pragma mark ImagePlayerViewDelegate
 
+#pragma mark - ImagePlayerViewDelegate
+- (NSInteger)numberOfItems
+{
+    return self.imageArr.count;
+}
+
+- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
+{
+    // recommend to use SDWebImage lib to load web image
+    //    [imageView setImageWithURL:[self.imageURLs objectAtIndex:index] placeholderImage:nil];
+    
+    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    //        imageView.image = self.imageArr[index];
+    //    });
+    imageView.image = self.imageArr[index];
+}
+
+- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
+{
+    NSLog(@"did tap index = %d", (int)index);
+    [self hidenKeyboard];
+}
 /**
  *  设置头部背景色和下线线
  */
@@ -88,7 +135,23 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
+#pragma mark textfield delegate
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    //ConstraintsRemark = _LoginHeadconstraints.constant;
+    
+    CGRect frame = [textField convertRect:textField.frame toView:self.view];
+    int i = 32;
+    int offset = frame.origin.y + i + frame.size.height - (self.view.frame.size.height - 216.0);
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    if (offset > 0) {
+       // self.view.frame = CGRectMake(0, -offset, self.view.frame.size.width,self.view.frame.size.height);
+        _headConstrains.constant = -offset;
+        [UIView commitAnimations];
+    }
+}
 //点击键盘上的Return按钮响应的方法
 -(IBAction)returnOnKeyboard:(UITextField *)sender{
     if (sender == username) {
@@ -103,6 +166,11 @@
 -(void)hidenKeyboard{
     [self.username resignFirstResponder];
     [self.password resignFirstResponder];
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    _headConstrains.constant = 0 ;
+    [UIView commitAnimations];
 }
 
 - (IBAction)login:(id)sender {
@@ -178,7 +246,7 @@
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
         [self presentViewController:nav animated:YES completion:nil];
     }else{
-        [self presentViewController:[super controllerFromMainStroryBoard:@"Register"] animated:YES completion:nil];
+        [self presentViewController:[super controllerFromMainStroryBoard:@"Register"] animated:NO completion:nil];
     }
 }
 
