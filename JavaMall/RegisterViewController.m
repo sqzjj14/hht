@@ -24,11 +24,19 @@
 - (IBAction)registerUser:(id)sender;
 - (IBAction)back:(id)sender;
 
+//需要部分－滚动视图 与 验证码
 @property (weak, nonatomic) IBOutlet ImagePlayerView *playView;
 @property (nonatomic,strong) NSArray *imageArr;
 
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
 - (IBAction)sendMessage:(id)sender;
+//重发计数
+@property (nonatomic,assign)NSInteger count;
+//验证码
+@property (nonatomic,assign)NSInteger identifyingCode;
+@property (weak, nonatomic) IBOutlet UITextField *identifyingCodeTF;
+//计时器
+@property (nonatomic,strong)NSTimer *time;
 @end
 
 @implementation RegisterViewController
@@ -65,10 +73,14 @@
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
     gesture.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:gesture];
-    
+    //创建滚动视图
     [self initPlayView];
+    //创建计时器
+    _count = 0;
+    _time = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startTime) userInfo:nil repeats:YES];
 
 }
+
 
 - (void)initPlayView{
     self.playView.imagePlayerViewDelegate = (id)self;
@@ -151,6 +163,12 @@
 
 
 - (IBAction)registerUser:(id)sender {
+    
+    if(_identifyingCodeTF.text != [NSString stringWithFormat:@"%d",_identifyingCode]){
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"验证码错误" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
     if(username.text.length == 0){
         [SVProgressHUD setErrorImage:nil];
         [SVProgressHUD showErrorWithStatus:@"用户名不能为空！" maskType:SVProgressHUDMaskTypeBlack];
@@ -273,6 +291,77 @@
         return NO;
     }
 }
+#pragma mark 验证码发送
 - (IBAction)sendMessage:(id)sender {
+    if (![self isMobileNumber:username.text]) {
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"手机号码格式错误" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
+    else{
+        
+        [SVProgressHUD showWithStatus:@"正在发送..." maskType:SVProgressHUDMaskTypeBlack];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            HttpClient *httpHelper = [[HttpClient alloc]init];
+            //4位数字验证码
+            _identifyingCode = (arc4random()%1000)+9000;
+            //post参数字典
+            NSMutableDictionary *pramaDIC = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
+            @"send",@"action",
+            @"4905",@"userid",
+            @"润植科技",@"account",
+            @"rzhkj012",@"password",
+            username.text,@"mobile",
+            [NSString stringWithFormat:@"您的验证码为：%ld,请及时完成注册,如非本人操作请忽略。【花卉通】",(long)_identifyingCode],@"content",
+            @"",@"sendTime",
+            @"",@"extno",nil];
+            
+            NSString *XMLstring = [httpHelper post:@"http://211.147.242.161:8888/sms.aspx" useEncoding:NSUTF8StringEncoding withData:pramaDIC];
+        _count = 60;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD setErrorImage:nil];
+            });
+         
+    //----------处理返回的XML字段------------
+            if (XMLstring.length == 0 || [XMLstring rangeOfString:@"Fail"].location != NSNotFound) {
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    // 更UI
+                    [SVProgressHUD setErrorImage:nil];
+                    [SVProgressHUD showErrorWithStatus:@"发送错误，请再次尝试" maskType:SVProgressHUDMaskTypeBlack];
+                });
+                
+        _count = 0;
+                return ;
+            }
+            else if ([XMLstring rangeOfString:@"Success"].location != NSNotFound){
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    // 更UI
+                    [SVProgressHUD setErrorImage:nil];
+                    [SVProgressHUD showErrorWithStatus:@"发送成功" maskType:SVProgressHUDMaskTypeBlack];
+                });
+                return;
+            }
+            
+        });
+    }
+    
+}
+-(void)startTime{
+    if (_count == 0){
+        [_messageBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        [_messageBtn setTintColor:[UIColor blueColor]];
+        [_messageBtn setEnabled:YES];
+    }
+    else if (_count <= 60 && _count > 0){
+        _count --;
+        [_messageBtn setTitle:[NSString stringWithFormat:@"%d",_count] forState:UIControlStateNormal];
+        [_messageBtn setTintColor:[UIColor blueColor]];
+        [_messageBtn setEnabled:NO];
+    }
+    
 }
 @end

@@ -2168,6 +2168,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="headerView" destination="y2c-07-g0d" id="2ff-Gj-JXJ"/>
+                        <outlet property="identifyingCodeTF" destination="qlb-e1-YI8" id="lGT-sp-HRZ"/>
                         <outlet property="messageBtn" destination="0EP-r2-2Jf" id="IIt-Wx-Va8"/>
                         <outlet property="password" destination="en6-ss-vdG" id="vPd-V0-YFx"/>
                         <outlet property="passwordView" destination="I1V-Wn-lud" id="k49-my-MPE"/>
