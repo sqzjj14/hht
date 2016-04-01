@@ -352,14 +352,14 @@
 }
 -(void)startTime{
     if (_count == 0){
-        [_messageBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
-        [_messageBtn setTintColor:[UIColor blueColor]];
+        [_messageBtn setTitle:@"获取短信验证" forState:UIControlStateNormal];
+        [_messageBtn setTintColor:[UIColor colorWithHexString:@"#00bfff"]];
         [_messageBtn setEnabled:YES];
     }
     else if (_count <= 60 && _count > 0){
         _count --;
         [_messageBtn setTitle:[NSString stringWithFormat:@"%d",_count] forState:UIControlStateNormal];
-        [_messageBtn setTintColor:[UIColor blueColor]];
+        [_messageBtn setTintColor:[UIColor colorWithHexString:@"#00bfff"]];
         [_messageBtn setEnabled:NO];
     }
     
