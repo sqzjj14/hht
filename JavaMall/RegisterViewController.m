@@ -10,8 +10,10 @@
 #import "UIColor+HexString.h"
 #import "SVProgressHUD.h"
 #import "HttpClient.h"
+#import "ImagePlayerView.h"
 
-@interface RegisterViewController ()
+
+@interface RegisterViewController () <UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIView *usernameView;
 @property (weak, nonatomic) IBOutlet UIView *passwordView;
@@ -22,6 +24,11 @@
 - (IBAction)registerUser:(id)sender;
 - (IBAction)back:(id)sender;
 
+@property (weak, nonatomic) IBOutlet ImagePlayerView *playView;
+@property (nonatomic,strong) NSArray *imageArr;
+
+@property (weak, nonatomic) IBOutlet UIButton *messageBtn;
+- (IBAction)sendMessage:(id)sender;
 @end
 
 @implementation RegisterViewController
@@ -58,7 +65,54 @@
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
     gesture.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:gesture];
+    
+    [self initPlayView];
 
+}
+
+- (void)initPlayView{
+    self.playView.imagePlayerViewDelegate = (id)self;
+    self.imageArr = @[[UIImage imageNamed:@"loginAD_1"],
+                      [UIImage imageNamed:@"loginAD_2"],
+                      [UIImage imageNamed:@"loginAD_3"]];
+    // set auto scroll interval to x seconds
+    self.playView.scrollInterval = 3.0f;
+    
+    // adjust pageControl position
+    self.playView
+    .pageControlPosition = ICPageControlPosition_BottomCenter;
+    
+    // hide pageControl or not
+    self.playView.hidePageControl = NO;
+    
+    
+    // adjust edgeInset
+    //    self.imagePlayerView.edgeInsets = UIEdgeInsetsMake(10, 20, 30, 40);
+    
+    [self.playView reloadData];
+    
+}
+
+#pragma mark - ImagePlayerViewDelegate
+- (NSInteger)numberOfItems
+{
+    return self.imageArr.count;
+}
+
+- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
+{
+    // recommend to use SDWebImage lib to load web image
+    //    [imageView setImageWithURL:[self.imageURLs objectAtIndex:index] placeholderImage:nil];
+    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        imageView.image = self.imageArr[index];
+//    });
+    imageView.image = self.imageArr[index];
+}
+
+- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
+{
+    NSLog(@"did tap index = %d", (int)index);
 }
 
 /**
@@ -218,5 +272,7 @@
     {
         return NO;
     }
+}
+- (IBAction)sendMessage:(id)sender {
 }
 @end

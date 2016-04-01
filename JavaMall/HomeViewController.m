@@ -14,6 +14,7 @@
 #import "GoodsNavigationViewController.h"
 #import "GoodsViewController.h"
 
+
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webview;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
@@ -55,6 +56,10 @@
     
     NSString *filePath=[[NSBundle mainBundle] pathForResource:@"home" ofType:@"js"];
     homeJavaScript = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
+
+    
+    
     
 }
 

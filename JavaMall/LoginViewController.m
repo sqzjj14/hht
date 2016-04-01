@@ -14,8 +14,9 @@
 #import "MobileRegisterViewController1.h"
 #import "FindPassViewController1.h"
 #import "AppDelegate.h"
+#import "ImagePlayerView.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<ImagePlayerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *usernameView;
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
@@ -64,8 +65,16 @@
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
     gesture.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:gesture];
+    
+    [self initImagePlayerView];
+    
 }
-
+#pragma mark ImagePlayerView
+-(void)initImagePlayerView
+{
+    
+}
+#pragma mark ImagePlayerViewDelegate
 
 /**
  *  设置头部背景色和下线线
@@ -149,7 +158,7 @@
                             [self presentViewController:[super controllerFromMainStroryBoard:@"Main"] animated:YES completion:nil];
                            
                           UIApplication *app = [UIApplication sharedApplication];
-                           AppDelegate *appdelegate = app.delegate;
+                           AppDelegate *appdelegate =  (AppDelegate*)app.delegate;
                           if( appdelegate.window.rootViewController == self)
                           {
                               [self presentViewController:[super controllerFromMainStroryBoard:@"Main"] animated:YES completion:nil];
