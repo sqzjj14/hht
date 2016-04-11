@@ -394,9 +394,23 @@
         [rogButton setTitle:@"确认收货" forState:UIControlStateNormal];
         [rogButton addTarget:self action:@selector(rogConfirm:) forControlEvents:UIControlEventTouchUpInside];
         [operationView addSubview:rogButton];
+        
+        UIButton *hurryButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 0, 100, 44)];
+        [hurryButton setBackgroundColor:[UIColor colorWithHexString:@"#f15352"]];
+        [hurryButton.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
+        [hurryButton setTitle:@"催单" forState:UIControlStateNormal];
+        [hurryButton addTarget:self action:@selector(hurryUp:) forControlEvents:UIControlEventTouchUpInside];
+        [operationView addSubview:hurryButton];
+        
     }
     
     [self.view addSubview:operationView];
+}
+
+//催单
+- (void)hurryUp:(id)sender{
+    [SVProgressHUD setSuccessImage:nil];
+    [SVProgressHUD showSuccessWithStatus:@"取消订单成功！" maskType:SVProgressHUDMaskTypeBlack];
 }
 
 /*

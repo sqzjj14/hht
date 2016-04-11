@@ -210,6 +210,7 @@
     HttpClient *client = [[HttpClient alloc] init];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                    ^{
+                       NSLog(@"%@",[NSString stringWithFormat:@"%@/api/shop/payment.do?orderid=%d",BASE_URL,[[order objectForKey:@"order_id"]intValue]]);
                        NSString *content = [client get:[BASE_URL stringByAppendingFormat:@"/api/shop/payment.do?orderid=%d&paymentid=%d", [[order objectForKey:@"order_id"] intValue], paymentid]];
                        dispatch_async(dispatch_get_main_queue(), ^{
                            [SVProgressHUD dismiss];
@@ -242,7 +243,10 @@
 */
 - (IBAction)back:(id)sender {
     [Constants setAction:@"cart"];
-    [self.view.window.rootViewController dismissViewControllerAnimated:NO completion:nil];
+   // [self.view.window.rootViewController dismissViewControllerAnimated:NO completion:nil];
+    //[self dismissViewControllerAnimated:NO completion:nil ];
+    
+    [self presentViewController:[super controllerFromMainStroryBoard:@"Main"] animated:YES completion:nil];
 }
 
 /**

@@ -150,7 +150,7 @@
 #pragma mark textfield delegate
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     CGRect frame = [textField convertRect:textField.frame toView:self.view];
-    int i = 32;
+    int i = 15;
     int offset = frame.origin.y + i + frame.size.height - (self.view.frame.size.height - 250.0);
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
@@ -174,7 +174,7 @@
     }
     else if (sender == _identifyingCodeTF){
         [self hidenKeyboard];
-        [self registerUser:nil];
+       // [self registerUser:nil];
     }
     
 }
@@ -194,8 +194,9 @@
 
 
 - (IBAction)registerUser:(id)sender {
-    
-    if(_identifyingCodeTF.text != [NSString stringWithFormat:@"%d",_identifyingCode]){
+    NSString *Code = [NSString stringWithFormat:@"%d",_identifyingCode];
+    NSLog(@"%@",_identifyingCodeTF.text);
+    if(![_identifyingCodeTF.text isEqualToString: Code]){
         [SVProgressHUD setErrorImage:nil];
         [SVProgressHUD showErrorWithStatus:@"验证码错误" maskType:SVProgressHUDMaskTypeBlack];
         return;

@@ -161,7 +161,7 @@
     [packageParams setObject: @"APP-001"        forKey:@"device_info"]; //支付设备号或门店号
     [packageParams setObject: noncestr          forKey:@"nonce_str"];   //随机串
     [packageParams setObject: @"APP"            forKey:@"trade_type"];  //支付类型，固定为APP
-    [packageParams setObject:[NSString stringWithFormat:@"订单：%@", [order objectForKey:@"sn"]] forKey:@"body"];        //订单描述，展示给用户
+    [packageParams setObject:[NSString stringWithFormat:@"%@", [order objectForKey:@"sn"]] forKey:@"body"];        //订单描述，展示给用户
     [packageParams setObject:[NSString stringWithFormat:@"%@/api/shop/s_wechatMobilePlugin_payment-callback.do", BASE_URL] forKey:@"notify_url"];  //支付结果异步通知
     [packageParams setObject: [order objectForKey:@"sn"]           forKey:@"out_trade_no"];//商户订单号
     [packageParams setObject: @"127.0.0.1"    forKey:@"spbill_create_ip"];//发器支付的机器ip

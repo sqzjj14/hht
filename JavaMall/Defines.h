@@ -30,7 +30,7 @@
 #define nChangePassword @"ChangePasswordCompletionNotification"
 
 //微信APP ID设置
-#define WECHAT_APP_ID @"您的微信应用AppId"
+#define WECHAT_APP_ID @"wxa21087b9d6d0d635"
 
 //广告设置
 #define AD_ENABLE NO

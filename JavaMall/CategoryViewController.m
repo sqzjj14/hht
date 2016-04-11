@@ -29,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //self.automaticallyAdjustsScrollViewInsets = NO;
+    
     //StatusBar背景色
     [super setStatusBarBackgroudColor:[UIColor colorWithHexString:@"#FAFAFA"]];
 
@@ -80,6 +82,7 @@
                                    for (NSDictionary *level2 in level2Array) {
                                        Menu *menu2 = [[Menu alloc] init];
                                        menu2.meunName = [level2 objectForKey:@"name"];
+                                       menu2.urlName = [level2 objectForKey:@"image"];
                                        menu2.ID = [level2 objectForKey:@"cat_id"];
                                        [level2MenuArray addObject:menu2];
                                        
@@ -140,10 +143,12 @@
  */
 - (void) initView:(NSMutableArray *)categoryArray {
     //初始化分类视图
+    
     MultilevelMenu * view=[[MultilevelMenu alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-49-64) WithData:categoryArray withSelectIndex:^(NSInteger left, NSInteger right,Menu* info) {
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         GoodsListViewController *goodsListViewController = [storyboard instantiateViewControllerWithIdentifier:@"GoodsList"];
+        //goodsListViewController.keyword =info.meunName;
         goodsListViewController.cid =[info.ID intValue];
         goodsListViewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:goodsListViewController animated:YES];
@@ -156,6 +161,7 @@
     //  view.leftSelectBgColor=[UIColor redColor];
     view.isRecordLastScroll = YES;
     [self.view addSubview:view];
+     //self.edgesForExtendedLayout=UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning {

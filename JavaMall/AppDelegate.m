@@ -35,6 +35,7 @@
     
     else{
         if ([self isLogined] == NO) {
+            
             [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"Login"]];
             }
         else{

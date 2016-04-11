@@ -100,6 +100,7 @@
                        }
                        
                        NSString *url = [[BASE_URL stringByAppendingFormat:@"/api/mobile/goods!list.do?%@", param] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+                       NSLog(@"goodlist = %@",url);
                        NSString *content = [client get:url];
                        dispatch_async(dispatch_get_main_queue(), ^{
                            [SVProgressHUD dismiss];

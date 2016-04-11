@@ -223,16 +223,19 @@
                            
                           
                            
-                            [self presentViewController:[super controllerFromMainStroryBoard:@"Main"] animated:YES completion:nil];
+                           
                            
                           UIApplication *app = [UIApplication sharedApplication];
                            AppDelegate *appdelegate =  (AppDelegate*)app.delegate;
                           if( appdelegate.window.rootViewController == self)
                           {
+                              [appdelegate.window setRootViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Main"]];
+                              
                               [self presentViewController:[super controllerFromMainStroryBoard:@"Main"] animated:YES completion:nil];
                           }
                           else{
                                [self dismissViewControllerAnimated:YES completion:nil];
+//                              [self presentViewController:[super controllerFromMainStroryBoard:@"Main"] animated:YES completion:nil];
                           }
                        });
                    });

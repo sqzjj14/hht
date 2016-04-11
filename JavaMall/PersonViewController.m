@@ -161,6 +161,9 @@
                                [SVProgressHUD showErrorWithStatus:@"退出登录成功！" maskType:SVProgressHUDMaskTypeBlack];
                                
                                [self initLoginView];
+//                               [self.view.window.rootViewController dismissViewControllerAnimated:NO completion:nil];
+//                               [self dismissViewControllerAnimated:NO completion:nil];
+                             [self presentViewController:[super controllerFromMainStroryBoard:@"Login"] animated:YES completion:nil];
                            });
                        });
     }
