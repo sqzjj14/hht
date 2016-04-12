@@ -11,6 +11,7 @@
 #import "UIColor+HexString.h"
 #import "TwoCell.h"
 #import "Menu.h"
+#import "UIColor+HexString.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -54,6 +55,7 @@
             self.tableView.separatorInset=UIEdgeInsetsZero;
         }
         self.tableView.separatorColor=self.leftSeparatorColor;
+        self.tableView.backgroundColor = _leftBgColor;
         
         [self.tableView registerNib:[UINib nibWithNibName:@"TwoCell" bundle:nil] forCellReuseIdentifier:@"TwoCell"];
     }
@@ -65,20 +67,36 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (_allData.count == 0) {
+        return 1;
+    }
     return _allData.count;
 }
     
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TwoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TwoCell"];
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    
     Menu *menu = _allData[indexPath.row];
     cell.title.text = menu.meunName;
+    cell.backgroundColor = _leftBgColor;
     
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TwoCell *cell = (TwoCell *)[tableView cellForRowAtIndexPath:indexPath];
+    cell.title.textColor = [UIColor redColor];
+    cell.backgroundColor = [UIColor whiteColor];
+    
     Menu *menu = _allData[indexPath.row];
     void (^select)(id info) = self.block;
     select(menu);
+}
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    TwoCell *cell = (TwoCell *)[tableView cellForRowAtIndexPath:indexPath];
+    cell.title.textColor = [UIColor blackColor];
+    cell.backgroundColor = UIColorFromRGB(0xF3F4F6);
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 30;

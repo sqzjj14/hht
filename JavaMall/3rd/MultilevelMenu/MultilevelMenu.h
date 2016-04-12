@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SecondTableView.h"
 
-#define kLeftWidth 80
+#define kLeftWidth 70
 
-@interface MultilevelMenu : UIView<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface MultilevelMenu : UIView<UITableViewDataSource,UITableViewDelegate>
 
 @property(strong,nonatomic,readonly) NSArray * allData;
 

@@ -11,6 +11,8 @@
 
 @interface ChartView : UITableView
 
+@property (nonatomic,assign) NSInteger cid;//分类id
+@property (nonatomic,assign) NSInteger pid;//商品id
 
 -(id)initChartViewWithFrame:(CGRect)frame andData:(Menu *)menu;
 @end

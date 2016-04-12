@@ -13,6 +13,8 @@
 #import "Menu.h"
 #import "Defines.h"
 #import "ChartView.h"
+#import "SVProgressHUD.h"
+#import "HttpClient.h"
 
 
 #define kImageDefaultName @"tempShop"
@@ -33,7 +35,9 @@
 @property(assign,nonatomic) BOOL isReturnLastOffset;
 
 @end
-@implementation MultilevelMenu
+@implementation MultilevelMenu{
+    HttpClient *client;
+}
 
 /*
  // Only override drawRect: if you perform custom drawing.
@@ -296,8 +300,10 @@
     Menu * title2 = title.nextArray[indexPath.row];
     NSArray *data = title2.nextArray;
     
-    SecondTableView *SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 50, 30 * data.count) WithData: data withChartDetail:^(id info) {
-        NSLog(@"点击了第三个table");
+    SecondTableView *SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 70, 30 * data.count) WithData: data withChartDetail:^(Menu* info) {
+        NSLog(@"cid=%@",info.ID);
+        ChartView *chartview = [[ChartView alloc]init];
+        chartview.cid = [info.ID intValue];
         
     }];
     [self addSubview:SecondView];
@@ -317,6 +323,37 @@
     
     cell.backgroundColor=self.leftUnSelectBgColor;
 }
+
+-(void)DoWithcid:(NSInteger)cid{
+    [SVProgressHUD showWithStatus:@"载入中..." maskType:SVProgressHUDMaskTypeBlack];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                   ^{
+                       NSString *url = [BASE_URL stringByAppendingFormat:@"/api/mobile/goods!list.do?page=1&sort=buynum_desc&cat=％d",cid];
+                       NSString *content = [client get:url];
+                       //没有分类
+                       dispatch_async(dispatch_get_main_queue(), ^{
+                           [SVProgressHUD dismiss];
+                           
+                           if([content length] == 0){
+                               //[self showNoData];
+                               return;
+                           }
+                      //找到分类下的商品
+                           NSDictionary *resultJSON = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+                           NSArray *dataArray = [resultJSON objectForKey:@"data"];
+                           //枚举商品的总数，储存为pid数组
+                           NSMutableArray *pidArr = [[NSMutableArray alloc]init];
+                           for (NSDictionary *data in dataArray) {
+                               NSString *pid = [data valueForKey:@"goods_id"];
+                               [pidArr addObject:pid];                               
+                           }
+                           
+                         });
+                   });
+}
+
+                   
+                   
 
 #pragma mark---imageCollectionView--------------------------
 
