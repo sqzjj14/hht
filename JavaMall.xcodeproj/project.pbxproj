@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		3EC21910C1F4CFEEBBB91A4B /* AlipayPaymentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC216173AEA3BAA74B95B22 /* AlipayPaymentHelper.m */; };
 		3EC21A40F8F676D6CEF19AC3 /* MobileRegisterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC210C4B668CF04AE1122CF /* MobileRegisterViewController1.m */; };
+		940A0ABB1CBB980000B2790C /* SecondTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 940A0ABA1CBB980000B2790C /* SecondTableView.m */; };
+		940A0ABF1CBBA85800B2790C /* TwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 940A0ABD1CBBA85800B2790C /* TwoCell.m */; };
+		940A0AC01CBBA85800B2790C /* TwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 940A0ABE1CBBA85800B2790C /* TwoCell.xib */; };
+		940A0AC41CBBA86D00B2790C /* ThridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 940A0AC21CBBA86D00B2790C /* ThridCell.m */; };
+		940A0AC51CBBA86D00B2790C /* ThridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 940A0AC31CBBA86D00B2790C /* ThridCell.xib */; };
+		940A0AC81CBBBBB600B2790C /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 940A0AC71CBBBBB600B2790C /* ChartView.m */; };
 		942452461CACB23400A9EC30 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452451CACB23400A9EC30 /* libc++.tbd */; };
 		942452481CACB26600A9EC30 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452471CACB26600A9EC30 /* libsqlite3.0.tbd */; };
 		9424524A1CACB26F00A9EC30 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452491CACB26F00A9EC30 /* libz.tbd */; };
@@ -254,6 +260,16 @@
 		3EC2141D2CC7E2A06BDCFD31 /* AlipayPaymentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlipayPaymentHelper.h; sourceTree = "<group>"; };
 		3EC214F7BA1FDBB49C2D7104 /* MobileRegisterViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileRegisterViewController1.h; sourceTree = "<group>"; };
 		3EC216173AEA3BAA74B95B22 /* AlipayPaymentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlipayPaymentHelper.m; sourceTree = "<group>"; };
+		940A0AB91CBB980000B2790C /* SecondTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTableView.h; sourceTree = "<group>"; };
+		940A0ABA1CBB980000B2790C /* SecondTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTableView.m; sourceTree = "<group>"; };
+		940A0ABC1CBBA85800B2790C /* TwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoCell.h; sourceTree = "<group>"; };
+		940A0ABD1CBBA85800B2790C /* TwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoCell.m; sourceTree = "<group>"; };
+		940A0ABE1CBBA85800B2790C /* TwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoCell.xib; sourceTree = "<group>"; };
+		940A0AC11CBBA86D00B2790C /* ThridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThridCell.h; sourceTree = "<group>"; };
+		940A0AC21CBBA86D00B2790C /* ThridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThridCell.m; sourceTree = "<group>"; };
+		940A0AC31CBBA86D00B2790C /* ThridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThridCell.xib; sourceTree = "<group>"; };
+		940A0AC61CBBBBB600B2790C /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
+		940A0AC71CBBBBB600B2790C /* ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartView.m; sourceTree = "<group>"; };
 		942452451CACB23400A9EC30 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		942452471CACB26600A9EC30 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		942452491CACB26F00A9EC30 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -874,6 +890,10 @@
 				D9132C031B3C51F500509ECB /* Menu.m */,
 				D9132C041B3C51F500509ECB /* MultilevelMenu.h */,
 				D9132C051B3C51F500509ECB /* MultilevelMenu.m */,
+				940A0AB91CBB980000B2790C /* SecondTableView.h */,
+				940A0ABA1CBB980000B2790C /* SecondTableView.m */,
+				940A0AC61CBBBBB600B2790C /* ChartView.h */,
+				940A0AC71CBBBBB600B2790C /* ChartView.m */,
 			);
 			path = MultilevelMenu;
 			sourceTree = "<group>";
@@ -890,6 +910,12 @@
 				D9132BFF1B3C51F500509ECB /* MultilevelTableViewCell.h */,
 				D9132C001B3C51F500509ECB /* MultilevelTableViewCell.m */,
 				D9132C011B3C51F500509ECB /* MultilevelTableViewCell.xib */,
+				940A0ABC1CBBA85800B2790C /* TwoCell.h */,
+				940A0ABD1CBBA85800B2790C /* TwoCell.m */,
+				940A0ABE1CBBA85800B2790C /* TwoCell.xib */,
+				940A0AC11CBBA86D00B2790C /* ThridCell.h */,
+				940A0AC21CBBA86D00B2790C /* ThridCell.m */,
+				940A0AC31CBBA86D00B2790C /* ThridCell.xib */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -1557,6 +1583,7 @@
 				D9132C681B3C51F500509ECB /* SVProgressHUD.bundle in Resources */,
 				D9132C501B3C51F500509ECB /* CollectionHeader.xib in Resources */,
 				D9B08FD11B19CDFA00F7F003 /* tabBar_home_normal@2x.png in Resources */,
+				940A0AC51CBBA86D00B2790C /* ThridCell.xib in Resources */,
 				D98852F51B3DB42000777FB2 /* back_bt_7@2x.png in Resources */,
 				D95AE2B51B42B3FF003821EE /* ico_star2@3x.png in Resources */,
 				D9AF8B121B45328A00D22811 /* radio_select@2x.png in Resources */,
@@ -1601,6 +1628,7 @@
 				D96F65091B85C9410063E91B /* seckill@2x.png in Resources */,
 				D9AF8B2D1B4582E200D22811 /* Button_A@2x.png in Resources */,
 				D98AD2A21B3FEC5600658441 /* jshop_list_back@2x.png in Resources */,
+				940A0AC01CBBA85800B2790C /* TwoCell.xib in Resources */,
 				D98852FE1B3DB9F700777FB2 /* sort_down_price_icon@2x.png in Resources */,
 				D9AF8B191B453E5500D22811 /* my_head_background_login@2x.jpg in Resources */,
 				D9AF8B131B45328A00D22811 /* radio_select@3x.png in Resources */,
@@ -1628,6 +1656,7 @@
 				D9E5D8C71B96A79F004D0C7D /* MWZoomingScrollView.h in Sources */,
 				D9E5D8C81B96A79F004D0C7D /* UIImage+MWPhotoBrowser.h in Sources */,
 				D95AE29C1B414D1C003821EE /* MSSlidingPanelController.m in Sources */,
+				940A0ABF1CBBA85800B2790C /* TwoCell.m in Sources */,
 				D9132C601B3C51F500509ECB /* UIButton+WebCache.m in Sources */,
 				D9132C381B3C51F500509ECB /* AFURLConnectionOperation.m in Sources */,
 				D9AF8B061B4512CF00D22811 /* AddressViewController.m in Sources */,
@@ -1672,9 +1701,11 @@
 				D9E5D8CF1B96A98A004D0C7D /* DALabeledCircularProgressView.m in Sources */,
 				D9132C5E1B3C51F500509ECB /* SDWebImageManager.m in Sources */,
 				D9D434741B7361F300111460 /* PaymentViewController.m in Sources */,
+				940A0AC81CBBBBB600B2790C /* ChartView.m in Sources */,
 				D9AF8B161B4538E000D22811 /* ReceiptViewController.m in Sources */,
 				D9B08FA71B19CB8900F7F003 /* AppDelegate.m in Sources */,
 				D9E5D8B41B96A757004D0C7D /* MWCaptionView.m in Sources */,
+				940A0ABB1CBB980000B2790C /* SecondTableView.m in Sources */,
 				D959982F1C2BCE7900988DFA /* StringHelper.m in Sources */,
 				D9132C591B3C51F500509ECB /* SDImageCache.m in Sources */,
 				D9132C3D1B3C51F500509ECB /* MJRefreshBackFooter.m in Sources */,
@@ -1686,6 +1717,7 @@
 				D95AE2C51B43D9BA003821EE /* CartCell.m in Sources */,
 				D9132C391B3C51F500509ECB /* AFURLRequestSerialization.m in Sources */,
 				D98852F91B3DB54F00777FB2 /* GoodsListViewController.m in Sources */,
+				940A0AC41CBBA86D00B2790C /* ThridCell.m in Sources */,
 				D9E5D8BC1B96A757004D0C7D /* UIImage+MWPhotoBrowser.m in Sources */,
 				D9132C451B3C51F500509ECB /* MJRefreshBackNormalFooter.m in Sources */,
 				D95998321C2BD07D00988DFA /* MobileRegisterViewController2.m in Sources */,

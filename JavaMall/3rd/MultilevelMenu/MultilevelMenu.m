@@ -11,6 +11,9 @@
 #import "MultilevelCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "Menu.h"
+#import "Defines.h"
+#import "ChartView.h"
+
 
 #define kImageDefaultName @"tempShop"
 #define kMultilevelCollectionViewCell @"MultilevelCollectionViewCell"
@@ -24,6 +27,9 @@
 @property(strong,nonatomic ) UITableView * leftTablew;
 @property(strong,nonatomic ) UICollectionView * rightCollection;
 
+//记录选择的是哪个buttn
+@property(assign,nonatomic) NSInteger btnTag;
+//@property (assign,nonatomic) CGRect frame;
 @property(assign,nonatomic) BOOL isReturnLastOffset;
 
 @end
@@ -54,14 +60,35 @@
         self.leftUnSelectColor=[UIColor blackColor];
         
         _selectIndex=0;
-        
+       // _frame = frame;
         _allData=data;
         
+        
+        //左边四个button
+        for (NSInteger i = 0; i<_allData.count; i++) {
+            
+            Menu *title = _allData[i];
+            if (title) {
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                btn.frame = CGRectMake(0 , 0 + i * 50, 80, 50);
+                
+                [btn setTitle:title.meunName forState:UIControlStateNormal];
+                [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                [btn setTitle:title.meunName forState:UIControlStateHighlighted];
+                [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+                
+                btn.titleLabel.font = [UIFont fontWithName:kFont size:13.f];
+                btn.titleLabel.textAlignment = NSTextAlignmentCenter;
+                [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+                btn.tag = 10 + i;
+                [self addSubview:btn];
+            }
+        }
         
         /**
          左边的视图
          */
-        self.leftTablew=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, kLeftWidth, frame.size.height)];
+        self.leftTablew=[[UITableView alloc] initWithFrame:CGRectMake(0, 50 * _allData.count, kLeftWidth, frame.size.height - (50 * _allData.count) )];
         self.leftTablew.dataSource=self;
         self.leftTablew.delegate=self;
         
@@ -85,7 +112,7 @@
         flowLayout.minimumLineSpacing=0.f;
         flowLayout.headerReferenceSize = CGSizeMake(0, 0);
         float leftMargin =0;
-        self.rightCollection=[[UICollectionView alloc] initWithFrame:CGRectMake(kLeftWidth+leftMargin,-20,kScreenWidth-kLeftWidth-leftMargin*2,frame.size.height) collectionViewLayout:flowLayout];
+        self.rightCollection=[[UICollectionView alloc] initWithFrame:CGRectMake(kLeftWidth+leftMargin,0,kScreenWidth-kLeftWidth-leftMargin*2,frame.size.height) collectionViewLayout:flowLayout];
         
         self.rightCollection.delegate=self;
         self.rightCollection.dataSource=self;
@@ -112,27 +139,51 @@
     }
     return self;
 }
-
--(void)setNeedToScorllerIndex:(NSInteger)needToScorllerIndex{
-    if (needToScorllerIndex>=0) {
-        
-        /**
-         *  滑动到 指定行数
-         */
-        [self.leftTablew selectRowAtIndexPath:[NSIndexPath indexPathForRow:needToScorllerIndex inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
-        
-        
-        MultilevelTableViewCell * cell=(MultilevelTableViewCell*)[self.leftTablew cellForRowAtIndexPath:[NSIndexPath indexPathForRow:needToScorllerIndex inSection:0]];
-        UILabel * line=(UILabel*)[cell viewWithTag:100];
-        line.backgroundColor=cell.backgroundColor;
-        cell.titile.textColor=self.leftSelectColor;
-        cell.backgroundColor=self.leftSelectBgColor;
-        _selectIndex=needToScorllerIndex;
-        
-        [self.rightCollection reloadData];
-        
+//一级btn点击监听
+-(void)btnClick:(UIButton *)sender
+{
+    UIButton*btn1=(UIButton*)[self viewWithTag:10];
+    UIButton*btn2=(UIButton*)[self viewWithTag:11];
+    UIButton*btn3=(UIButton*)[self viewWithTag:12];
+    UIButton*btn4=(UIButton*)[self viewWithTag:13];
+    btn1.selected=NO;
+    btn2.selected=NO;
+    btn3.selected=NO;
+    btn4.selected=NO;
+    
+    if (sender.tag==10) {
+        btn1.selected=YES;
+        btn2.selected=NO;
+        btn3.selected=NO;
+        btn4.selected=NO;
+        _btnTag = sender.tag - 10;
+        [self.leftTablew reloadData];
     }
-    _needToScorllerIndex=needToScorllerIndex;
+    if (sender.tag==11) {
+        btn1.selected=NO;
+        btn2.selected=YES;
+        btn3.selected=NO;
+        btn4.selected=NO;
+        _btnTag = sender.tag - 10;
+        [self.leftTablew reloadData];
+    }
+    if (sender.tag==12) {
+        btn1.selected=NO;
+        btn2.selected=NO;
+        btn3.selected=YES;
+        btn4.selected=NO;
+        _btnTag = sender.tag - 10;
+        [self.leftTablew reloadData];
+    }
+    if (sender.tag == 13) {
+        btn1.selected=NO;
+        btn2.selected=NO;
+        btn3.selected=NO;
+        btn4.selected=YES;
+        _btnTag = sender.tag - 10;
+        [self.leftTablew reloadData];
+    }
+    
 }
 
 -(void)setLeftBgColor:(UIColor *)leftBgColor{
@@ -152,11 +203,6 @@
     self.leftTablew.separatorColor=leftSeparatorColor;
 }
 
--(void)reloadData{
-    [self.leftTablew reloadData];
-    [self.rightCollection reloadData];
-}
-
 #pragma mark---左边的tablew 代理
 #pragma mark--deleagte
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -164,7 +210,15 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.allData.count;
+    UIButton*btn1=(UIButton*)[self viewWithTag:10];
+    UIButton*btn2=(UIButton*)[self viewWithTag:11];
+    UIButton*btn3=(UIButton*)[self viewWithTag:12];
+    UIButton*btn4=(UIButton*)[self viewWithTag:13];
+    if (btn1.selected == NO && btn2.selected == NO &&btn3.selected == NO &&btn4.selected == NO) {
+        return 0; //初次进入不显示二级table
+    }
+    Menu *title=self.allData[_btnTag];
+    return title.nextArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -186,10 +240,12 @@
     
     
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    Menu * title=self.allData[indexPath.row];
     
-    cell.titile.text= title.meunName;
-    cell.titile.numberOfLines = 2;
+    Menu * title=self.allData[_btnTag];
+    Menu * title2 = title.nextArray[indexPath.row];
+    
+    cell.titile.text= title2.meunName;
+    //cell.titile.numberOfLines = 2;
     
     UILabel * line=(UILabel*)[cell viewWithTag:100];
     
@@ -217,7 +273,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 64;
+    return 30;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -226,8 +282,6 @@
     cell.titile.textColor=self.leftSelectColor;
     cell.backgroundColor=self.leftSelectBgColor;
     _selectIndex=indexPath.row;
-    Menu* title=self.allData[indexPath.row];
-    
     
     UILabel *line=(UILabel*)[cell viewWithTag:100];
     line.backgroundColor=cell.backgroundColor;
@@ -237,14 +291,21 @@
     
     self.isReturnLastOffset=NO;
     
-    [self.rightCollection reloadData];
+    //创建三级table
+    Menu * title=self.allData[_btnTag];
+    Menu * title2 = title.nextArray[indexPath.row];
+    NSArray *data = title2.nextArray;
+    
+    SecondTableView *SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 50, 30 * data.count) WithData: data withChartDetail:^(id info) {
+        NSLog(@"点击了第三个table");
+        
+    }];
+    [self addSubview:SecondView];
+    [self bringSubviewToFront:SecondView];
     
     
-    if (self.isRecordLastScroll) {
-        [self.rightCollection scrollRectToVisible:CGRectMake(0, title.offsetScorller, self.rightCollection.frame.size.width, self.rightCollection.frame.size.height) animated:NO];
-    }else{
-        [self.rightCollection scrollRectToVisible:CGRectMake(0, 0, self.rightCollection.frame.size.width, self.rightCollection.frame.size.height) animated:NO];
-    }
+    //[self.rightCollection reloadData];
+    
 }
 
 
@@ -260,28 +321,12 @@
 #pragma mark---imageCollectionView--------------------------
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-//    if (self.allData.count==0) {
-//        return 0;
-//    }
-//    
-//    Menu *title=self.allData[self.selectIndex];
-//    return title.nextArray.count;
+
     return 1;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    Menu * title=self.allData[self.selectIndex];
-//    if (title.nextArray.count>0) {
-//        Menu *sub=title.nextArray[section];
-//        if (sub.nextArray.count==0){
-//            //没有下一级
-//            return 1;
-//        }else{
-//            return sub.nextArray.count;
-//        }
-//    }else{
-//        return title.nextArray.count;
-//    }
+
     if (self.allData.count==0) {
                 return 0;
     }
@@ -376,7 +421,7 @@
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    CGSize size={kScreenWidth,44};
+    CGSize size={kScreenWidth,20};
     return size;
 }
 

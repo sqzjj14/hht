@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Enation. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+#import "SecondTableView.h"
 
 #ifndef JavaMall_Defines_h
 #define JavaMall_Defines_h
