@@ -11,20 +11,20 @@
 
 @interface ChartView()<UITableViewDelegate,UITableViewDataSource>
 
-@property(strong,nonatomic,readonly) NSArray * allData;
+
 @property(strong,nonatomic) UITableView *chartTableW;
 @end
 
 
 @implementation ChartView
 
--(id)initChartViewWithFrame:(CGRect)frame andData:(Menu *)menu{
+-(id)initChartViewWithFrame:(CGRect)frame andData:(NSMutableArray*)data{
     
     if (self  == [super initWithFrame:frame]) {
-        if (menu == nil) {
+        if (data == nil) {
             return nil;
         }
-     
+        _allData = data;
         
         self.chartTableW=
         [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
@@ -53,13 +53,17 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return _allData.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ThridCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ThridCell"];
    // Menu *menu = _allData[indexPath.row];
     //cell.title.text = menu.meunName;
+    ChartModel *chartmodel = _allData[indexPath.row];
+    cell.name.text = chartmodel.name;
+    cell.price.text = [NSString stringWithFormat:@"价格：%@元",chartmodel.price];
+    cell.pid = chartmodel.pid;
     
     return cell;
 }
@@ -71,4 +75,5 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 44;
 }
+
 @end

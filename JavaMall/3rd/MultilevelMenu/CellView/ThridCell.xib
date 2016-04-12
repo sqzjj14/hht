@@ -14,15 +14,89 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name : 1111111111111111111111111111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnH-6y-gK6">
-                        <rect key="frame" x="13" y="0.0" width="294" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="单价：？？元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATE-ph-CnI">
+                        <rect key="frame" x="8" y="22" width="100" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnK-fb-c8h">
+                        <rect key="frame" x="296" y="15" width="24" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="DhQ-qr-YzQ"/>
+                            <constraint firstAttribute="height" constant="28" id="yyZ-l5-7yl"/>
+                        </constraints>
+                        <state key="normal" title="车" image="cart_round_check2.png"/>
+                        <connections>
+                            <action selector="gotoCar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fIF-AE-yQf"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPV-to-GYd">
+                        <rect key="frame" x="261" y="22" width="17" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="17" id="kmt-Fh-Cuc"/>
+                            <constraint firstAttribute="height" constant="18" id="zOo-dK-vsI"/>
+                        </constraints>
+                        <state key="normal" title="+" image="syncart_more_btn_enable.png"/>
+                        <connections>
+                            <action selector="addCount:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="N0r-FN-Pt4"/>
+                        </connections>
+                    </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="center" minimumFontSize="17" background="syncart_middle_btn_enable.png" translatesAutoresizingMaskIntoConstraints="NO" id="dqj-fe-2eJ">
+                        <rect key="frame" x="239" y="22" width="22" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="OxL-gs-65f"/>
+                            <constraint firstAttribute="height" constant="18" id="Txf-BQ-uua"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVD-nP-Qd6">
+                        <rect key="frame" x="222" y="22" width="17" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="K2c-pr-wAf"/>
+                            <constraint firstAttribute="width" constant="17" id="gzr-OC-a50"/>
+                        </constraints>
+                        <state key="normal" title="-" image="syncart_less_btn_enable.png"/>
+                        <connections>
+                            <action selector="lessCount:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D22-yh-ir5"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="name : xxxxxxxxx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnH-6y-gK6">
+                        <rect key="frame" x="8" y="2" width="312" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="CnH-6y-gK6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="1i8-vo-ArT"/>
+                    <constraint firstAttribute="bottom" secondItem="VVD-nP-Qd6" secondAttribute="bottom" constant="3" id="6HK-hE-HVM"/>
+                    <constraint firstAttribute="bottom" secondItem="MPV-to-GYd" secondAttribute="bottom" constant="3" id="8cB-j5-l4u"/>
+                    <constraint firstItem="dqj-fe-2eJ" firstAttribute="leading" secondItem="VVD-nP-Qd6" secondAttribute="trailing" id="Aak-yB-Wat"/>
+                    <constraint firstAttribute="bottom" secondItem="BnK-fb-c8h" secondAttribute="bottom" id="M85-hY-dfO"/>
+                    <constraint firstItem="CnH-6y-gK6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Okl-IT-kgz"/>
+                    <constraint firstItem="BnK-fb-c8h" firstAttribute="leading" secondItem="MPV-to-GYd" secondAttribute="trailing" constant="18" id="R7C-Uv-qTE"/>
+                    <constraint firstItem="MPV-to-GYd" firstAttribute="leading" secondItem="dqj-fe-2eJ" secondAttribute="trailing" id="T5v-Rm-8Mc"/>
+                    <constraint firstAttribute="trailing" secondItem="BnK-fb-c8h" secondAttribute="trailing" id="aLs-Us-cl3"/>
+                    <constraint firstAttribute="bottom" secondItem="dqj-fe-2eJ" secondAttribute="bottom" constant="3" id="d32-zb-KRN"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="298" y="401"/>
+            <connections>
+                <outlet property="addBtn" destination="MPV-to-GYd" id="a1F-nh-FC9"/>
+                <outlet property="checkBtn" destination="BnK-fb-c8h" id="QNr-N5-fbD"/>
+                <outlet property="lessBtn" destination="VVD-nP-Qd6" id="AhY-X8-WXF"/>
+                <outlet property="name" destination="CnH-6y-gK6" id="Mw1-M5-GZE"/>
+                <outlet property="price" destination="ATE-ph-CnI" id="V2I-BE-WBq"/>
+                <outlet property="priceTF" destination="dqj-fe-2eJ" id="yp4-tN-1aS"/>
+            </connections>
+            <point key="canvasLocation" x="283" y="400"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="cart_round_check2.png" width="18" height="18"/>
+        <image name="syncart_less_btn_enable.png" width="25" height="25"/>
+        <image name="syncart_middle_btn_enable.png" width="40" height="25"/>
+        <image name="syncart_more_btn_enable.png" width="25" height="25"/>
+    </resources>
 </document>

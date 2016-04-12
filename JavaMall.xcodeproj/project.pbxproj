@@ -15,6 +15,7 @@
 		940A0AC41CBBA86D00B2790C /* ThridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 940A0AC21CBBA86D00B2790C /* ThridCell.m */; };
 		940A0AC51CBBA86D00B2790C /* ThridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 940A0AC31CBBA86D00B2790C /* ThridCell.xib */; };
 		940A0AC81CBBBBB600B2790C /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 940A0AC71CBBBBB600B2790C /* ChartView.m */; };
+		941260D21CBCB4230086FBBD /* ChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 941260D11CBCB4230086FBBD /* ChartModel.m */; };
 		942452461CACB23400A9EC30 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452451CACB23400A9EC30 /* libc++.tbd */; };
 		942452481CACB26600A9EC30 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452471CACB26600A9EC30 /* libsqlite3.0.tbd */; };
 		9424524A1CACB26F00A9EC30 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452491CACB26F00A9EC30 /* libz.tbd */; };
@@ -270,6 +271,8 @@
 		940A0AC31CBBA86D00B2790C /* ThridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThridCell.xib; sourceTree = "<group>"; };
 		940A0AC61CBBBBB600B2790C /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
 		940A0AC71CBBBBB600B2790C /* ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartView.m; sourceTree = "<group>"; };
+		941260D01CBCB4230086FBBD /* ChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartModel.h; sourceTree = "<group>"; };
+		941260D11CBCB4230086FBBD /* ChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartModel.m; sourceTree = "<group>"; };
 		942452451CACB23400A9EC30 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		942452471CACB26600A9EC30 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		942452491CACB26F00A9EC30 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -740,6 +743,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941260CF1CBCB3FE0086FBBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9132C021B3C51F500509ECB /* Menu.h */,
+				D9132C031B3C51F500509ECB /* Menu.m */,
+				941260D01CBCB4230086FBBD /* ChartModel.h */,
+				941260D11CBCB4230086FBBD /* ChartModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		D9132BB51B3C51F500509ECB /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,8 +900,7 @@
 			isa = PBXGroup;
 			children = (
 				D9132BF81B3C51F500509ECB /* CellView */,
-				D9132C021B3C51F500509ECB /* Menu.h */,
-				D9132C031B3C51F500509ECB /* Menu.m */,
+				941260CF1CBCB3FE0086FBBD /* Model */,
 				D9132C041B3C51F500509ECB /* MultilevelMenu.h */,
 				D9132C051B3C51F500509ECB /* MultilevelMenu.m */,
 				940A0AB91CBB980000B2790C /* SecondTableView.h */,
@@ -1710,6 +1723,7 @@
 				D9132C591B3C51F500509ECB /* SDImageCache.m in Sources */,
 				D9132C3D1B3C51F500509ECB /* MJRefreshBackFooter.m in Sources */,
 				D9132C671B3C51F500509ECB /* SVIndefiniteAnimatedView.m in Sources */,
+				941260D21CBCB4230086FBBD /* ChartModel.m in Sources */,
 				D9E5D8CE1B96A98A004D0C7D /* DACircularProgressView.m in Sources */,
 				D9A5F4EF1B4BD55C002B57F6 /* Constants.m in Sources */,
 				D986280D1B4D6EFB0006C9FD /* OrderDetailViewController.m in Sources */,
@@ -1914,8 +1928,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1935,8 +1949,9 @@
 					"$(PROJECT_DIR)/JavaMall/3rd/Wechat",
 					"$(PROJECT_DIR)/JavaMall/3rd/Unionpay",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.58hht.www;
 				PRODUCT_NAME = javamall;
-				PROVISIONING_PROFILE = "b5d63eeb-c6f7-4c87-89cc-688395e91da2";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1945,8 +1960,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1966,8 +1981,9 @@
 					"$(PROJECT_DIR)/JavaMall/3rd/Wechat",
 					"$(PROJECT_DIR)/JavaMall/3rd/Unionpay",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.58hht.www;
 				PRODUCT_NAME = javamall;
-				PROVISIONING_PROFILE = "b5d63eeb-c6f7-4c87-89cc-688395e91da2";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

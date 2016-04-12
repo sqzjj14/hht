@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Menu.h"
+#import "ChartModel.h"
 
 @interface ChartView : UITableView
 
-@property (nonatomic,assign) NSInteger cid;//分类id
-@property (nonatomic,assign) NSInteger pid;//商品id
+@property(strong,nonatomic,readonly) NSArray * allData;
 
--(id)initChartViewWithFrame:(CGRect)frame andData:(Menu *)menu;
+-(id)initChartViewWithFrame:(CGRect)frame andData:(NSMutableArray *)data;
 @end

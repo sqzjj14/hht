@@ -100,6 +100,8 @@
                        }
                        
                        NSString *url = [[BASE_URL stringByAppendingFormat:@"/api/mobile/goods!list.do?%@", param] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+                       
+                       
                        NSLog(@"goodlist = %@",url);
                        NSString *content = [client get:url];
                        dispatch_async(dispatch_get_main_queue(), ^{
@@ -123,7 +125,7 @@
                            }
                            
                            for (NSDictionary *data in dataArray) {
-                               [goodsArray addObject:data];
+                               [goodsArray addObject:data];//核心
                            }
                            [tableView reloadData];
                            if(page == 1){

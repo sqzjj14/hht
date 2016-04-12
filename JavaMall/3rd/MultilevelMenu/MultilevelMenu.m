@@ -15,6 +15,7 @@
 #import "ChartView.h"
 #import "SVProgressHUD.h"
 #import "HttpClient.h"
+#import "ChartModel.h"
 
 
 #define kImageDefaultName @"tempShop"
@@ -106,40 +107,7 @@
             self.leftTablew.separatorInset=UIEdgeInsetsZero;
         }
         self.leftTablew.separatorColor=self.leftSeparatorColor;
-        
-        
-        /**
-         右边的视图
-         */
-        UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
-        flowLayout.minimumInteritemSpacing=0.f;//左右间隔
-        flowLayout.minimumLineSpacing=0.f;
-        flowLayout.headerReferenceSize = CGSizeMake(0, 0);
-        float leftMargin =0;
-        self.rightCollection=[[UICollectionView alloc] initWithFrame:CGRectMake(kLeftWidth+leftMargin,0,kScreenWidth-kLeftWidth-leftMargin*2,frame.size.height) collectionViewLayout:flowLayout];
-        
-        self.rightCollection.delegate=self;
-        self.rightCollection.dataSource=self;
-        
-        
-        UINib *nib=[UINib nibWithNibName:kMultilevelCollectionViewCell bundle:nil];
-        
-        [self.rightCollection registerNib: nib forCellWithReuseIdentifier:kMultilevelCollectionViewCell];
-        
-        
-       // UINib *header=[UINib nibWithNibName:kMultilevelCollectionHeader bundle:nil];
-      //  [self.rightCollection registerNib:header forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kMultilevelCollectionHeader];
-        
-        [self addSubview:self.rightCollection];
-        
-        
-        self.isReturnLastOffset=YES;
-        
-        self.rightCollection.backgroundColor=self.leftSelectBgColor;
-        
-        self.backgroundColor=self.leftSelectBgColor;
-        
-        
+                
     }
     return self;
 }
@@ -302,8 +270,12 @@
     
     SecondTableView *SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 70, 30 * data.count) WithData: data withChartDetail:^(Menu* info) {
         NSLog(@"cid=%@",info.ID);
-        ChartView *chartview = [[ChartView alloc]init];
-        chartview.cid = [info.ID intValue];
+        
+        ChartView *chartview = [[ChartView alloc]
+                                initChartViewWithFrame:CGRectMake(70, 0, kScreenWidth - 70, kScreenHeight)
+                                andData:[self DoWithcid:[NSString stringWithFormat:@"%@",info.ID]]];
+        [self addSubview:chartview];
+        [self willRemoveSubview:SecondView];
         
     }];
     [self addSubview:SecondView];
@@ -324,32 +296,44 @@
     cell.backgroundColor=self.leftUnSelectBgColor;
 }
 
--(void)DoWithcid:(NSInteger)cid{
+-(NSMutableArray *)DoWithcid:(NSString*)cid{
     [SVProgressHUD showWithStatus:@"载入中..." maskType:SVProgressHUDMaskTypeBlack];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-                   ^{
-                       NSString *url = [BASE_URL stringByAppendingFormat:@"/api/mobile/goods!list.do?page=1&sort=buynum_desc&cat=％d",cid];
+    NSMutableArray *pidArr = [[NSMutableArray alloc]init];
+    
+    NSString *param = [NSString stringWithFormat:@"%@",cid];
+    NSString *url = [[BASE_URL stringByAppendingFormat:@"/api/mobile/goods!list.do?page=1&sort=buynum_desc&cat=%@",param]stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        client = [[HttpClient alloc]init];
                        NSString *content = [client get:url];
                        //没有分类
-                       dispatch_async(dispatch_get_main_queue(), ^{
                            [SVProgressHUD dismiss];
                            
                            if([content length] == 0){
                                //[self showNoData];
-                               return;
+                               NSLog(@"载入cid失败");
+                               return nil;
                            }
                       //找到分类下的商品
                            NSDictionary *resultJSON = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
                            NSArray *dataArray = [resultJSON objectForKey:@"data"];
-                           //枚举商品的总数，储存为pid数组
-                           NSMutableArray *pidArr = [[NSMutableArray alloc]init];
+                           //枚举商品的总数，储存为gid数组
                            for (NSDictionary *data in dataArray) {
-                               NSString *pid = [data valueForKey:@"goods_id"];
-                               [pidArr addObject:pid];                               
+                               ChartModel *chartmodel = [[ChartModel alloc]init];
+                               chartmodel.gid = [data objectForKey:@"goods_id"];
+                               NSLog(@"gid=%@",chartmodel.gid);
+                               chartmodel.name = [data objectForKey:@"name"];
+                               chartmodel.price = [data objectForKey:@"price"];
+                               //去gid对应的pid
+                               NSString *url = [NSString stringWithFormat:@"http://wap.58hht.com/api/mobile/goods!detail.do?id=%@",chartmodel.gid];
+                               NSString *content = [client get:url];
+                               NSDictionary *resultJSON = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+                               NSDictionary *dataDic = [resultJSON objectForKey:@"data"];
+                               chartmodel.pid = [dataDic objectForKey:@"product_id"];
+                               NSLog(@"pid=%@",chartmodel.pid);
+                               
+                               [pidArr addObject:chartmodel];
                            }
-                           
-                         });
-                   });
+    
+         return pidArr;
 }
 
                    
