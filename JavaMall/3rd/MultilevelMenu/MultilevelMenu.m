@@ -279,7 +279,7 @@
     [_SecondView removeFromSuperview]; 
         _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 70, 30 * data.count) WithData: data withChartDetail:^(Menu* info) {
                 NSLog(@"cid=%@",info.ID);
-        
+            [_chartview removeFromSuperview];
                 _chartview = [[ChartView alloc]
                                 initChartViewWithFrame:CGRectMake(0, 0, kScreenWidth - 70, kScreenHeight)
                                 andData:[self DoWithcid:[NSString stringWithFormat:@"%@",info.ID]]];
