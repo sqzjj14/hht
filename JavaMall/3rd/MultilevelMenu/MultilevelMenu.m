@@ -190,7 +190,7 @@
 
 -(void)leftslide:(UIPanGestureRecognizer*)pan{
     NSLog(@"leftPan");
-    
+    [_SecondView removeFromSuperview];
     static CGPoint point;
     point = CGPointMake(kLeftWidth/2, _Height/2);
     CGPoint offsetPoint = [pan translationInView:self];
@@ -198,7 +198,6 @@
    // _slideView.center = CGPointMake(point.x + offsetPoint.x, point.y);
     
     if (pan.state == UIGestureRecognizerStateChanged) {
-        [_chartview removeFromSuperview];
         if ( offsetPoint.x < 0) {
             _slideView.center = CGPointMake(point.x + offsetPoint.x, point.y);
             if (_slideView.center.x > kLeftWidth/2) {
@@ -216,15 +215,11 @@
     }
 }
 -(void)rightslide:(UIPanGestureRecognizer*)pan{
-    NSLog(@"rightPan");
-    if (_chartview == nil) {
-        NSLog(@"我没了");
-    }
-    if (_chartview ) {
-        NSLog(@"%f,%f,%f,%f",_chartview.frame.origin.x,_chartview.frame.origin.y,_chartview.frame.size.height,_chartview.frame.size.width);
-    }
-    static CGPoint point;
-    point = CGPointMake(-kLeftWidth/2, _Height/2);
+    [_SecondView removeFromSuperview];
+    
+    static CGPoint currentpoint;
+    currentpoint = _slideView.center;
+    CGPoint point = CGPointMake(-kLeftWidth/2, _Height/2);
     CGPoint initpoint = CGPointMake(kLeftWidth/2, _Height/2);
     CGPoint offsetPoint = [pan translationInView:self];
     
@@ -234,13 +229,33 @@
             if (_slideView.center.x > kLeftWidth/2) {
                 _slideView.center = initpoint;
             }
+            
+         }
+        if (offsetPoint.x > 0 && (_slideView.center.x < initpoint.x)) {
+            _slideView.center = CGPointMake(currentpoint.x + offsetPoint.x, point.y);
+            if (_slideView.center.x > kLeftWidth/2) {
+                _slideView.center = initpoint;
+            }
+            
         }
+        if ( offsetPoint.x < 0 ) {
+            NSLog(@"here");
+            _slideView.center = CGPointMake(initpoint.x + offsetPoint.x, initpoint.y);
+        }
+        
     }
+    
     if (pan.state == UIGestureRecognizerStateEnded) {
         if (_slideView.center.x > (-kLeftWidth/2)+20){
             _slideView.center = initpoint;
         }
         else if (_slideView.center.x < (-kLeftWidth/2)+20){
+            _slideView.center = point;
+        }
+        if (_slideView.center.x > (kLeftWidth/2)-15){
+            _slideView.center = initpoint;
+        }
+        else if (_slideView.center.x < (kLeftWidth/2)-15){
             _slideView.center = point;
         }
     }
