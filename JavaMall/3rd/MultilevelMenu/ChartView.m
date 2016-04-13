@@ -9,6 +9,8 @@
 #import "ChartView.h"
 #import "ThridCell.h"
 #import "UIColor+HexString.h"
+#import "UIImageView+WebCache.h"
+#import "Defines.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -16,6 +18,8 @@
 
 
 @property(strong,nonatomic) UITableView *chartTableW;
+@property(strong,nonatomic) UITapGestureRecognizer *imageTap;
+@property(strong,nonatomic) UIImageView *imageView;
 @end
 
 
@@ -27,6 +31,8 @@
         if (data == nil) {
             return nil;
         }
+        _allData = [[NSMutableArray alloc]init];
+        [_allData removeAllObjects];
         _allData = data;
         
         self.chartTableW=
@@ -69,13 +75,21 @@
     cell.name.text = chartmodel.name;
     cell.price.text = [NSString stringWithFormat:@"价格：%@元",chartmodel.price];
     cell.pid = chartmodel.pid;
+    cell.imageURL = chartmodel.imageURL;
     
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ThridCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.backgroundColor = UIColorFromRGB(0xF3F4F6);
+    _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(90, 90, kScreenWidth-180, kScreenWidth-180)];
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:cell.imageURL] placeholderImage:nil];
+    [self addSubview:_imageView];
+    //添加取消手势
+    _imageTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cencelImage:)];
+    [self addGestureRecognizer:_imageTap];
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     ThridCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -84,5 +98,9 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 44;
 }
-
+-(void)cencelImage:(UITapGestureRecognizer *)tap{
+    [_imageView removeFromSuperview];
+    [self removeGestureRecognizer:tap];
+    
+}
 @end

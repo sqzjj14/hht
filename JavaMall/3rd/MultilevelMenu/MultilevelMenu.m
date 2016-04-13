@@ -34,6 +34,13 @@
 @property(strong,nonatomic) SecondTableView *SecondView;//第二个table
 @property(strong,nonatomic) ChartView *chartview;
 
+@property(assign,nonatomic) CGFloat Wight;
+@property(assign,nonatomic) CGFloat Height;
+
+//右边侧滑手势
+@property (nonatomic,strong) UIPanGestureRecognizer *rightPan;
+@property (nonatomic,strong) UIPanGestureRecognizer *leftPan;
+
 //记录选择的是哪个buttn
 @property(assign,nonatomic) NSInteger btnTag;
 //@property (assign,nonatomic) CGRect frame;
@@ -71,12 +78,26 @@
         _selectIndex=0;
         _allData = [[NSMutableArray alloc]initWithArray:data];
         _locationArr = data;
+        _Height = frame.size.height;
+        _Wight = frame.size.width;
         //左view
         self.slideView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,kLeftWidth,frame.size.height)];
-        [self addSubview:self.slideView];
+        //[self addSubview:self.slideView];
+        //创建手势
+        _leftPan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(leftslide:)];
+        _leftPan.minimumNumberOfTouches = 1;
+        _leftPan.maximumNumberOfTouches = 2;
+        [_slideView addGestureRecognizer:_leftPan];
+        _rightPan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(rightslide:)];
+        _rightPan.minimumNumberOfTouches = 1;
+        _rightPan.maximumNumberOfTouches = 2;
+       
         //chart底视图
-        self.chartBgView = [[UIView alloc]initWithFrame:CGRectMake(kLeftWidth, 0, frame.size.width - kLeftWidth, frame.size.height)];
+        self.chartBgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [self addSubview:self.chartBgView];
+        [self.chartBgView addSubview:self.slideView];
+        [_chartBgView addGestureRecognizer:_rightPan];
+        
         
         //左边四个button
         for (NSInteger i = 0; i<_allData.count; i++) {
@@ -86,6 +107,7 @@
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
                 btn.frame = CGRectMake(0 , 0 + i * 50, kLeftWidth, 50);
                 
+                [btn setBackgroundColor:[UIColor whiteColor]];
                 [btn setTitle:title.meunName forState:UIControlStateNormal];
                 [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 [btn setTitle:title.meunName forState:UIControlStateHighlighted];
@@ -166,6 +188,63 @@
     [self.leftTablew reloadData];
 }
 
+-(void)leftslide:(UIPanGestureRecognizer*)pan{
+    NSLog(@"leftPan");
+    
+    static CGPoint point;
+    point = CGPointMake(kLeftWidth/2, _Height/2);
+    CGPoint offsetPoint = [pan translationInView:self];
+    
+   // _slideView.center = CGPointMake(point.x + offsetPoint.x, point.y);
+    
+    if (pan.state == UIGestureRecognizerStateChanged) {
+        [_chartview removeFromSuperview];
+        if ( offsetPoint.x < 0) {
+            _slideView.center = CGPointMake(point.x + offsetPoint.x, point.y);
+            if (_slideView.center.x > kLeftWidth/2) {
+                _slideView.center = point;
+            }
+        }
+    }
+    if (pan.state == UIGestureRecognizerStateEnded) {
+        if (_slideView.center.x > (kLeftWidth/2)-15){
+            _slideView.center = point;
+        }
+        else if (_slideView.center.x < (kLeftWidth/2)-15){
+            _slideView.center = CGPointMake(-kLeftWidth/2, _Height/2);
+        }
+    }
+}
+-(void)rightslide:(UIPanGestureRecognizer*)pan{
+    NSLog(@"rightPan");
+    if (_chartview == nil) {
+        NSLog(@"我没了");
+    }
+    if (_chartview ) {
+        NSLog(@"%f,%f,%f,%f",_chartview.frame.origin.x,_chartview.frame.origin.y,_chartview.frame.size.height,_chartview.frame.size.width);
+    }
+    static CGPoint point;
+    point = CGPointMake(-kLeftWidth/2, _Height/2);
+    CGPoint initpoint = CGPointMake(kLeftWidth/2, _Height/2);
+    CGPoint offsetPoint = [pan translationInView:self];
+    
+    if (pan.state == UIGestureRecognizerStateChanged) {
+        if ( offsetPoint.x > 0 && (_slideView.center.x != initpoint.x)) {
+            _slideView.center = CGPointMake(point.x + offsetPoint.x, point.y);
+            if (_slideView.center.x > kLeftWidth/2) {
+                _slideView.center = initpoint;
+            }
+        }
+    }
+    if (pan.state == UIGestureRecognizerStateEnded) {
+        if (_slideView.center.x > (-kLeftWidth/2)+20){
+            _slideView.center = initpoint;
+        }
+        else if (_slideView.center.x < (-kLeftWidth/2)+20){
+            _slideView.center = point;
+        }
+    }
+}
 -(void)setLeftBgColor:(UIColor *)leftBgColor{
     _leftBgColor=leftBgColor;
     self.leftTablew.backgroundColor=leftBgColor;
@@ -276,16 +355,22 @@
     Menu * title2 = title.nextArray[indexPath.row];
     NSArray *data = title2.nextArray;
     
-    [_SecondView removeFromSuperview]; 
-        _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 70, 30 * data.count) WithData: data withChartDetail:^(Menu* info) {
+    [_SecondView removeFromSuperview];//删除原来的table
+    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 70, 30 * data.count) WithData: data withChartDetail:^(Menu* info) {
                 NSLog(@"cid=%@",info.ID);
-            [_chartview removeFromSuperview];
-                _chartview = [[ChartView alloc]
-                                initChartViewWithFrame:CGRectMake(0, 0, kScreenWidth - 70, kScreenHeight)
-                                andData:[self DoWithcid:[NSString stringWithFormat:@"%@",info.ID]]];
-        [_SecondView removeFromSuperview];
-        [self.chartBgView willRemoveSubview:_chartview];
-        [self.chartBgView addSubview:_chartview];
+        
+        [_chartview removeFromSuperview];//删除原来的chart
+            _chartview = [[ChartView alloc]
+                            initChartViewWithFrame:CGRectMake(0, 0, _Wight , _Height)
+                            andData:[self DoWithcid:[NSString stringWithFormat:@"%@",info.ID]]];
+        [_SecondView removeFromSuperview];//删除原来的table
+         //[self bringSubviewToFront:self.slideView];
+        [UIView animateWithDuration:0.3f animations:^{
+            self.slideView.frame = CGRectMake(-kLeftWidth, 0, kLeftWidth, _Height);
+        } completion:^(BOOL finished) {
+            [self.chartBgView addSubview:_chartview];
+            [self.chartBgView bringSubviewToFront:_slideView];
+        }];
     }];
 
     [self addSubview:_SecondView];
@@ -336,6 +421,7 @@
                                NSDictionary *resultJSON = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
                                NSDictionary *dataDic = [resultJSON objectForKey:@"data"];
                                chartmodel.pid = [dataDic objectForKey:@"product_id"];
+                               chartmodel.imageURL = [dataDic objectForKey:@"thumbnail"];
                                NSLog(@"pid=%@",chartmodel.pid);
                                
                                [pidArr addObject:chartmodel];

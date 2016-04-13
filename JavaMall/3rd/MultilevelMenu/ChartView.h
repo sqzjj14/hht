@@ -12,7 +12,7 @@
 
 @interface ChartView : UITableView
 
-@property(strong,nonatomic,readonly) NSArray * allData;
+@property(strong,nonatomic,readonly) NSMutableArray * allData;
 
 -(id)initChartViewWithFrame:(CGRect)frame andData:(NSMutableArray *)data;
 @end

@@ -16,7 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *addBtn;
 @property (weak, nonatomic) IBOutlet UIButton *lessBtn;
 @property (weak, nonatomic) IBOutlet UITextField *priceTF;
-@property (nonatomic,strong)NSString *pid;
+@property (nonatomic,copy)NSString *pid;
+@property (nonatomic,copy)NSString *imageURL;
 
 - (IBAction)addCount:(id)sender;
 - (IBAction)lessCount:(id)sender;

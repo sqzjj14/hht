@@ -10,10 +10,11 @@
 
 @interface ChartModel : NSObject
 
-@property (nonatomic,strong)NSString *pid;
-@property (nonatomic,strong)NSString *gid;
-@property (nonatomic,strong) NSString *name;
-@property (nonatomic,strong) NSString *single;//单价
-@property (nonatomic,strong) NSString *price;
+@property (nonatomic,copy)NSString *pid;
+@property (nonatomic,copy)NSString *gid;
+@property (nonatomic,copy) NSString *name;
+@property (nonatomic,copy) NSString *single;//单价
+@property (nonatomic,copy) NSString *price;
+@property (nonatomic,copy) NSString *imageURL;
 
 @end
