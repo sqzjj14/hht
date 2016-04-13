@@ -33,7 +33,7 @@
 
 - (IBAction)lessCount:(id)sender {
     _count = [_priceTF.text intValue];
-    if (_count > 0) {
+    if (_count > 1) {
         _priceTF.text = [NSString stringWithFormat:@"%d",_count-1];
     }
 }

@@ -8,6 +8,9 @@
 
 #import "ChartView.h"
 #import "ThridCell.h"
+#import "UIColor+HexString.h"
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface ChartView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -33,7 +36,7 @@
         
         self.chartTableW.tableFooterView=[[UIView alloc] init];
         [self addSubview:self.chartTableW];
-        self.chartTableW.backgroundColor=[UIColor whiteColor];
+        self.chartTableW.backgroundColor= [UIColor whiteColor];
         if ([self.chartTableW respondsToSelector:@selector(setLayoutMargins:)]) {
             self.chartTableW.layoutMargins=UIEdgeInsetsZero;
         }
@@ -43,6 +46,8 @@
         self.chartTableW.separatorColor=[UIColor blackColor];
         
         [self.chartTableW registerNib:[UINib nibWithNibName:@"ThridCell" bundle:nil] forCellReuseIdentifier:@"ThridCell"];
+        
+        
     }
     
         
@@ -65,12 +70,16 @@
     cell.price.text = [NSString stringWithFormat:@"价格：%@元",chartmodel.price];
     cell.pid = chartmodel.pid;
     
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-   // Menu *menu = _allData[indexPath.row];
-   // void (^select)(id info) = self.block;
-   // select(menu);
+    ThridCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = UIColorFromRGB(0xF3F4F6);
+}
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ThridCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 44;

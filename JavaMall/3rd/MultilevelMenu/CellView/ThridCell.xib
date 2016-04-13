@@ -17,7 +17,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="单价：？？元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATE-ph-CnI">
                         <rect key="frame" x="8" y="22" width="100" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnK-fb-c8h">
@@ -62,15 +62,15 @@
                             <action selector="lessCount:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D22-yh-ir5"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="name : xxxxxxxxx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnH-6y-gK6">
-                        <rect key="frame" x="8" y="2" width="312" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="发财树" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnH-6y-gK6">
+                        <rect key="frame" x="8" y="8" width="312" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="CnH-6y-gK6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="1i8-vo-ArT"/>
+                    <constraint firstItem="CnH-6y-gK6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1i8-vo-ArT"/>
                     <constraint firstAttribute="bottom" secondItem="VVD-nP-Qd6" secondAttribute="bottom" constant="3" id="6HK-hE-HVM"/>
                     <constraint firstAttribute="bottom" secondItem="MPV-to-GYd" secondAttribute="bottom" constant="3" id="8cB-j5-l4u"/>
                     <constraint firstItem="dqj-fe-2eJ" firstAttribute="leading" secondItem="VVD-nP-Qd6" secondAttribute="trailing" id="Aak-yB-Wat"/>
