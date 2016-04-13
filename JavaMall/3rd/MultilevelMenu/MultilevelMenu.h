@@ -13,7 +13,8 @@
 
 @interface MultilevelMenu : UIView<UITableViewDataSource,UITableViewDelegate>
 
-@property(strong,nonatomic,readonly) NSArray * allData;
+@property(strong,nonatomic) NSMutableArray * allData;
+@property(strong,nonatomic) NSArray *locationArr;
 
 
 @property(copy,nonatomic,readonly) id block;
