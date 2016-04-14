@@ -86,6 +86,10 @@
     cell.backgroundColor = UIColorFromRGB(0xF3F4F6);
     _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(90, 90, kScreenWidth-180, kScreenWidth-180)];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:cell.imageURL] placeholderImage:nil];
+    _imageView.layer.cornerRadius = 5.f;
+    _imageView.layer.shadowOffset = CGSizeMake(1, 1);
+    _imageView.layer.shadowOpacity = 0.8;
+    _imageView.layer.shadowColor = [[UIColor colorWithHexString:@"#24A676"]CGColor];
     [self addSubview:_imageView];
     //添加取消手势
     _imageTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cencelImage:)];

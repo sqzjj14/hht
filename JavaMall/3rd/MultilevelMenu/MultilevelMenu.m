@@ -16,6 +16,8 @@
 #import "SVProgressHUD.h"
 #import "HttpClient.h"
 #import "ChartModel.h"
+#import "UIColor+HexString.h"
+#import "Defines.h"
 
 
 #define kImageDefaultName @"tempShop"
@@ -111,13 +113,14 @@
                 [btn setTitle:title.meunName forState:UIControlStateNormal];
                 [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 [btn setTitle:title.meunName forState:UIControlStateHighlighted];
-                [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-                //btn.backgroundColor=[UIColor colorWithRed:44/255.0 green:178/255.0 blue:219/255.0 alpha:1.0];
+                [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+                btn.titleLabel.font = [UIFont fontWithName:kFont size:12];
+                
                 //阴影设置
                 btn.layer.cornerRadius = 5;
                 btn.layer.shadowOffset =  CGSizeMake(1, 1);
                 btn.layer.shadowOpacity = 0.8;
-                btn.layer.shadowColor =  [UIColor blackColor].CGColor;
+                btn.layer.shadowColor = [[UIColor colorWithHexString:@"#24A676"]CGColor];
                 
                 btn.titleLabel.font = [UIFont fontWithName:kFont size:13.f];
                 btn.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -166,6 +169,10 @@
         btn2.selected=NO;
         btn3.selected=NO;
         btn4.selected=NO;
+        [btn1 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
+        [btn2 setBackgroundColor:[UIColor whiteColor]];
+        [btn3 setBackgroundColor:[UIColor whiteColor]];
+        [btn4 setBackgroundColor:[UIColor whiteColor]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag==11) {
@@ -173,6 +180,10 @@
         btn2.selected=YES;
         btn3.selected=NO;
         btn4.selected=NO;
+        [btn2 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
+        [btn1 setBackgroundColor:[UIColor whiteColor]];
+        [btn3 setBackgroundColor:[UIColor whiteColor]];
+        [btn4 setBackgroundColor:[UIColor whiteColor]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag==12) {
@@ -180,6 +191,10 @@
         btn2.selected=NO;
         btn3.selected=YES;
         btn4.selected=NO;
+        [btn3 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
+        [btn2 setBackgroundColor:[UIColor whiteColor]];
+        [btn1 setBackgroundColor:[UIColor whiteColor]];
+        [btn4 setBackgroundColor:[UIColor whiteColor]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag == 13) {
@@ -187,6 +202,10 @@
         btn2.selected=NO;
         btn3.selected=NO;
         btn4.selected=YES;
+        [btn4 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
+        [btn2 setBackgroundColor:[UIColor whiteColor]];
+        [btn3 setBackgroundColor:[UIColor whiteColor]];
+        [btn1 setBackgroundColor:[UIColor whiteColor]];
         _btnTag = sender.tag - 10;
     }
     [_allData removeAllObjects];
