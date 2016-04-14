@@ -84,6 +84,7 @@
         _Wight = frame.size.width;
         //左view
         self.slideView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,kLeftWidth,frame.size.height)];
+        self.slideView.backgroundColor =[UIColor whiteColor];
         //[self addSubview:self.slideView];
         //创建手势
         _leftPan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(leftslide:)];
@@ -114,8 +115,6 @@
                 [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 [btn setTitle:title.meunName forState:UIControlStateHighlighted];
                 [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-                btn.titleLabel.font = [UIFont fontWithName:kFont size:12];
-                
                 //阴影设置
                 btn.layer.cornerRadius = 5;
                 btn.layer.shadowOffset =  CGSizeMake(1, 1);
@@ -396,7 +395,7 @@
     NSArray *data = title2.nextArray;
     
     [_SecondView removeFromSuperview];//删除原来的table
-    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 70, 30 * data.count) WithData: data withChartDetail:^(Menu* info) {
+    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 90, 30 * data.count) WithData: data withChartDetail:^(Menu* info) {
                 NSLog(@"cid=%@",info.ID);
         
         [_chartview removeFromSuperview];//删除原来的chart

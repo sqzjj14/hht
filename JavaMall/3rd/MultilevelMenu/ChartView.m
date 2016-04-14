@@ -94,6 +94,8 @@
     //添加取消手势
     _imageTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cencelImage:)];
     [self addGestureRecognizer:_imageTap];
+    //松开手指时 消除选中效果
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     ThridCell *cell = [tableView cellForRowAtIndexPath:indexPath];
