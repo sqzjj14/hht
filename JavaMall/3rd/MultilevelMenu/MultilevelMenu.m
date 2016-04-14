@@ -24,6 +24,7 @@
 #define kImageDefaultName @"tempShop"
 #define kMultilevelCollectionViewCell @"MultilevelCollectionViewCell"
 #define kMultilevelCollectionHeader   @"CollectionHeader"//CollectionHeader
+#define kMultilevelTableViewCell @"MultilevelTableViewCell"
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -164,6 +165,8 @@
             self.leftTablew.separatorInset=UIEdgeInsetsZero;
         }
         self.leftTablew.separatorColor=self.leftSeparatorColor;
+        
+        [self.leftTablew registerNib:[UINib nibWithNibName:@"MultilevelTableViewCell" bundle:nil] forCellReuseIdentifier:@"MultilevelTableViewCell"];
         
          [self.slideView addSubview:self.leftTablew];
                 
@@ -346,14 +349,14 @@
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     
     
-    if (!cell) {
-        cell=[[NSBundle mainBundle] loadNibNamed:@"MultilevelTableViewCell" owner:self options:nil][0];
-        
-        UILabel * label=[[UILabel alloc] initWithFrame:CGRectMake(kLeftWidth-0.5, 0, 0.5, 44)];
-        label.backgroundColor=tableView.separatorColor;
-        [cell addSubview:label];
-        label.tag=100;
-    }
+//    if (!cell) {
+//        cell=[[NSBundle mainBundle] loadNibNamed:@"MultilevelTableViewCell" owner:self options:nil][0];
+//        
+//        UILabel * label=[[UILabel alloc] initWithFrame:CGRectMake(kLeftWidth-0.5, 0, 0.5, 44)];
+//        label.backgroundColor=tableView.separatorColor;
+//        [cell addSubview:label];
+//        label.tag=100;
+//    }
     
     
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
@@ -362,22 +365,20 @@
     Menu * title2 = title.nextArray[indexPath.row];
     
     cell.titile.text= title2.meunName;
-    //cell.titile.numberOfLines = 2;
+ 
     
-   // UILabel * line=(UILabel*)[cell viewWithTag:100];
-    
-    if (indexPath.row==self.selectIndex) {
-        cell.titile.textColor=[UIColor whiteColor];
-       // cell.backgroundColor=self.leftSelectBgColor;
-        //line.backgroundColor=cell.backgroundColor;
-        cell.bgimage.image = [UIImage imageNamed:@"greenBtn"];
-    }else{
-        cell.titile.textColor=self.leftUnSelectColor;
+//    if (indexPath.row==self.selectIndex) {
+//        cell.titile.textColor=[UIColor whiteColor];
+//       // cell.backgroundColor=self.leftSelectBgColor;
+//        //line.backgroundColor=cell.backgroundColor;
+//        cell.bgimage.image = [UIImage imageNamed:@"greenBtn"];
+//    }else{
+    cell.titile.textColor=[UIColor blackColor];
        // cell.backgroundColor=[UIColor colorWithRed:36/255.0 green:166/255.0 blue:118/225.0 alpha:0.1];
-;
+
        // line.backgroundColor=tableView.separatorColor;
         
-    }
+   // }
     
     
     
@@ -403,13 +404,7 @@
     cell.bgimage.image = [UIImage imageNamed:@"greenBtn"];
     _selectIndex=indexPath.row;
     
-    UILabel *line=(UILabel*)[cell viewWithTag:100];
-    line.backgroundColor=cell.backgroundColor;
-    
-    
     [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-    
-    self.isReturnLastOffset=NO;
     
     //创建三级table
     Menu * title=self.allData[_btnTag];
@@ -447,7 +442,7 @@
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     MultilevelTableViewCell * cell=(MultilevelTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-    cell.titile.textColor=self.leftUnSelectColor;
+    cell.titile.textColor=[UIColor blackColor];
     cell.bgimage.image = [UIImage imageNamed:@"whiteBtn"];
    // UILabel *line=(UILabel*)[cell viewWithTag:100];
    // line.backgroundColor=tableView.separatorColor;
