@@ -105,13 +105,19 @@
             Menu *title = _allData[i];
             if (title) {
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-                btn.frame = CGRectMake(0 , 0 + i * 50, kLeftWidth, 50);
+                btn.frame = CGRectMake(2.5 , 2 + i * 50, kLeftWidth-6, 47);
                 
                 [btn setBackgroundColor:[UIColor whiteColor]];
                 [btn setTitle:title.meunName forState:UIControlStateNormal];
                 [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 [btn setTitle:title.meunName forState:UIControlStateHighlighted];
                 [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+                //btn.backgroundColor=[UIColor colorWithRed:44/255.0 green:178/255.0 blue:219/255.0 alpha:1.0];
+                //阴影设置
+                btn.layer.cornerRadius = 5;
+                btn.layer.shadowOffset =  CGSizeMake(1, 1);
+                btn.layer.shadowOpacity = 0.8;
+                btn.layer.shadowColor =  [UIColor blackColor].CGColor;
                 
                 btn.titleLabel.font = [UIFont fontWithName:kFont size:13.f];
                 btn.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -124,7 +130,7 @@
         /**
          左边的视图
          */
-        self.leftTablew=[[UITableView alloc] initWithFrame:CGRectMake(0, 50 * _allData.count, kLeftWidth, frame.size.height - (50 * _allData.count) )];
+        self.leftTablew=[[UITableView alloc] initWithFrame:CGRectMake(0, 2+ 50 * _allData.count, kLeftWidth, frame.size.height - (50 * _allData.count) )];
         self.leftTablew.dataSource=self;
         self.leftTablew.delegate=self;
         

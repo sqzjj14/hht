@@ -144,7 +144,7 @@
 - (void) initView:(NSMutableArray *)categoryArray {
     //初始化分类视图
     
-    MultilevelMenu * view=[[MultilevelMenu alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-49-64) WithData:categoryArray withSelectIndex:^(NSInteger left, NSInteger right,Menu* info) {
+    MultilevelMenu * view=[[MultilevelMenu alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, kScreenHeight-49-20) WithData:categoryArray withSelectIndex:^(NSInteger left, NSInteger right,Menu* info) {
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         GoodsListViewController *goodsListViewController = [storyboard instantiateViewControllerWithIdentifier:@"GoodsList"];

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SecondTableView.h"
 
-#define kLeftWidth 70
+#define kLeftWidth 90
 
 @interface MultilevelMenu : UIView<UITableViewDataSource,UITableViewDelegate>
 
