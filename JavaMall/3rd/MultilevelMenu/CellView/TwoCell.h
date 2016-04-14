@@ -11,4 +11,5 @@
 @interface TwoCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title;
 
+@property (weak, nonatomic) IBOutlet UIImageView *bgimage;
 @end

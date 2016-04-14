@@ -18,6 +18,7 @@
 #import "ChartModel.h"
 #import "UIColor+HexString.h"
 #import "Defines.h"
+#import "ChartList.h"
 
 
 #define kImageDefaultName @"tempShop"
@@ -35,6 +36,9 @@
 @property(strong,nonatomic ) UICollectionView * rightCollection;
 @property(strong,nonatomic) SecondTableView *SecondView;//第二个table
 @property(strong,nonatomic) ChartView *chartview;
+@property(strong,nonatomic) UIImageView *checkBgimageView;
+@property(strong,nonatomic) UIImageView *slideBgimageView;
+
 
 @property(assign,nonatomic) CGFloat Wight;
 @property(assign,nonatomic) CGFloat Height;
@@ -97,7 +101,22 @@
        
         //chart底视图
         self.chartBgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        
+        //引导图
+        self.checkBgimageView = [[UIImageView alloc]initWithFrame:CGRectMake(90, 30, 200, 200)];
+        self.checkBgimageView.image = [UIImage imageNamed:@"check"];
+        self.slideBgimageView = [[UIImageView alloc]initWithFrame:CGRectMake(90,frame.size.height - 200 , 200, 200)];
+        self.slideBgimageView.image = [UIImage imageNamed:@"slide"];
+        
+        //chart参数
+        ChartList *chartlist = [[NSBundle mainBundle]loadNibNamed:@"ChartList" owner:nil options:nil][0];
+        chartlist.frame = CGRectMake(0, 0, frame.size.width, 30);
+        
         [self addSubview:self.chartBgView];
+        //[self.chartBgView addSubview:self.chartBgimageView];
+        [self.chartBgView addSubview:chartlist];
+        [self.chartBgView addSubview:_checkBgimageView];
+        [self.chartBgView addSubview:_slideBgimageView];
         [self.chartBgView addSubview:self.slideView];
         [_chartBgView addGestureRecognizer:_rightPan];
         
@@ -345,16 +364,18 @@
     cell.titile.text= title2.meunName;
     //cell.titile.numberOfLines = 2;
     
-    UILabel * line=(UILabel*)[cell viewWithTag:100];
+   // UILabel * line=(UILabel*)[cell viewWithTag:100];
     
     if (indexPath.row==self.selectIndex) {
-        cell.titile.textColor=self.leftSelectColor;
-        cell.backgroundColor=self.leftSelectBgColor;
-        line.backgroundColor=cell.backgroundColor;
+        cell.titile.textColor=[UIColor whiteColor];
+       // cell.backgroundColor=self.leftSelectBgColor;
+        //line.backgroundColor=cell.backgroundColor;
+        cell.bgimage.image = [UIImage imageNamed:@"greenBtn"];
     }else{
         cell.titile.textColor=self.leftUnSelectColor;
-        cell.backgroundColor=self.leftUnSelectBgColor;
-        line.backgroundColor=tableView.separatorColor;
+       // cell.backgroundColor=[UIColor colorWithRed:36/255.0 green:166/255.0 blue:118/225.0 alpha:0.1];
+;
+       // line.backgroundColor=tableView.separatorColor;
         
     }
     
@@ -377,8 +398,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     MultilevelTableViewCell * cell=(MultilevelTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-    cell.titile.textColor=self.leftSelectColor;
-    cell.backgroundColor=self.leftSelectBgColor;
+    cell.titile.textColor=[UIColor whiteColor];
+    //cell.backgroundColor=self.leftSelectBgColor;
+    cell.bgimage.image = [UIImage imageNamed:@"greenBtn"];
     _selectIndex=indexPath.row;
     
     UILabel *line=(UILabel*)[cell viewWithTag:100];
@@ -397,10 +419,14 @@
     [_SecondView removeFromSuperview];//删除原来的table
     _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 90, 30 * data.count) WithData: data withChartDetail:^(Menu* info) {
                 NSLog(@"cid=%@",info.ID);
-        
+        //删除两个引导图画
+        if (_slideBgimageView || _checkBgimageView) {
+            [_slideBgimageView removeFromSuperview];
+            [_checkBgimageView removeFromSuperview];
+        }
         [_chartview removeFromSuperview];//删除原来的chart
             _chartview = [[ChartView alloc]
-                            initChartViewWithFrame:CGRectMake(0, 0, _Wight , _Height)
+                            initChartViewWithFrame:CGRectMake(0, 30, _Wight , _Height -30)
                             andData:[self DoWithcid:[NSString stringWithFormat:@"%@",info.ID]]];
         [_SecondView removeFromSuperview];//删除原来的table
          //[self bringSubviewToFront:self.slideView];
@@ -422,10 +448,12 @@
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     MultilevelTableViewCell * cell=(MultilevelTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
     cell.titile.textColor=self.leftUnSelectColor;
-    UILabel *line=(UILabel*)[cell viewWithTag:100];
-    line.backgroundColor=tableView.separatorColor;
+    cell.bgimage.image = [UIImage imageNamed:@"whiteBtn"];
+   // UILabel *line=(UILabel*)[cell viewWithTag:100];
+   // line.backgroundColor=tableView.separatorColor;
     
-    cell.backgroundColor=self.leftUnSelectBgColor;
+  //  cell.backgroundColor=[UIColor colorWithRed:36/255.0 green:166/255.0 blue:118/225.0 alpha:0.1];
+;
 }
 
 -(NSMutableArray *)DoWithcid:(NSString*)cid{

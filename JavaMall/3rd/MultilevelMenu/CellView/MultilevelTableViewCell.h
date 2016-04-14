@@ -11,6 +11,7 @@
 @interface MultilevelTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titile;
+@property (weak, nonatomic) IBOutlet UIImageView *bgimage;
 
 -(void)setZero;
 @end

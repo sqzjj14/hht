@@ -76,6 +76,7 @@
     [self loadSpec];
     
     goodsViewController = (GoodsViewController *)[self slidingPanelController].centerViewController;
+    
 }
 
 /**

@@ -14,6 +14,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="90" height="29"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="whiteBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="Loy-mZ-kqP">
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 无" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V61-8W-AFJ">
                         <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -21,11 +24,21 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Loy-mZ-kqP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5N9-i5-Nja"/>
+                    <constraint firstItem="Loy-mZ-kqP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="DDm-9z-bSn"/>
+                    <constraint firstAttribute="trailing" secondItem="Loy-mZ-kqP" secondAttribute="trailing" id="ipc-Y7-cPg"/>
+                    <constraint firstAttribute="bottom" secondItem="Loy-mZ-kqP" secondAttribute="bottom" constant="1" id="psq-Nz-Bnx"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bgimage" destination="Loy-mZ-kqP" id="gkd-Wv-ApR"/>
                 <outlet property="title" destination="V61-8W-AFJ" id="Kv7-vE-2Ep"/>
             </connections>
             <point key="canvasLocation" x="306" y="433"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="whiteBtn.png" width="71" height="41"/>
+    </resources>
 </document>

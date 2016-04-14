@@ -74,7 +74,7 @@
                 return;
             }
             [SVProgressHUD setInfoImage:nil];
-            [SVProgressHUD showInfoWithStatus:@"添加成功！" maskType:SVProgressHUDMaskTypeBlack];
+            [SVProgressHUD showInfoWithStatus:@"添加到购物车成功！" maskType:SVProgressHUDMaskTypeBlack];
             [self loadCartCount];
         });
     });

@@ -14,6 +14,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="90" height="29"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="whiteBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="sCK-j6-my5">
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJ2-ih-FZh">
                         <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -21,11 +24,21 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="sCK-j6-my5" secondAttribute="bottom" constant="1" id="K9f-AX-hBm"/>
+                    <constraint firstAttribute="trailing" secondItem="sCK-j6-my5" secondAttribute="trailing" id="NKf-sy-RKJ"/>
+                    <constraint firstItem="sCK-j6-my5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ee3-nC-8f9"/>
+                    <constraint firstItem="sCK-j6-my5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ial-Ug-g1F"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bgimage" destination="sCK-j6-my5" id="YCr-5o-N5G"/>
                 <outlet property="titile" destination="eJ2-ih-FZh" id="3Yc-bX-JM4"/>
             </connections>
             <point key="canvasLocation" x="389" y="359"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="whiteBtn.png" width="71" height="41"/>
+    </resources>
 </document>
