@@ -484,6 +484,7 @@
                                NSDictionary *dataDic = [resultJSON objectForKey:@"data"];
                                chartmodel.pid = [dataDic objectForKey:@"product_id"];
                                chartmodel.imageURL = [dataDic objectForKey:@"thumbnail"];
+                               chartmodel.limitCount = [dataDic objectForKey:@"p9"];
                                NSLog(@"pid=%@",chartmodel.pid);
                                
                                [pidArr addObject:chartmodel];

@@ -25,7 +25,6 @@
 		94C6D2E61CAD2C9C00828E6B /* loginAD_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C6D2E51CAD2C9C00828E6B /* loginAD_1.png */; };
 		94C6D2E81CAD2CA200828E6B /* loginAD_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C6D2E71CAD2CA200828E6B /* loginAD_3.png */; };
 		94C6D2EA1CAD2CA600828E6B /* loginAD_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C6D2E91CAD2CA600828E6B /* loginAD_2.png */; };
-		94F505011CBF64FD00A8161A /* 背景3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94F505001CBF64FD00A8161A /* 背景3.jpg */; };
 		94F505041CBF758D00A8161A /* ChartList.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F505031CBF758D00A8161A /* ChartList.m */; };
 		94F505061CBF75CA00A8161A /* ChartList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94F505051CBF75CA00A8161A /* ChartList.xib */; };
 		94F505081CBF880500A8161A /* greenBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F505071CBF880500A8161A /* greenBtn.png */; };
@@ -289,7 +288,6 @@
 		94C6D2E51CAD2C9C00828E6B /* loginAD_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginAD_1.png; sourceTree = "<group>"; };
 		94C6D2E71CAD2CA200828E6B /* loginAD_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginAD_3.png; sourceTree = "<group>"; };
 		94C6D2E91CAD2CA600828E6B /* loginAD_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginAD_2.png; sourceTree = "<group>"; };
-		94F505001CBF64FD00A8161A /* 背景3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "背景3.jpg"; sourceTree = "<group>"; };
 		94F505021CBF758D00A8161A /* ChartList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartList.h; sourceTree = "<group>"; };
 		94F505031CBF758D00A8161A /* ChartList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartList.m; sourceTree = "<group>"; };
 		94F505051CBF75CA00A8161A /* ChartList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartList.xib; sourceTree = "<group>"; };
@@ -914,7 +912,6 @@
 		D9132BF71B3C51F500509ECB /* MultilevelMenu */ = {
 			isa = PBXGroup;
 			children = (
-				94F505001CBF64FD00A8161A /* 背景3.jpg */,
 				D9132BF81B3C51F500509ECB /* CellView */,
 				941260CF1CBCB3FE0086FBBD /* Model */,
 				94F505091CBF882800A8161A /* whiteBtn.png */,
@@ -1660,7 +1657,6 @@
 				D95AE2A21B4167EF003821EE /* syncart_middle_btn_enable@2x.png in Resources */,
 				D9B08FB21B19CB8900F7F003 /* Images.xcassets in Resources */,
 				D9AF8B201B453F4E00D22811 /* my_favorite@2x.png in Resources */,
-				94F505011CBF64FD00A8161A /* 背景3.jpg in Resources */,
 				D95AE2CB1B43DB3E003821EE /* cart_round_check1@3x.png in Resources */,
 				D9AAFD681CA50DA800CCF6D5 /* wechat@2x.png in Resources */,
 				D95AE2C21B43D1E4003821EE /* cartNoContentIcon@3x.png in Resources */,

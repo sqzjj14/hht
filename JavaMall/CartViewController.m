@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *operationViewVertical;
+@property (nonatomic,assign) NSInteger amout;
 
 @end
 
@@ -256,6 +257,7 @@
                            }
                            //总价
                            amountLabel.text = [NSString stringWithFormat:@"合计:￥%.2f", [[data objectForKey:@"total"] doubleValue]];
+                           _amout = [[data objectForKey:@"total"]intValue];
                            [tableView reloadData];
                            [SVProgressHUD dismiss];
                            
@@ -482,6 +484,11 @@
 - (void) checkout{
     if ([super isLogined] == NO) {
         [self presentViewController:[super controllerFromMainStroryBoard:@"Login"] animated:YES completion:nil];
+        return;
+    }
+    if (_amout < 1000) {
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"金额未满1000元无法下单！" maskType:SVProgressHUDMaskTypeBlack];
         return;
     }
     [self presentViewController:[super controllerFromMainStroryBoard:@"Checkout"] animated:YES completion:nil];

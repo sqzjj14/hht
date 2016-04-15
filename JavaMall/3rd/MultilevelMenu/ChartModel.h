@@ -16,5 +16,6 @@
 @property (nonatomic,copy) NSString *single;//单价
 @property (nonatomic,copy) NSString *price;
 @property (nonatomic,copy) NSString *imageURL;
+@property (nonatomic,copy)NSString *limitCount;
 
 @end

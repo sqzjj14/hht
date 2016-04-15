@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *priceTF;
 @property (nonatomic,copy)NSString *pid;
 @property (nonatomic,copy)NSString *imageURL;
+@property (weak, nonatomic) IBOutlet UILabel *limitCount;
 
 - (IBAction)addCount:(id)sender;
 - (IBAction)lessCount:(id)sender;

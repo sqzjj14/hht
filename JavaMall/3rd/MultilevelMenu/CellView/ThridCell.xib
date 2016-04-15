@@ -10,11 +10,11 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ThridCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnK-fb-c8h">
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnK-fb-c8h">
                         <rect key="frame" x="293" y="0.0" width="27" height="43"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="27" id="DhQ-qr-YzQ"/>
@@ -25,7 +25,7 @@
                             <action selector="gotoCar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fIF-AE-yQf"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPV-to-GYd">
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPV-to-GYd">
                         <rect key="frame" x="261" y="11" width="24" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="kmt-Fh-Cuc"/>
@@ -36,7 +36,7 @@
                             <action selector="addCount:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="N0r-FN-Pt4"/>
                         </connections>
                     </button>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="line" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" background="syncart_middle_btn_enable.png" translatesAutoresizingMaskIntoConstraints="NO" id="dqj-fe-2eJ">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="line" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" background="syncart_middle_btn_enable.png" translatesAutoresizingMaskIntoConstraints="NO" id="dqj-fe-2eJ">
                         <rect key="frame" x="235" y="11" width="26" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="26" id="OxL-gs-65f"/>
@@ -45,7 +45,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVD-nP-Qd6">
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVD-nP-Qd6">
                         <rect key="frame" x="211" y="11" width="24" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="K2c-pr-wAf"/>
@@ -56,7 +56,7 @@
                             <action selector="lessCount:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D22-yh-ir5"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一二三四五六七八" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnH-6y-gK6">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="一二三四五六七八" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnH-6y-gK6">
                         <rect key="frame" x="7" y="7" width="55" height="29"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="55" id="jzE-lu-6mw"/>
@@ -66,58 +66,58 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ke-LP-NXS">
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ke-LP-NXS">
                         <rect key="frame" x="66" y="0.0" width="1" height="44"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="L0a-YB-bQt"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MM2-Pv-ICd">
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MM2-Pv-ICd">
                         <rect key="frame" x="0.0" y="43" width="320" height="1"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="2kZ-ec-Lu4"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aC6-Zb-6Ku">
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aC6-Zb-6Ku">
                         <rect key="frame" x="202" y="0.0" width="1" height="44"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="YUv-p4-jSS"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVd-h1-ecD">
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iVd-h1-ecD">
                         <rect key="frame" x="0.0" y="0.0" width="1" height="44"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="RoQ-x2-V7o"/>
                         </constraints>
                     </view>
-                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3l-Ab-FDK">
+                    <view alpha="0.80000000000000004" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3l-Ab-FDK">
                         <rect key="frame" x="319" y="0.0" width="1" height="44"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="IGy-VX-BmR"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-yi-hdy">
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-yi-hdy">
                         <rect key="frame" x="135" y="0.0" width="1" height="44"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="i6b-R6-jIe"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25盆/箱 起" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfm-XU-cqf">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="25盆/箱 起" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfm-XU-cqf">
                         <rect key="frame" x="66" y="6" width="70" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="Nme-Bn-icV"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88元" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATE-ph-CnI">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="88元" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATE-ph-CnI">
                         <rect key="frame" x="144" y="5" width="50" height="33"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="SQU-Us-jKV"/>
@@ -170,6 +170,7 @@
                 <outlet property="addBtn" destination="MPV-to-GYd" id="a1F-nh-FC9"/>
                 <outlet property="checkBtn" destination="BnK-fb-c8h" id="QNr-N5-fbD"/>
                 <outlet property="lessBtn" destination="VVD-nP-Qd6" id="AhY-X8-WXF"/>
+                <outlet property="limitCount" destination="Nfm-XU-cqf" id="2VR-k4-6yG"/>
                 <outlet property="name" destination="CnH-6y-gK6" id="Mw1-M5-GZE"/>
                 <outlet property="price" destination="ATE-ph-CnI" id="V2I-BE-WBq"/>
                 <outlet property="priceTF" destination="dqj-fe-2eJ" id="yp4-tN-1aS"/>

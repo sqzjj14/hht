@@ -13,6 +13,7 @@
 @implementation ThridCell{
     NSInteger _count;
     UILabel *badgeLabel;
+    NSInteger _limit;
 }
 
 - (void)awakeFromNib {
@@ -40,6 +41,19 @@
 
 
 - (IBAction)gotoCar:(id)sender {
+    _limit = [_limitCount.text intValue];
+    _count = [_priceTF.text intValue];
+    if ( _limit > _count){
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"订量不足" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
+    else if (_count % _limit != 0){
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"不是订单倍数" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
+    
     [SVProgressHUD showWithStatus:@"正在加入购物车..." maskType:SVProgressHUDMaskTypeBlack];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *content = @"";

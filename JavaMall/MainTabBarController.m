@@ -30,6 +30,8 @@
     client = [[HttpClient alloc] init];
     
     UITabBar *tabBar = self.tabBar;
+    self.selectedIndex = 1;
+    
     
     UIImage *bgImage = [UIImage imageNamed:@"tabBar_bg"];
     [tabBar setBackgroundImage:bgImage];

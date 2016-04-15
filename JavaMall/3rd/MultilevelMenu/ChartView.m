@@ -96,9 +96,10 @@
     //cell.title.text = menu.meunName;
     ChartModel *chartmodel = _allData[indexPath.row];
     cell.name.text = chartmodel.name;
-    cell.price.text = [NSString stringWithFormat:@"价格：%@元",chartmodel.price];
+    cell.price.text = [NSString stringWithFormat:@"价格/元 %@",chartmodel.price];
     cell.pid = chartmodel.pid;
     cell.imageURL = chartmodel.imageURL;
+    cell.limitCount.text = chartmodel.limitCount;
     
     if (indexPath.row%2 == 1) {
         cell.backgroundColor =[UIColor whiteColor];
