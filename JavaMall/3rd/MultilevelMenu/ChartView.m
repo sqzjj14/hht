@@ -12,6 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "Defines.h"
 #import "SVProgressHUD.h"
+#import "imageDetailView.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -21,7 +22,8 @@
 @property(strong,nonatomic) UITableView *chartTableW;
 @property(strong,nonatomic) UITapGestureRecognizer *imageTap;
 @property(strong,nonatomic) UITapGestureRecognizer *keyboradTap;
-@property(strong,nonatomic) UIImageView *imageView;
+//@property(strong,nonatomic) UIImageView *imageView;
+@property(strong,nonatomic) imageDetailView *imageView;
 @end
 
 
@@ -58,6 +60,7 @@
         _keyboradTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cencelKeyborad:)];
         //[self addGestureRecognizer:_keyboradTap];
         
+         _imageView = [[NSBundle mainBundle]loadNibNamed:@"imageDetailView" owner:nil options:nil][0];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
          
@@ -96,10 +99,14 @@
     //cell.title.text = menu.meunName;
     ChartModel *chartmodel = _allData[indexPath.row];
     cell.name.text = chartmodel.name;
-    cell.price.text = [NSString stringWithFormat:@"价格/元 %@",chartmodel.price];
+    cell.price.text = [NSString stringWithFormat:@"%@",chartmodel.price];
     cell.pid = chartmodel.pid;
     cell.imageURL = chartmodel.imageURL;
     cell.limitCount.text = chartmodel.limitCount;
+    cell.height_tree = chartmodel.height_tree;
+    cell.width_tree = chartmodel.width_tree;
+    cell.potSize = chartmodel.potSize;
+    cell.specification.text = chartmodel.specification;
     
     if (indexPath.row%2 == 1) {
         cell.backgroundColor =[UIColor whiteColor];
@@ -115,8 +122,18 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ThridCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     //cell.backgroundColor = UIColorFromRGB(0xF3F4F6);
-    _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(90, 90, kScreenWidth-180, kScreenWidth-180)];
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:cell.imageURL] placeholderImage:nil];
+    _imageView.frame = CGRectMake(90, 90, 180, 239);
+    
+    if ([cell.imageURL isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    else {
+    [_imageView.image sd_setImageWithURL:[NSURL URLWithString:cell.imageURL] placeholderImage:nil];
+      _imageView.height_tree.text = cell.height_tree;
+      _imageView.width_tree.text = cell.width_tree;
+      _imageView.potSize.text = cell.potSize;
+
+    
     _imageView.layer.cornerRadius = 5.f;
     _imageView.layer.shadowOffset = CGSizeMake(1, 1);
     _imageView.layer.shadowOpacity = 0.8;
@@ -128,6 +145,7 @@
     [self addGestureRecognizer:_imageTap];
     //松开手指时 消除选中效果
     //[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     ThridCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -158,7 +176,8 @@
 }
 
 -(void)cencelKeyborad:(UITapGestureRecognizer *)tap{
-    [[self findFirstResponderBeneathView:self]resignFirstResponder];
+   // [[self findFirstResponderBeneathView:self]resignFirstResponder];
+    [self endEditing:YES];
     [self removeGestureRecognizer:_keyboradTap];
     [_imageView removeFromSuperview];
     [self removeGestureRecognizer:_imageTap];

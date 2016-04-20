@@ -147,9 +147,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yz1-y6-g8U" secondAttribute="trailing" id="DZs-uf-99m"/>
-                            <constraint firstItem="yz1-y6-g8U" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="OAH-Q8-6jY"/>
-                            <constraint firstItem="yz1-y6-g8U" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="sfh-Wa-1Vm"/>
+                            <constraint firstItem="yz1-y6-g8U" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" constant="20" id="CAT-aq-wIS"/>
+                            <constraint firstAttribute="trailing" secondItem="yz1-y6-g8U" secondAttribute="trailing" id="ZR8-fO-t2p"/>
+                            <constraint firstItem="yz1-y6-g8U" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="fbq-0Y-eAs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pr4-I9-yS9"/>

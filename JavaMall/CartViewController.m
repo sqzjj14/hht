@@ -486,11 +486,11 @@
         [self presentViewController:[super controllerFromMainStroryBoard:@"Login"] animated:YES completion:nil];
         return;
     }
-    if (_amout < 1000) {
-        [SVProgressHUD setErrorImage:nil];
-        [SVProgressHUD showErrorWithStatus:@"金额未满1000元无法下单！" maskType:SVProgressHUDMaskTypeBlack];
-        return;
-    }
+      if (_amout < 1000) {
+          [SVProgressHUD setErrorImage:nil];
+          [SVProgressHUD showErrorWithStatus:@"金额未满1000元无法下单！" maskType: SVProgressHUDMaskTypeBlack];
+          return;
+      }
     [self presentViewController:[super controllerFromMainStroryBoard:@"Checkout"] animated:YES completion:nil];
 }
 

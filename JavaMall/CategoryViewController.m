@@ -16,6 +16,7 @@
 #import "HttpClient.h"
 #import "GoodsListViewController.h"
 #import "SearchViewController.h"
+#import "Masonry.h"
 
 @interface CategoryViewController ()
 @property (weak, nonatomic) IBOutlet UIView *headerView;
@@ -144,7 +145,7 @@
 - (void) initView:(NSMutableArray *)categoryArray {
     //初始化分类视图
     
-    MultilevelMenu * view=[[MultilevelMenu alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, kScreenHeight-49-20) WithData:categoryArray withSelectIndex:^(NSInteger left, NSInteger right,Menu* info) {
+    MultilevelMenu * view=[[MultilevelMenu alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-49-64) WithData:categoryArray withSelectIndex:^(NSInteger left, NSInteger right,Menu* info) {
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         GoodsListViewController *goodsListViewController = [storyboard instantiateViewControllerWithIdentifier:@"GoodsList"];
@@ -156,11 +157,17 @@
     }];
     
     
-    view.needToScorllerIndex = 0;
+    //view.needToScorllerIndex = 0;
     //    view.leftSelectColor=[UIColor greenColor];
     //  view.leftSelectBgColor=[UIColor redColor];
-    view.isRecordLastScroll = YES;
-    [self.view addSubview:view];
+//    view.isRecordLastScroll = YES;
+     [self.view addSubview:view];
+//    headerView.frame = CGRectMake(0, 20, kScreenWidth, 44);
+//    [headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.bottom.equalTo(view).with.offset(0);
+//        make.left.equalTo(self.view).with.offset(0);
+//        make.right.equalTo(self.view).with.offset(0);
+//    }];
      //self.edgesForExtendedLayout=UIRectEdgeNone;
 }
 

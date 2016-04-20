@@ -130,7 +130,7 @@
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
                 btn.frame = CGRectMake(2.5 , 2 + i * 50, kLeftWidth-6, 47);
                 
-                [btn setBackgroundColor:[UIColor whiteColor]];
+                [btn setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
                 [btn setTitle:title.meunName forState:UIControlStateNormal];
                 [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 [btn setTitle:title.meunName forState:UIControlStateHighlighted];
@@ -138,7 +138,7 @@
                 //阴影设置
                 btn.layer.cornerRadius = 5;
                 btn.layer.shadowOffset =  CGSizeMake(1, 1);
-                btn.layer.shadowOpacity = 0.8;
+                btn.layer.shadowOpacity = 0.5;
                 btn.layer.shadowColor = [[UIColor colorWithHexString:@"#24A676"]CGColor];
                 
                 btn.titleLabel.font = [UIFont fontWithName:kFont size:13.f];
@@ -191,10 +191,11 @@
         btn3.selected=NO;
         btn4.selected=NO;
         [btn1 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
-        [btn2 setBackgroundColor:[UIColor whiteColor]];
-        [btn3 setBackgroundColor:[UIColor whiteColor]];
-        [btn4 setBackgroundColor:[UIColor whiteColor]];
+        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
         _btnTag = sender.tag - 10;
+        
     }
     if (sender.tag==11) {
         btn1.selected=NO;
@@ -202,9 +203,9 @@
         btn3.selected=NO;
         btn4.selected=NO;
         [btn2 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
-        [btn1 setBackgroundColor:[UIColor whiteColor]];
-        [btn3 setBackgroundColor:[UIColor whiteColor]];
-        [btn4 setBackgroundColor:[UIColor whiteColor]];
+        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag==12) {
@@ -213,9 +214,9 @@
         btn3.selected=YES;
         btn4.selected=NO;
         [btn3 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
-        [btn2 setBackgroundColor:[UIColor whiteColor]];
-        [btn1 setBackgroundColor:[UIColor whiteColor]];
-        [btn4 setBackgroundColor:[UIColor whiteColor]];
+        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag == 13) {
@@ -224,14 +225,15 @@
         btn3.selected=NO;
         btn4.selected=YES;
         [btn4 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
-        [btn2 setBackgroundColor:[UIColor whiteColor]];
-        [btn3 setBackgroundColor:[UIColor whiteColor]];
-        [btn1 setBackgroundColor:[UIColor whiteColor]];
+        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
         _btnTag = sender.tag - 10;
     }
     [_allData removeAllObjects];
     _allData = [[NSMutableArray alloc]initWithArray:_locationArr];
     [self.leftTablew reloadData];
+    self.needToScorllerIndex = 0;
 }
 
 -(void)leftslide:(UIPanGestureRecognizer*)pan{
@@ -325,6 +327,21 @@
 
 #pragma mark---左边的tablew 代理
 #pragma mark--deleagte
+-(void)setNeedToScorllerIndex:(NSInteger)needToScorllerIndex{
+    if (needToScorllerIndex>=0) {
+
+        [self.leftTablew selectRowAtIndexPath:[NSIndexPath indexPathForRow:needToScorllerIndex inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
+        
+        
+        MultilevelTableViewCell * cell=(MultilevelTableViewCell*)[self.leftTablew cellForRowAtIndexPath:[NSIndexPath indexPathForRow:needToScorllerIndex inSection:0]];
+        cell.titile.textColor=[UIColor whiteColor];
+        cell.bgimage.image = [UIImage imageNamed:@"greenBtn"];
+        
+        _selectIndex=needToScorllerIndex;
+        [self.rightCollection reloadData];        
+    }
+    _needToScorllerIndex=needToScorllerIndex;
+}
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -393,7 +410,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 30;
+    return 50;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -412,7 +429,7 @@
     NSArray *data = title2.nextArray;
     
     [_SecondView removeFromSuperview];//删除原来的table
-    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 90, 30 * data.count) WithData: data withChartDetail:^(Menu* info) {
+    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 90, 50 * data.count) WithData: data withChartDetail:^(Menu* info) {
                 NSLog(@"cid=%@",info.ID);
         //删除两个引导图画
         if (_slideBgimageView || _checkBgimageView) {
@@ -484,7 +501,13 @@
                                NSDictionary *dataDic = [resultJSON objectForKey:@"data"];
                                chartmodel.pid = [dataDic objectForKey:@"product_id"];
                                chartmodel.imageURL = [dataDic objectForKey:@"thumbnail"];
-                               chartmodel.limitCount = [dataDic objectForKey:@"p9"];
+                               chartmodel.limitCount = [dataDic objectForKey:@"packingnum"];
+                               chartmodel.height_tree = [dataDic objectForKey:@"height"];
+                               chartmodel.width_tree = [dataDic objectForKey:@"crownsize"];
+                               chartmodel.potSize = [dataDic objectForKey:@"potradius"];
+                               chartmodel.specification = [dataDic objectForKey:@"specification"];
+                               
+                               
                                NSLog(@"pid=%@",chartmodel.pid);
                                
                                [pidArr addObject:chartmodel];

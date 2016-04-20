@@ -16,8 +16,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *addBtn;
 @property (weak, nonatomic) IBOutlet UIButton *lessBtn;
 @property (weak, nonatomic) IBOutlet UITextField *priceTF;
+@property (weak, nonatomic) IBOutlet UILabel *specification;
 @property (nonatomic,copy)NSString *pid;
 @property (nonatomic,copy)NSString *imageURL;
+@property (nonatomic,copy)NSString *height_tree;
+@property (nonatomic,copy)NSString *width_tree;
+@property (nonatomic,copy)NSString *potSize;
+
 @property (weak, nonatomic) IBOutlet UILabel *limitCount;
 
 - (IBAction)addCount:(id)sender;

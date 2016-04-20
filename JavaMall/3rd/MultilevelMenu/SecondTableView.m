@@ -80,16 +80,18 @@
     Menu *menu = _allData[indexPath.row];
     cell.title.text = menu.meunName;
    // cell.backgroundColor = _leftBgColor;
-    if (indexPath.row%2 == 1) {
-        //cell.backgroundColor =UIColorFromRGB(0xF3F4F6);
-        cell.bgimage.image = [UIImage imageNamed:@"whiteBtn"];
-        cell.title.textColor = [UIColor blackColor];
-    }
-    else if (indexPath.row%2 == 0){
-        //cell.backgroundColor = [UIColor colorWithRed:36/255.0 green:166/255.0 blue:118/225.0 alpha:0.1];
-        cell.bgimage.image = [UIImage imageNamed:@"greenBtn"];
-        cell.title.textColor = [UIColor whiteColor];
-    }
+//    if (indexPath.row%2 == 1) {
+//        //cell.backgroundColor =UIColorFromRGB(0xF3F4F6);
+//        cell.bgimage.image = [UIImage imageNamed:@"whiteBtn"];
+//        cell.title.textColor = [UIColor blackColor];
+//        
+//    }
+//    else if (indexPath.row%2 == 0){
+//        //cell.backgroundColor = [UIColor colorWithRed:36/255.0 green:166/255.0 blue:118/225.0 alpha:0.1];
+//        cell.bgimage.image = [UIImage imageNamed:@"Dark_greenBtn"];
+//        //cell.title.textColor = [UIColor whiteColor];
+//        cell.title.textColor = [UIColor blackColor];
+//    }
     
     return cell;
 }
@@ -104,11 +106,11 @@
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     TwoCell *cell = (TwoCell *)[tableView cellForRowAtIndexPath:indexPath];
-    cell.title.textColor = [UIColor blackColor];
-    cell.backgroundColor = UIColorFromRGB(0xF3F4F6);
+    //cell.title.textColor = [UIColor blackColor];
+   // cell.backgroundColor = UIColorFromRGB(0xF3F4F6);
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 30;
+    return 50;
 }
 
 @end

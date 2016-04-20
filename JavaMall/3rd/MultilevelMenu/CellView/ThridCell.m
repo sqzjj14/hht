@@ -9,6 +9,7 @@
 #import "ThridCell.h"
 #import "SVProgressHUD.h"
 #import "HttpClient.h"
+#import "MainTabBarController.h"
 
 @implementation ThridCell{
     NSInteger _count;
@@ -43,9 +44,14 @@
 - (IBAction)gotoCar:(id)sender {
     _limit = [_limitCount.text intValue];
     _count = [_priceTF.text intValue];
+    if (_limit == 0){
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"此商品信息不完善" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
     if ( _limit > _count){
         [SVProgressHUD setErrorImage:nil];
-        [SVProgressHUD showErrorWithStatus:@"订量不足" maskType:SVProgressHUDMaskTypeBlack];
+        [SVProgressHUD showErrorWithStatus:@"未达到装量" maskType:SVProgressHUDMaskTypeBlack];
         return;
     }
     else if (_count % _limit != 0){
@@ -132,16 +138,19 @@
         return;
     }
     if(badgeLabel == nil){
-        //购物车角标
-        badgeLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 5, 20, 14)];
-        [badgeLabel setFont:[UIFont systemFontOfSize:12]];
-        [badgeLabel setText:[NSString stringWithFormat:@"%d", _count]];
-        [badgeLabel setBackgroundColor:[UIColor redColor]];
-        [badgeLabel setTextColor:[UIColor whiteColor]];
+        MainTabBarController *tabController = [[MainTabBarController alloc]init];
+        UITabBarItem *cartItem = tabController.tabBar.items[1];
+        UIView *v = [cartItem valueForKey:@"view"];
+        badgeLabel = [[UILabel alloc] initWithFrame:CGRectMake(45 * (v.frame.size.width / 75), 5, 25, 14)];
+        [badgeLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:12]];
+        [badgeLabel setText:[NSString stringWithFormat:@"%d", _carCount]];
+        [badgeLabel setBackgroundColor:[UIColor whiteColor]];
+        [badgeLabel setTextColor:[UIColor redColor]];
         [badgeLabel setTextAlignment:NSTextAlignmentCenter];
         badgeLabel.layer.cornerRadius = 6;
         badgeLabel.layer.masksToBounds = YES;
-     //   [cartBtn addSubview:badgeLabel];
+        [v addSubview:badgeLabel];
+        
         return;
     }
     [badgeLabel setText:[NSString stringWithFormat:@"%d", _count]];

@@ -17,5 +17,11 @@
 @property (nonatomic,copy) NSString *price;
 @property (nonatomic,copy) NSString *imageURL;
 @property (nonatomic,copy)NSString *limitCount;
+@property (nonatomic,copy)NSString *specification;
+
+@property (nonatomic,copy)NSString *height_tree;
+@property (nonatomic,copy)NSString *width_tree;
+@property (nonatomic,copy)NSString *potSize;
+@property (nonatomic,copy)NSString *height_difference;
 
 @end
