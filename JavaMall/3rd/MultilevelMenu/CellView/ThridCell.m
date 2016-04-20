@@ -29,13 +29,18 @@
 }
 
 - (IBAction)addCount:(id)sender {
+    _limit = [_limitCount.text integerValue];
     _count = [_priceTF.text intValue];
-    _priceTF.text = [NSString stringWithFormat:@"%d",_count+1];
+    _priceTF.text = [NSString stringWithFormat:@"%d",_count+_limit];
 }
 
 - (IBAction)lessCount:(id)sender {
     _count = [_priceTF.text intValue];
-    if (_count > 1) {
+    _limit = [_limitCount.text integerValue];
+    if (_count >= _limit) {
+        _priceTF.text = [NSString stringWithFormat:@"%d",_count-_limit];
+    }
+    else if (_count < _limit && _count >0){
         _priceTF.text = [NSString stringWithFormat:@"%d",_count-1];
     }
 }

@@ -130,7 +130,8 @@
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
                 btn.frame = CGRectMake(2.5 , 2 + i * 50, kLeftWidth-6, 47);
                 
-                [btn setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+                [btn setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+                //[btn setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
                 [btn setTitle:title.meunName forState:UIControlStateNormal];
                 [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 [btn setTitle:title.meunName forState:UIControlStateHighlighted];
@@ -191,9 +192,9 @@
         btn3.selected=NO;
         btn4.selected=NO;
         [btn1 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
-        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
-        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
-        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
         
     }
@@ -203,9 +204,9 @@
         btn3.selected=NO;
         btn4.selected=NO;
         [btn2 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
-        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
-        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
-        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag==12) {
@@ -214,9 +215,9 @@
         btn3.selected=YES;
         btn4.selected=NO;
         [btn3 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
-        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
-        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
-        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.2]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag == 13) {
@@ -225,9 +226,9 @@
         btn3.selected=NO;
         btn4.selected=YES;
         [btn4 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
-        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
-        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
-        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.1]];
+        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
     }
     [_allData removeAllObjects];
@@ -366,14 +367,9 @@
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     
     
-//    if (!cell) {
-//        cell=[[NSBundle mainBundle] loadNibNamed:@"MultilevelTableViewCell" owner:self options:nil][0];
-//        
-//        UILabel * label=[[UILabel alloc] initWithFrame:CGRectMake(kLeftWidth-0.5, 0, 0.5, 44)];
-//        label.backgroundColor=tableView.separatorColor;
-//        [cell addSubview:label];
-//        label.tag=100;
-//    }
+    if (!cell) {
+        cell=[[NSBundle mainBundle] loadNibNamed:@"MultilevelTableViewCell" owner:self options:nil][0];
+    }
     
     
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
@@ -382,6 +378,7 @@
     Menu * title2 = title.nextArray[indexPath.row];
     
     cell.titile.text= title2.meunName;
+    cell.bgimage.image = [UIImage imageNamed:@"whiteBtn"];
  
     
 //    if (indexPath.row==self.selectIndex) {
