@@ -10,6 +10,9 @@
 #import "BaseViewController.h"
 
 @interface CheckoutViewController : BaseViewController<UITextFieldDelegate>
+@property (nonatomic,assign) BOOL isfrist;//是否是刚进入这个页面，处理代金劵问题
 - (IBAction)back:(id)sender;
 
+- (void) initCouponView;
 @end
+

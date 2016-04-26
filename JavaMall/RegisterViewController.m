@@ -11,6 +11,11 @@
 #import "SVProgressHUD.h"
 #import "HttpClient.h"
 #import "ImagePlayerView.h"
+#import "HttpClient.h"
+#import "Masonry.h"
+#import "UIImageView+WebCache.h"
+
+#import "CouponCell.h"
 
 
 @interface RegisterViewController () <UIImagePickerControllerDelegate>
@@ -39,9 +44,16 @@
 @property (weak, nonatomic) IBOutlet UITextField *identifyingCodeTF;
 //计时器
 @property (nonatomic,strong)NSTimer *time;
+//优惠劵数据源
+@property (nonatomic,strong)NSMutableArray *dataSource;
+//关闭优惠劵手势
+@property (nonatomic,strong)UITapGestureRecognizer *coupontap;
+@property (nonatomic,strong)UIView *couponView;
 @end
 
-@implementation RegisterViewController
+@implementation RegisterViewController{
+    HttpClient *client;
+}
 
 @synthesize headerView, usernameView, passwordView, username, password, repassword, registerBtn;
 
@@ -83,6 +95,11 @@
     //创建计时器
     _count = 0;
     _time = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startTime) userInfo:nil repeats:YES];
+    
+    client = [[HttpClient alloc]init];
+    _dataSource = [[NSMutableArray alloc]init];
+    
+    [self initCouponView];
 
 }
 
@@ -266,7 +283,8 @@
                            
                            [SVProgressHUD setErrorImage:nil];
                            [SVProgressHUD showErrorWithStatus:@"注册成功！" maskType:SVProgressHUDMaskTypeBlack];
-                           [self dismissViewControllerAnimated:YES completion:nil];
+                           [self initCouponView];
+                          // [self dismissViewControllerAnimated:YES completion:nil];
                        });
                    });
 }
@@ -395,5 +413,85 @@
         [_messageBtn setEnabled:NO];
     }
     
+}
+#pragma mark 注册送优惠卷视图
+-(void)getHttp{
+    
+    NSString *content = [client get:[BASE_URL stringByAppendingString:@"/api/shop/bonus!getMemberBonus2.do"]];
+    if ([content length] == 0 || content == nil) {
+        return;
+    }
+    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+    if ([[result objectForKey:@"result"]intValue] == 0) {
+        return;
+    }
+    else{
+        NSDictionary *data = [result objectForKey:@"data"];
+        if (data == nil) {
+            return;
+        }
+        for (NSArray *arr in data) {
+            [_dataSource addObject:arr];
+        }
+    }
+}
+-(void)initCouponView{
+    [self getHttp];
+    NSInteger couponCount = [_dataSource count];
+    
+    //contentView
+    //UIView *CouponView = [[UIView alloc]initWithFrame:CGRectMake(0, 300, 320, 80 * 2)];
+    _couponView = [[UIView alloc]init];
+    _couponView.backgroundColor = [UIColor whiteColor];
+    _couponView.layer.shadowOffset = CGSizeMake(1, 1);
+    _couponView.layer.shadowColor = [[UIColor colorWithHexString:@"#24A676"]CGColor];
+    _couponView.layer.shadowOpacity = 0.5;
+    _couponView.layer.cornerRadius = 2 ;
+    _couponView.layer.shadowRadius=5;
+    [self.view addSubview:_couponView];
+    [_couponView mas_makeConstraints:^(MASConstraintMaker *make) {
+        //make.centerX.equalTo(self.view.mas_centerX).with.offset(0);
+        make.top.equalTo(self.view.mas_top).with.offset(70);
+        make.left.equalTo(self.view.mas_left).with.offset(40);
+        make.right.equalTo(self.view.mas_right).with.offset(-40);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(-100);
+        
+    }];
+    UIImageView *imageView = [[UIImageView alloc]init];
+    imageView.backgroundColor = [UIColor redColor];
+    [_couponView addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_couponView.mas_top);
+        make.leading.equalTo(_couponView.mas_leading);
+        make.trailing.equalTo(_couponView.mas_trailing);
+        make.bottom.equalTo(_couponView.mas_bottom);
+        make.width.equalTo(_couponView.mas_width);
+        make.height.equalTo(_couponView.mas_height);
+    }];
+    //imageView.image = [UIImage imageNamed:<#(nonnull NSString *)#>];
+    
+    //tap
+    _coupontap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cencelImage:)];
+    _coupontap.numberOfTapsRequired = 1;
+    [_couponView addGestureRecognizer:_coupontap];
+    
+    
+    //cell
+    for (int i = 0; i <couponCount; i++) {
+        CouponCell *cell = [[NSBundle mainBundle]loadNibNamed:@"CouponCell" owner:nil options:nil][0];
+        NSMutableDictionary *couponModel = _dataSource[i];
+        cell.name.text = [couponModel objectForKey:@"name"];
+        cell.remark.text = [couponModel objectForKey:@"remark"];
+        cell.time.text = [couponModel objectForKey:@"time"];
+        [cell.image sd_setImageWithURL:[NSURL URLWithString:[couponModel objectForKey:@"imageUrl"]]];
+        cell.backgroundColor = [UIColor whiteColor];
+        cell.frame = CGRectMake(0, 80 * i, 320, 80 );
+       // [CouponView addSubview:cell];
+    }
+}
+-(void)cencelImage:(UITapGestureRecognizer*)tap{
+    [_couponView removeFromSuperview];
+    [self.view removeGestureRecognizer:tap];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

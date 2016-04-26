@@ -13,6 +13,7 @@
 #import "UIImageView+WebCache.h"
 #import "HttpClient.h"
 #import "AddressViewController.h"
+#import "CouponViewController.h"
 
 @interface PersonViewController()
 @property (weak, nonatomic) IBOutlet UIView *headerView;
@@ -22,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIView *addressView;
 @property (weak, nonatomic) IBOutlet UIView *passwordView;
 @property (weak, nonatomic) IBOutlet UIView *logoutView;
+//优惠劵
+@property (weak, nonatomic) IBOutlet UIView *couponView;
 
 @property (weak, nonatomic) IBOutlet UIView *editView;
 
@@ -84,6 +87,11 @@
     UITapGestureRecognizer *editTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(edit:)];
     [editTapGesture setNumberOfTouchesRequired:1];
     [editView addGestureRecognizer:editTapGesture];
+    
+    UITapGestureRecognizer *couponTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(coupon:)];
+    [couponTapGesture setNumberOfTouchesRequired:1];
+    [_couponView addGestureRecognizer:couponTapGesture];
+    
 }
 
 - (void) initLoginView{
@@ -216,6 +224,16 @@
         return;
     }
     [self presentViewController:[super controllerFromMainStroryBoard:@"PersonEdit"] animated:YES completion:nil];
+}
+-(void)coupon:(UITapGestureRecognizer *)gesture{
+    
+    if(![super isLogined]){
+        [self presentViewController:[super controllerFromMainStroryBoard:@"Login"] animated:YES completion:nil];
+        return;
+    }
+    CouponViewController *vc = (CouponViewController *)[super controllerFromMainStroryBoard:@"Coupon"];
+    vc.ispaying = NO;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 -(void)changePasswordCompletion:(NSNotification*)notification{

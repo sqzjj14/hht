@@ -108,6 +108,9 @@
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="装量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysd-IG-F3j">
                             <rect key="frame" x="41" y="0.0" width="40" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="I80-Zq-TaY"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -116,7 +119,6 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="vut-bL-x5g" firstAttribute="leading" secondItem="QIi-4W-ZqD" secondAttribute="trailing" constant="1" id="3lP-ec-2JO"/>
-                        <constraint firstItem="vut-bL-x5g" firstAttribute="centerX" secondItem="fSr-Ey-2VA" secondAttribute="centerX" id="8NR-lW-eQ4"/>
                         <constraint firstItem="vut-bL-x5g" firstAttribute="top" secondItem="fSr-Ey-2VA" secondAttribute="top" id="Brt-MF-rr4"/>
                         <constraint firstItem="QIi-4W-ZqD" firstAttribute="top" secondItem="fSr-Ey-2VA" secondAttribute="top" id="ETs-nf-ffv"/>
                         <constraint firstAttribute="bottom" secondItem="Ysd-IG-F3j" secondAttribute="bottom" constant="1" id="RL1-kI-BcM"/>

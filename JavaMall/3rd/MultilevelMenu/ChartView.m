@@ -13,6 +13,7 @@
 #import "Defines.h"
 #import "SVProgressHUD.h"
 #import "imageDetailView.h"
+#import "Masonry.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -44,16 +45,17 @@
         self.chartTableW.dataSource= self;
         self.chartTableW.delegate= self;
         
-        self.chartTableW.tableFooterView=[[UIView alloc] init];
+        self.chartTableW.tableFooterView=[[UIView alloc]initWithFrame:CGRectMake(0,0,self.frame.size.width,10)];
         [self addSubview:self.chartTableW];
         self.chartTableW.backgroundColor= [UIColor whiteColor];
-        if ([self.chartTableW respondsToSelector:@selector(setLayoutMargins:)]) {
-            self.chartTableW.layoutMargins=UIEdgeInsetsZero;
-        }
-        if ([self.chartTableW respondsToSelector:@selector(setSeparatorInset:)]) {
-            self.chartTableW.separatorInset=UIEdgeInsetsZero;
-        }
-        self.chartTableW.separatorColor=[UIColor blackColor];
+        
+//        if ([self.chartTableW respondsToSelector:@selector(setLayoutMargins:)]) {
+//            self.chartTableW.layoutMargins=UIEdgeInsetsZero;
+//        }
+//        if ([self.chartTableW respondsToSelector:@selector(setSeparatorInset:)]) {
+//            self.chartTableW.separatorInset=UIEdgeInsetsZero;
+//        }
+        self.chartTableW.separatorColor=[UIColor clearColor];
         
         [self.chartTableW registerNib:[UINib nibWithNibName:@"ThridCell" bundle:nil] forCellReuseIdentifier:@"ThridCell"];
         //添加取消keyboard手势
@@ -116,13 +118,13 @@
     }
     
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    
+
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ThridCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     //cell.backgroundColor = UIColorFromRGB(0xF3F4F6);
-    _imageView.frame = CGRectMake(90, 90, 180, 239);
+    //_imageView.frame = CGRectMake(90, 90, 180, 239);
     
     if ([cell.imageURL isKindOfClass:[NSNull class]]) {
         return;
@@ -139,6 +141,11 @@
     _imageView.layer.shadowOpacity = 0.8;
     _imageView.layer.shadowColor = [[UIColor colorWithHexString:@"#24A676"]CGColor];
     [self addSubview:_imageView];
+        [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self);
+            make.width.equalTo(@180);
+            make.height.equalTo(@239);
+        }];
     
     //添加取消手势
     _imageTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cencelImage:)];

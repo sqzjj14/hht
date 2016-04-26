@@ -132,6 +132,9 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBB-XA-aZ7">
                                 <rect key="frame" x="42" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="1qx-pY-chp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -153,7 +156,6 @@
                             <constraint firstItem="eiB-Ko-LWz" firstAttribute="top" secondItem="3Sw-X8-KWQ" secondAttribute="top" id="gdG-Qs-6ri"/>
                             <constraint firstAttribute="bottom" secondItem="N7j-f5-XUG" secondAttribute="bottom" id="k6m-b1-Tcf"/>
                             <constraint firstItem="N7j-f5-XUG" firstAttribute="top" secondItem="3Sw-X8-KWQ" secondAttribute="top" id="nvX-Kc-EUs"/>
-                            <constraint firstItem="eiB-Ko-LWz" firstAttribute="centerX" secondItem="3Sw-X8-KWQ" secondAttribute="centerX" id="pan-44-oS5"/>
                             <constraint firstItem="N7j-f5-XUG" firstAttribute="leading" secondItem="3Sw-X8-KWQ" secondAttribute="leading" id="ryQ-Ki-aLW"/>
                             <constraint firstItem="eiB-Ko-LWz" firstAttribute="leading" secondItem="N7j-f5-XUG" secondAttribute="trailing" constant="1" id="wNS-EE-fHm"/>
                         </constraints>

@@ -204,6 +204,12 @@
                                [SVProgressHUD showErrorWithStatus:@"用户名或密码错误！" maskType:SVProgressHUDMaskTypeBlack];
                                return;
                            }
+                           if([[result objectForKey:@"result"] intValue] == 2){
+                               [SVProgressHUD setErrorImage:nil];
+                               [SVProgressHUD showErrorWithStatus:@"请耐心等待审核" maskType:SVProgressHUDMaskTypeBlack];
+                               return;
+                           }
+                           
                            
                            //登录成功
                            NSDictionary *data = [result objectForKey:@"data"];

@@ -26,6 +26,7 @@
 #define nSelectAddress @"SelectAddressCompletionNotification"
 #define nEditAddress @"EditAddressCompletionNotification"
 #define nSelectPaymentDelivery @"SelectPaymentDeliveryCompletionNotification"
+#define nSelectCoupon @"SelectCouponCompletionNotification"
 #define nSelectReceipt @"SelectReceiptCompletionNotification"
 #define nSubmitOrder @"SubmitOrderCompletionNotification"
 #define nChangePassword @"ChangePasswordCompletionNotification"
