@@ -369,7 +369,7 @@
     [paymnetView addSubview:shipLabel];
     
     UILabel *shipPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 200, 35, 160, 15)];
-    shipPriceLabel.text = [NSString stringWithFormat:@"快递费：￥%.2f", [[shipping objectForKey:@"price"] doubleValue]];
+    shipPriceLabel.text = [NSString stringWithFormat:@"物流配送费：￥%.2f", [[shipping objectForKey:@"price"] doubleValue]];
     shipPriceLabel.font = [UIFont systemFontOfSize:12];
     shipPriceLabel.textAlignment = NSTextAlignmentRight;
     [shipPriceLabel setTextColor:[UIColor redColor]];
@@ -377,11 +377,11 @@
     
     UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenWidth - 20, 20, 9, 15)];
     arrowImage.image = [UIImage imageNamed:@"jshop_list_back.png"];
-    [paymnetView addSubview:arrowImage];
+    //[paymnetView addSubview:arrowImage];
     
     UITapGestureRecognizer *specTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectPayment:)];
     [specTapGesture setNumberOfTapsRequired:1];
-    [paymnetView addGestureRecognizer:specTapGesture];
+    //[paymnetView addGestureRecognizer:specTapGesture];
 
     
     [super setBorderWithView:paymnetView top:YES left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#edeef0"] borderWidth:0.5f];

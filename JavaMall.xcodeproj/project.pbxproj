@@ -38,6 +38,7 @@
 		9424524E1CACB96900A9EC30 /* hht_head_background_login@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9424524D1CACB96900A9EC30 /* hht_head_background_login@2x.jpg */; };
 		942452501CACD3BC00A9EC30 /* 新LOGO横向 (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 9424524F1CACD3BC00A9EC30 /* 新LOGO横向 (2).png */; };
 		943180281CCF0D100073EDFE /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 943180271CCF0D100073EDFE /* point.png */; };
+		9431802B1CCF60040073EDFE /* couponAD.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9431802A1CCF60040073EDFE /* couponAD.jpg */; };
 		9496AF3A1CC8D2F900B81D91 /* coupon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9496AF391CC8D2F900B81D91 /* coupon@2x.png */; };
 		9496AF3D1CC8D61600B81D91 /* CouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9496AF3C1CC8D61600B81D91 /* CouponViewController.m */; };
 		9496AF421CC8D7BE00B81D91 /* CouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9496AF401CC8D7BE00B81D91 /* CouponCell.m */; };
@@ -339,6 +340,7 @@
 		9424524D1CACB96900A9EC30 /* hht_head_background_login@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hht_head_background_login@2x.jpg"; sourceTree = "<group>"; };
 		9424524F1CACD3BC00A9EC30 /* 新LOGO横向 (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新LOGO横向 (2).png"; sourceTree = "<group>"; };
 		943180271CCF0D100073EDFE /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
+		9431802A1CCF60040073EDFE /* couponAD.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = couponAD.jpg; sourceTree = "<group>"; };
 		9496AF391CC8D2F900B81D91 /* coupon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon@2x.png"; sourceTree = "<group>"; };
 		9496AF3B1CC8D61600B81D91 /* CouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponViewController.h; sourceTree = "<group>"; };
 		9496AF3C1CC8D61600B81D91 /* CouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponViewController.m; sourceTree = "<group>"; };
@@ -980,6 +982,7 @@
 		94E582EC1CCE1E4E00958299 /* 注册 */ = {
 			isa = PBXGroup;
 			children = (
+				9431802A1CCF60040073EDFE /* couponAD.jpg */,
 				D9AF8B2E1B45887200D22811 /* RegisterViewController.h */,
 				D9AF8B2F1B45887200D22811 /* RegisterViewController.m */,
 			);
@@ -1789,6 +1792,7 @@
 				D98AD2911B3FCB1500658441 /* sort_price_icon@2x.png in Resources */,
 				D95AE2D61B440072003821EE /* address_phone_icon@2x.png in Resources */,
 				D91059671B4EDE2D00451BFC /* Default-667h@2x.png in Resources */,
+				9431802B1CCF60040073EDFE /* couponAD.jpg in Resources */,
 				9424524C1CACB94A00A9EC30 /* LOGO.png in Resources */,
 				D9132C6A1B3C51F500509ECB /* WebViewJavascriptBridge.js.txt in Resources */,
 				D9A5F4E61B4B8D54002B57F6 /* checkout_success@2x.png in Resources */,

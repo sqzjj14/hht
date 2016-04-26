@@ -99,7 +99,8 @@
     client = [[HttpClient alloc]init];
     _dataSource = [[NSMutableArray alloc]init];
     
-    [self initCouponView];
+    // test
+    //[self initCouponView];
 
 }
 
@@ -468,7 +469,7 @@
         make.width.equalTo(_couponView.mas_width);
         make.height.equalTo(_couponView.mas_height);
     }];
-    //imageView.image = [UIImage imageNamed:<#(nonnull NSString *)#>];
+    imageView.image = [UIImage imageNamed:@"couponAD.jpg"];
     
     //tap
     _coupontap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cencelImage:)];
