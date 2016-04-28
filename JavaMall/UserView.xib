@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserView">
+            <rect key="frame" x="0.0" y="0.0" width="275" height="450"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dru-da-NPb">
+                    <rect key="frame" x="0.0" y="0.0" width="275" height="450"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxZ-Ed-7Cf" userLabel="content View">
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="600"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5FU-bp-bYR">
+                                    <rect key="frame" x="0.0" y="0.0" width="275" height="600"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="花卉通服务协议" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdA-Es-1w7">
+                                            <rect key="frame" x="0.0" y="0.0" width="275" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fp-Hu-LkC">
+                                            <rect key="frame" x="8" y="36" width="259" height="500"/>
+                                            <mutableString key="text">  一 入会资格：从事花卉经营工作的个     人或单位 
+  二 会费：免会员费
+  三 交易规则
+  1.采用网上交易系统，凭本人会员号及密码上网交易，不议价；花卉通提供具有竞争优势的批发价，不赚取价差，仅收取10%的服务费。
+  2.实行预付款交易，订购货品即减帐户余额，不设欠款或挂帐。
+  3.特殊植物品种整箱起订（可参考装箱数）
+  4.每次订货在￥1000元以上。
+  5.统一以花卉通标准纸箱包装。
+  6.订购货品的交货地点为广州花卉通现场部，
+  7.由于发货或送货产生的物流运费或送货费由会员自付（详情见收费标准），并由花卉通在会员的往来帐上代扣、代付。
+  8.会员收货时请及时验收货品，如发现货品品质与等级不符或有参差,两天内在网上投诉，核实后不符部分货品将按实际开单金额赔偿或做等额 的商品补偿，补偿金额将划入会员往来账；遇运输造成的损坏，本网工作人员将尽力协助向承运商索赔，并积极协助物色更负责任的承运商。
+  9.会员号只允许所属会员本人使用。会籍不得转让，帐户不得借人使用，违者将被收回会员号，并终止会籍，密码是会员的重要个人资料，需 认真设置、管理与使用，凡使用本网帐户和密码办理的业务,均视为会员本人亲自办理。
+  四 会员资料
+  （1）填写资料要求详尽、完整、真实，符合自身的实际情况，单位名称，姓名，地址，手机号码，电话号码，邮箱地址，QQ等联系方式，务必要填写最常用的联系方式，以便我们更及时的、准确的与贵单位以及您取得联系。
+  （2）客户填写的资料绝对保密，不对外公开。
+  （3）“*”表示所在项为必填项。
+  本会员须知解释权为花卉通所有
+</mutableString>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="同意" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tO9-Xg-UBq">
+                                            <rect key="frame" x="88" y="550" width="100" height="40"/>
+                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="1Fp-Hu-LkC" firstAttribute="leading" secondItem="5FU-bp-bYR" secondAttribute="leading" constant="8" id="3OM-UJ-Xlx"/>
+                                        <constraint firstItem="PdA-Es-1w7" firstAttribute="top" secondItem="5FU-bp-bYR" secondAttribute="top" id="4Gr-70-ECM"/>
+                                        <constraint firstAttribute="height" constant="600" id="8aZ-gl-yJV"/>
+                                        <constraint firstAttribute="trailing" secondItem="PdA-Es-1w7" secondAttribute="trailing" id="EMB-CJ-qPe"/>
+                                        <constraint firstAttribute="trailing" secondItem="1Fp-Hu-LkC" secondAttribute="trailing" constant="8" id="J5L-mJ-y5V"/>
+                                        <constraint firstItem="tO9-Xg-UBq" firstAttribute="centerX" secondItem="5FU-bp-bYR" secondAttribute="centerX" id="cCM-L3-Of7"/>
+                                        <constraint firstItem="1Fp-Hu-LkC" firstAttribute="top" secondItem="PdA-Es-1w7" secondAttribute="bottom" constant="8" id="hmo-eS-YYg"/>
+                                        <constraint firstItem="PdA-Es-1w7" firstAttribute="leading" secondItem="5FU-bp-bYR" secondAttribute="leading" id="wUb-fj-I0B"/>
+                                        <constraint firstItem="tO9-Xg-UBq" firstAttribute="top" secondItem="1Fp-Hu-LkC" secondAttribute="bottom" constant="14" id="zbN-cG-Fn6"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="5FU-bp-bYR" secondAttribute="trailing" id="Otm-k1-npO"/>
+                                <constraint firstItem="5FU-bp-bYR" firstAttribute="top" secondItem="KxZ-Ed-7Cf" secondAttribute="top" id="U0n-DO-Z3g"/>
+                                <constraint firstAttribute="height" constant="600" id="VO2-2i-lQR"/>
+                                <constraint firstItem="5FU-bp-bYR" firstAttribute="leading" secondItem="KxZ-Ed-7Cf" secondAttribute="leading" id="qNJ-ky-Sfb"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="KxZ-Ed-7Cf" secondAttribute="bottom" id="3if-TZ-fRs"/>
+                        <constraint firstAttribute="trailing" secondItem="KxZ-Ed-7Cf" secondAttribute="trailing" id="6Ej-zl-dGZ"/>
+                        <constraint firstItem="KxZ-Ed-7Cf" firstAttribute="top" secondItem="dru-da-NPb" secondAttribute="top" id="KnZ-JI-YjL"/>
+                        <constraint firstItem="KxZ-Ed-7Cf" firstAttribute="leading" secondItem="dru-da-NPb" secondAttribute="leading" id="XS3-s3-3hQ"/>
+                        <constraint firstItem="KxZ-Ed-7Cf" firstAttribute="centerX" secondItem="dru-da-NPb" secondAttribute="centerX" id="tNv-9g-0Nq"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dru-da-NPb" secondAttribute="trailing" id="71n-lD-3bQ"/>
+                <constraint firstItem="dru-da-NPb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Pip-Dr-y8Z"/>
+                <constraint firstAttribute="bottom" secondItem="dru-da-NPb" secondAttribute="bottom" id="YWc-hB-n8c"/>
+                <constraint firstItem="dru-da-NPb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ecP-Xa-p3Z"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="546.5" y="313"/>
+        </view>
+    </objects>
+</document>

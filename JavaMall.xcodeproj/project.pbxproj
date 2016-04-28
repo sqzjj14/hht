@@ -39,6 +39,8 @@
 		942452501CACD3BC00A9EC30 /* 新LOGO横向 (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 9424524F1CACD3BC00A9EC30 /* 新LOGO横向 (2).png */; };
 		943180281CCF0D100073EDFE /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 943180271CCF0D100073EDFE /* point.png */; };
 		9431802B1CCF60040073EDFE /* couponAD.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9431802A1CCF60040073EDFE /* couponAD.jpg */; };
+		9480B6131CD2042900D5048A /* UserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9480B6121CD2042900D5048A /* UserView.m */; };
+		9480B6151CD2044200D5048A /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9480B6141CD2044200D5048A /* UserView.xib */; };
 		9496AF3A1CC8D2F900B81D91 /* coupon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9496AF391CC8D2F900B81D91 /* coupon@2x.png */; };
 		9496AF3D1CC8D61600B81D91 /* CouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9496AF3C1CC8D61600B81D91 /* CouponViewController.m */; };
 		9496AF421CC8D7BE00B81D91 /* CouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9496AF401CC8D7BE00B81D91 /* CouponCell.m */; };
@@ -341,6 +343,9 @@
 		9424524F1CACD3BC00A9EC30 /* 新LOGO横向 (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新LOGO横向 (2).png"; sourceTree = "<group>"; };
 		943180271CCF0D100073EDFE /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
 		9431802A1CCF60040073EDFE /* couponAD.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = couponAD.jpg; sourceTree = "<group>"; };
+		9480B6111CD2042900D5048A /* UserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserView.h; sourceTree = "<group>"; };
+		9480B6121CD2042900D5048A /* UserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserView.m; sourceTree = "<group>"; };
+		9480B6141CD2044200D5048A /* UserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
 		9496AF391CC8D2F900B81D91 /* coupon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon@2x.png"; sourceTree = "<group>"; };
 		9496AF3B1CC8D61600B81D91 /* CouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponViewController.h; sourceTree = "<group>"; };
 		9496AF3C1CC8D61600B81D91 /* CouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponViewController.m; sourceTree = "<group>"; };
@@ -987,6 +992,9 @@
 				9431802A1CCF60040073EDFE /* couponAD.jpg */,
 				D9AF8B2E1B45887200D22811 /* RegisterViewController.h */,
 				D9AF8B2F1B45887200D22811 /* RegisterViewController.m */,
+				9480B6111CD2042900D5048A /* UserView.h */,
+				9480B6121CD2042900D5048A /* UserView.m */,
+				9480B6141CD2044200D5048A /* UserView.xib */,
 			);
 			name = "注册";
 			sourceTree = "<group>";
@@ -1849,6 +1857,7 @@
 				940D004D1CC5E585004F3E23 /* tabBar_category_press@2x.png in Resources */,
 				940D004B1CC5E55D004F3E23 /* tabBar_category_normal@2x.png in Resources */,
 				D959982C1C2BA3EC00988DFA /* test.txt in Resources */,
+				9480B6151CD2044200D5048A /* UserView.xib in Resources */,
 				D95AE2A31B4167EF003821EE /* syncart_more_btn_enable@2x.png in Resources */,
 				D9AF8C8F1B47F64100D22811 /* address_delete@2x.png in Resources */,
 				D95AE2B31B42B3FF003821EE /* ico_star1@3x.png in Resources */,
@@ -1934,6 +1943,7 @@
 				D9AF8B091B4517BA00D22811 /* AddressCell.m in Sources */,
 				D98628131B4E26520006C9FD /* MyFavoriteCell.m in Sources */,
 				D9AF8C881B46A93800D22811 /* MBProgressHUD.m in Sources */,
+				9480B6131CD2042900D5048A /* UserView.m in Sources */,
 				D9E5D8BB1B96A757004D0C7D /* MWZoomingScrollView.m in Sources */,
 				D9132C3A1B3C51F500509ECB /* AFURLResponseSerialization.m in Sources */,
 				D95AE2D01B43FCA1003821EE /* CheckoutViewController.m in Sources */,

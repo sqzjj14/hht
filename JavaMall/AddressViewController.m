@@ -104,7 +104,7 @@
     [tableView reloadData];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                    ^{
-                       NSString *content = [client get:[BASE_URL stringByAppendingString:@"/api/mobile/address!list.do"]];
+                       NSString *content = [client get:[BASE_URL stringByAppendingString:@"/api/shop/memberAddress!list.do"]];
                        dispatch_async(dispatch_get_main_queue(), ^{
                            [SVProgressHUD dismiss];
                            

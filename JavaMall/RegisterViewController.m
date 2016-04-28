@@ -14,6 +14,7 @@
 #import "HttpClient.h"
 #import "Masonry.h"
 #import "UIImageView+WebCache.h"
+#import "UserView.h"
 
 #import "CouponCell.h"
 
@@ -49,6 +50,9 @@
 //关闭优惠劵手势
 @property (nonatomic,strong)UITapGestureRecognizer *coupontap;
 @property (nonatomic,strong)UIView *couponView;
+//关闭用户协议手势
+@property (nonatomic,strong)UITapGestureRecognizer *usertap;
+@property (nonatomic,strong)UserView *userView;
 @end
 
 @implementation RegisterViewController{
@@ -194,10 +198,34 @@
 #pragma mark 键盘的方法就是以上了～
 #pragma mark 创建用户协议视图
 - (IBAction)creatUserView:(UIButton *)sender {
-    
+    _userView = [[NSBundle mainBundle]loadNibNamed:@"UserView" owner:nil options:nil][0];
+    _userView.backgroundColor = [UIColor whiteColor];
+    _userView.layer.shadowOffset = CGSizeMake(1, 1);
+    _userView.layer.shadowColor = [[UIColor colorWithHexString:@"#24A676"]CGColor];
+    _userView.layer.shadowOpacity = 0.5;
+    _userView.layer.cornerRadius = 2 ;
+    _userView.layer.shadowRadius=5;
+    [self.view addSubview:_userView];
+    [_userView mas_makeConstraints:^(MASConstraintMaker *make) {
+        //make.centerX.equalTo(self.view.mas_centerX).with.offset(0);
+        make.top.equalTo(self.view.mas_top).with.offset(70);
+        make.left.equalTo(self.view.mas_left).with.offset(40);
+        make.right.equalTo(self.view.mas_right).with.offset(-40);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(-100);
+        
+    }];
+    //tap
+    _usertap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cencelUser:)];
+    _usertap.numberOfTapsRequired = 1;
+    [_userView addGestureRecognizer:_usertap];
     
 }
-
+-(void)cencelUser:(UITapGestureRecognizer*)tap{
+    [_userView removeFromSuperview];
+    [self.view removeGestureRecognizer:tap];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+#pragma mark 注册的判断
 - (IBAction)registerUser:(id)sender {
     NSString *Code = [NSString stringWithFormat:@"%d",_identifyingCode];
     NSLog(@"%@",_identifyingCodeTF.text);
