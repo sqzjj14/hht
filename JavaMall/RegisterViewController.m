@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *repassword;
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
+
 - (IBAction)registerUser:(id)sender;
 - (IBAction)back:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *registView;
@@ -191,6 +192,11 @@
     [UIView commitAnimations];
 }
 #pragma mark 键盘的方法就是以上了～
+#pragma mark 创建用户协议视图
+- (IBAction)creatUserView:(UIButton *)sender {
+    
+    
+}
 
 - (IBAction)registerUser:(id)sender {
     NSString *Code = [NSString stringWithFormat:@"%d",_identifyingCode];
