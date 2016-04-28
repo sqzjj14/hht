@@ -181,20 +181,24 @@
     UIButton*btn2=(UIButton*)[self viewWithTag:11];
     UIButton*btn3=(UIButton*)[self viewWithTag:12];
     UIButton*btn4=(UIButton*)[self viewWithTag:13];
+    UIButton*btn5=(UIButton*)[self viewWithTag:14];
     btn1.selected=NO;
     btn2.selected=NO;
     btn3.selected=NO;
     btn4.selected=NO;
+    btn5.selected=NO;
     
     if (sender.tag==10) {
         btn1.selected=YES;
         btn2.selected=NO;
         btn3.selected=NO;
         btn4.selected=NO;
+        btn5.selected=NO;
         [btn1 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
         [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn5 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
         
     }
@@ -203,10 +207,12 @@
         btn2.selected=YES;
         btn3.selected=NO;
         btn4.selected=NO;
+        btn5.selected=NO;
         [btn2 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
         [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn5 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag==12) {
@@ -214,10 +220,12 @@
         btn2.selected=NO;
         btn3.selected=YES;
         btn4.selected=NO;
+        btn5.selected=NO;
         [btn3 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
         [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.2]];
+        [btn5 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag == 13) {
@@ -225,10 +233,25 @@
         btn2.selected=NO;
         btn3.selected=NO;
         btn4.selected=YES;
+        btn5.selected=NO;
         [btn4 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
         [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn5 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        _btnTag = sender.tag - 10;
+    }
+    if (sender.tag == 14) {
+        btn1.selected=NO;
+        btn2.selected=NO;
+        btn3.selected=NO;
+        btn4.selected=NO;
+        btn5.selected=YES;
+        [btn5 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
+        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
     }
     [_allData removeAllObjects];

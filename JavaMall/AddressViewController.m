@@ -16,6 +16,13 @@
 @interface AddressViewController ()
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+//保存def_Btn Tag用的数组
+@property (nonatomic,strong) NSMutableArray *BtnArr;
+//选中的def_Btn tag
+@property (nonatomic,assign) NSInteger selectedBtnTag;
+//是否是vip客服
+@property (nonatomic,assign) NSInteger VIPSelected;
 - (IBAction)back:(id)sender;
 
 @end
@@ -38,6 +45,9 @@
     addresses = [NSMutableArray arrayWithCapacity:0];
     
     bgcolor = [UIColor colorWithHexString:@"#eff3f6"];
+    
+    _BtnArr = [[NSMutableArray alloc]init];
+    [_BtnArr removeAllObjects];
     
     //列表设置
     if([type isEqualToString:@"manage"]){
@@ -65,7 +75,7 @@
 }
 
 /**
- *  初始化新建地址视图
+ *  初始化新建地址视图  （也就是下面的新建按钮而已）
  */
 - (void) initAddView{
     UIView *addView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight - 44, kScreenWidth, 44)];
@@ -76,12 +86,12 @@
     [addButton setTitle:@"+ 新建地址" forState:UIControlStateNormal];
     [addButton.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
     [addButton addTarget:self action:@selector(add:) forControlEvents:UIControlEventTouchUpInside];
-    [addView addSubview:addButton];
+   // [addView addSubview:addButton];
     
     UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, 44, 0);
     tableView.contentInset = insets;
     
-    [self.view addSubview:addView];
+    //[self.view addSubview:addView];
 
 }
 
@@ -123,6 +133,7 @@
                            NSArray *addressList = [data objectForKey:@"addressList"];
                            for (NSDictionary *address in addressList) {
                                [addresses addObject:address];
+                               // addresses是一个可变数组，做数据源的吧
                            }
                            [tableView reloadData];
                            
@@ -152,19 +163,25 @@
  *
  *  @return
  */
+#pragma mark cellForRowAtIndexPath
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *address = [addresses objectAtIndex:indexPath.row];
+    
+    //存储defBtn的tag
+    NSString *defTag = [NSString stringWithFormat:@"%d",indexPath.row + 10];
+    [_BtnArr addObject:defTag];
+    
+    
     NSString *cellIdentifier = @"AddressCell2";
     if([type isEqualToString:@"manage"]){
         cellIdentifier = @"AddressCell";
     }else{
         cellIdentifier = @"AddressCell2";
-        if([[address objectForKey:@"def_addr"] intValue] == 1){
-            cellIdentifier = @"AddressCell2_Default";
-        }
     }
     
+    
     AddressCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
     cell.name.text = [address objectForKey:@"name"];
     cell.mobile.text = [address objectForKey:@"mobile"];
     cell.address.text = [address objectForKey:@"addr"];
@@ -172,19 +189,94 @@
     [cell.editBtn addTarget:self action:@selector(edit:) forControlEvents:UIControlEventTouchUpInside];
     cell.deleteBtn.tag = indexPath.row;
     [cell.deleteBtn addTarget:self action:@selector(delete:) forControlEvents:UIControlEventTouchUpInside];
-    cell.defaultBtn.hidden = NO;
-    if([cellIdentifier isEqualToString:@"AddressCell"]){
+    // --------changgeDefault
+    
+    cell.defaultBtn.tag = indexPath.row + 10;
+    
+    [cell.defaultBtn addTarget:self action:@selector(changeDefault:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //  -------checkout----------
+    if([cellIdentifier isEqualToString:@"AddressCell2"]){
         if([[address objectForKey:@"def_addr"] intValue] == 1){
-            cell.defaultBtn.hidden = NO;
-//            [cell.defaultBtn setImage:[UIImage imageNamed:@"cart_round_check2.png"] forState:UIControlStateNormal];
+            _selectedBtnTag = indexPath.row + 10;
         }else{
-            cell.defaultBtn.hidden = YES;
-//            [cell.defaultBtn setImage:[UIImage imageNamed:@"cart_round_check1.png"] forState:UIControlStateNormal];
+            cell.defaultBtn.backgroundColor = [UIColor lightGrayColor];
         }
     }
+    
+    //  －－－－PersonEdit－－－－－
+    if([cellIdentifier isEqualToString:@"AddressCell"]){
+
+        if([[address objectForKey:@"def_addr"] intValue] == 1){
+           [cell.defaultBtn setImage:[UIImage imageNamed:@"cart_round_check2.png"] forState:UIControlStateNormal];
+            _selectedBtnTag = indexPath.row + 10;
+        }else{
+           [cell.defaultBtn setImage:[UIImage imageNamed:@"cart_round_check1.png"] forState:UIControlStateNormal];
+        }
+
+    }
+    
+    // --------VIP------------
+    if ([[address objectForKey:@"VIP"]integerValue] == 1) {
+        //设置金色头像和手机
+        cell.userImage.image = [UIImage imageNamed:@"goldUser"];
+        cell.userImage.image = [UIImage imageNamed:@"goldMobile"];
+        //金头像特别的编辑模式
+        //记录vip的tag和 btn tag对比
+        cell.editBtn.tag = 10000;
+    }
+    
     return cell;
 }
+-(void)changeDefault:(UIButton*)btn{
+    if (btn.tag == _selectedBtnTag) {
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"已是默认地址" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
+    else{
+            //getHttp
+            NSString *content = [client get:[BASE_URL stringByAppendingString:@"/api/mobile/address!list.do"]];
+            
+                [SVProgressHUD dismiss];
+                
+                if([content length] == 0){
+                    [SVProgressHUD setInfoImage:nil];
+                    [SVProgressHUD showInfoWithStatus:@"默认地址修改失败" maskType:SVProgressHUDMaskTypeBlack];
+                    return;
+                }
+                
+                NSDictionary *result = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+                
+                if([[result objectForKey:@"result"] intValue] == 0){
+                    [SVProgressHUD setErrorImage:nil];
+                    [SVProgressHUD showErrorWithStatus:@"未登录或登录已过期，请重新登录！" maskType:SVProgressHUDMaskTypeBlack];
+                    [self presentViewController:[super controllerFromMainStroryBoard:@"Login"] animated:YES completion:nil];
+                    return;
+                }
+            if ([[result objectForKey:@"result"]intValue] == 1) {
+                [SVProgressHUD setErrorImage:nil];
+                [SVProgressHUD showErrorWithStatus:@"默认地址已更变" maskType:SVProgressHUDMaskTypeBlack];
+                
+                for (NSString *tagStr in _BtnArr) {
+                    UIButton *otherBtn = [self.view viewWithTag:[tagStr integerValue]];
+                    
+                    //根据编辑模式决定
+                    if([type isEqualToString:@"manage"]){
+                        [otherBtn setImage:[UIImage imageNamed:@"cart_round_check1.png"] forState:UIControlStateNormal];
+                        [btn setImage:[UIImage imageNamed:@"cart_round_check2.png"] forState:UIControlStateNormal];
+                    }else{
+                        otherBtn.backgroundColor = [UIColor lightGrayColor];
+                        btn.backgroundColor = [UIColor colorWithRed:190/255.0 green:20/255.0 blue:44/255.0 alpha:1];
+                    }
 
+                    
+                }
+                //记录新的选中tag
+                _selectedBtnTag = btn.tag;
+            }
+        }
+}
 /**
  *  添加地址
  *
@@ -205,6 +297,12 @@
     
     AddressEditViewController *addressEditViewController = (AddressEditViewController *)[super controllerFromMainStroryBoard:@"AddressEdit"];
     addressEditViewController.addressDic = [NSMutableDictionary dictionaryWithDictionary:address];
+    
+    //VIP
+    if (editBtn.tag == 10000) {
+        addressEditViewController.type = @"VIP";
+    }
+    
     [self presentViewController:addressEditViewController animated:YES completion:nil];
 }
 
@@ -215,14 +313,18 @@
  */
 - (void)delete:(id)sender{
     UIButton *deleteBtn = (UIButton *)sender;
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"您确认要删除这个地址吗？"
-                                                             delegate:self
-                                                    cancelButtonTitle:@"取消"
-                                               destructiveButtonTitle:@"确定"
-                                                    otherButtonTitles:nil
-                                  ];
-    actionSheet.tag = deleteBtn.tag;
-    [actionSheet showInView:self.view];
+    
+    [SVProgressHUD setErrorImage:nil];
+    [SVProgressHUD showErrorWithStatus:@"基地地址无法删除！" maskType:SVProgressHUDMaskTypeBlack];
+    return;
+//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"您确认要删除这个地址吗？"
+//                                                             delegate:self
+//                                                    cancelButtonTitle:@"取消"
+//                                               destructiveButtonTitle:@"确定"
+//                                                    otherButtonTitles:nil
+//                                  ];
+//    actionSheet.tag = deleteBtn.tag;
+//    [actionSheet showInView:self.view];
 }
 
 /**
@@ -234,7 +336,7 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
     if(buttonIndex !=[actionSheet cancelButtonIndex]){
         NSDictionary *address = [addresses objectAtIndex:actionSheet.tag];
-        
+    
         [SVProgressHUD showWithStatus:@"正在删除..." maskType:SVProgressHUDMaskTypeBlack];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                        ^{
@@ -286,6 +388,9 @@
         NSDictionary *address = [addresses objectAtIndex:indexPath.row];
         [[NSNotificationCenter defaultCenter] postNotificationName:nSelectAddress object:nil userInfo:address];
         [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    if ([type isEqualToString:@"manage"] == YES) {
+        //defaut Btn ~?
     }
 }
 

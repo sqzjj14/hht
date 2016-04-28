@@ -29,7 +29,6 @@
 - (IBAction)registerUser:(id)sender;
 - (IBAction)back:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *registView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headConstraints;
 
 //需要部分－滚动视图 与 验证码
 @property (weak, nonatomic) IBOutlet ImagePlayerView *playView;
@@ -110,19 +109,13 @@
     self.imageArr = @[[UIImage imageNamed:@"loginAD_1"],
                       [UIImage imageNamed:@"loginAD_2"],
                       [UIImage imageNamed:@"loginAD_3"]];
-    // set auto scroll interval to x seconds
     self.playView.scrollInterval = 3.0f;
     
-    // adjust pageControl position
     self.playView
     .pageControlPosition = ICPageControlPosition_BottomCenter;
     
-    // hide pageControl or not
     self.playView.hidePageControl = NO;
     
-    
-    // adjust edgeInset
-    //    self.imagePlayerView.edgeInsets = UIEdgeInsetsMake(10, 20, 30, 40);
     
     [self.playView reloadData];
     
@@ -167,33 +160,22 @@
 }
 #pragma mark textfield delegate
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    CGRect frame = [textField convertRect:textField.frame toView:self.view];
-    int i = 15;
-    int offset = frame.origin.y + i + frame.size.height - (self.view.frame.size.height - 250.0);
-    NSTimeInterval animationDuration = 0.30f;
-    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    
-    if (offset > 0) {
-        //_registView.frame = CGRectMake(0, -offset, self.view.frame.size.width,self.view.frame.size.height
-        _headConstraints.constant = -offset;
-        [UIView commitAnimations];
-    }
+//    CGRect frame = [textField convertRect:textField.frame toView:self.view];
+//    int i = 15;
+//    int offset = frame.origin.y + i + frame.size.height - (self.view.frame.size.height - 250.0);
+//    NSTimeInterval animationDuration = 0.30f;
+//    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+//    [UIView setAnimationDuration:animationDuration];
+//    
+//    if (offset > 0) {
+//        //_registView.frame = CGRectMake(0, -offset, self.view.frame.size.width,self.view.frame.size.height
+//        [UIView commitAnimations];
+//    }
 }
 
 //点击键盘上的Return按钮响应的方法
 -(IBAction)returnOnKeyboard:(UITextField *)sender{
-    if (sender == username) {
-        [self.password becomeFirstResponder];
-    }else if (sender == password) {
-        [self.repassword becomeFirstResponder];
-    }else if (sender == self.password){
-        [self.repassword becomeFirstResponder];
-    }
-    else if (sender == _identifyingCodeTF){
-        [self hidenKeyboard];
-       // [self registerUser:nil];
-    }
+    [self hidenKeyboard];
     
 }
 
@@ -206,10 +188,9 @@
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
     [UIView setAnimationDuration:animationDuration];
-    _headConstraints.constant = 0;
     [UIView commitAnimations];
 }
-
+#pragma mark 键盘的方法就是以上了～
 
 - (IBAction)registerUser:(id)sender {
     NSString *Code = [NSString stringWithFormat:@"%d",_identifyingCode];

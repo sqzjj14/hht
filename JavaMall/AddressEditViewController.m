@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *address;
 @property (weak, nonatomic) IBOutlet UILabel *regionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *arrowImage;
 - (IBAction)back:(id)sender;
 
 @end
@@ -89,12 +90,18 @@
     //tap手势
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectRegion:)];
     [tapGesture setNumberOfTapsRequired:1];
-    [regionView addGestureRecognizer:tapGesture];
+    //[regionView addGestureRecognizer:tapGesture];
     
     //添加手势，点击屏幕其他区域关闭键盘的操作
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     gesture.numberOfTapsRequired = 1;
-    [self.view addGestureRecognizer:gesture];
+    
+#pragma mark VIP客服才可以选择，用type属性
+    _arrowImage.hidden = YES;
+    if ([_type isEqualToString:@"VIP"]) {
+        [self.view addGestureRecognizer:gesture];
+        _arrowImage.hidden = NO;
+    }
 
     
     [self loadData:0 type:0];
@@ -405,6 +412,11 @@
         [SVProgressHUD showErrorWithStatus:@"手机号码不能为空！" maskType:SVProgressHUDMaskTypeBlack];
         return;
     }
+    if(mobile.text.length <= 4){
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"号码格式错误" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
     if(name.text.length == 0){
         [SVProgressHUD setErrorImage:nil];
         [SVProgressHUD showErrorWithStatus:@"收货人姓名不能为空！" maskType:SVProgressHUDMaskTypeBlack];
@@ -433,8 +445,10 @@
                        [params setValue:address.text forKey:@"addr"];
                        [params setValue:mobile.text forKey:@"mobile"];
                        
+                       //判断是编辑状态还是添加状态
                        NSString *action = addressDic == nil ? @"add" : @"edit";
                        if(addressDic != nil){
+                           //addressDic 是外部传入的对应地址字典 添加到请求的一个字段
                            [params setValue:[addressDic objectForKey:@"addr_id"] forKey:@"addr_id"];
                        }
                        NSString *content = [client post:[BASE_URL stringByAppendingFormat:@"/api/mobile/address!%@.do", action] withData:params];

@@ -11,4 +11,6 @@
 
 @interface AddressEditViewController : BaseViewController
 @property (strong, nonatomic) NSMutableDictionary *addressDic;
+@property (strong,nonatomic) NSString *type;
+
 @end
