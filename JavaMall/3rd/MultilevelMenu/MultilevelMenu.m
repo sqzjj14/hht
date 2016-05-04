@@ -504,7 +504,7 @@
         [_SecondView removeFromSuperview];//删除原来的table
          //[self bringSubviewToFront:self.slideView];
         [UIView animateWithDuration:0.3f animations:^{
-            self.slideView.frame = CGRectMake(-kLeftWidth * _scaleX, 0, kLeftWidth * _scaleX, _Height * -_scaleY);
+            self.slideView.frame = CGRectMake(-kLeftWidth * _scaleX, 0, kLeftWidth * _scaleX, _Height);
         } completion:^(BOOL finished) {
             [self.chartBgView addSubview:_chartview];
             [self.chartBgView bringSubviewToFront:_slideView];

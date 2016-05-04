@@ -23,12 +23,13 @@
 @property (weak, nonatomic) IBOutlet UIView *addressView;
 @property (weak, nonatomic) IBOutlet UIView *passwordView;
 @property (weak, nonatomic) IBOutlet UIView *logoutView;
-@property (weak, nonatomic) IBOutlet UILabel *i4logoutView;
 //优惠劵
 @property (weak, nonatomic) IBOutlet UIView *couponView;
 
 @property (weak, nonatomic) IBOutlet UIView *editView;
 
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginConstraint;
 
 @end
 
@@ -43,8 +44,10 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-   
-    //logoutView.translatesAutoresizingMaskIntoConstraints = NO;
+    if ([UIScreen mainScreen].bounds.size.height == 480){
+        _loginConstraint.constant = 85;
+    }
+
     //self.dataView.translatesAutoresizingMaskIntoConstraints = NO;
 //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:logoutView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.dataView attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
 //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:logoutView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.dataView attribute:NSLayoutAttributeTrailing multiplier:1 constant:0]];
@@ -68,10 +71,6 @@
     UITapGestureRecognizer *logoutTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(logout:)];
     [logoutTapGesture setNumberOfTapsRequired:1];
     [logoutView addGestureRecognizer:logoutTapGesture];
-    
-    UITapGestureRecognizer *rightLogoutGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(logout:)];
-    [rightLogoutGesture setNumberOfTapsRequired:1];
-    [_i4logoutView addGestureRecognizer:rightLogoutGesture];
     
     UITapGestureRecognizer *orderTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(order:)];
     [orderTapGesture setNumberOfTapsRequired:1];
@@ -119,7 +118,6 @@
         [loginPanel addSubview:loginBtn];
         
         logoutView.hidden = YES;
-        _i4logoutView.hidden = YES;
     }else{
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
@@ -142,7 +140,6 @@
         [loginPanel addSubview:levelLabel];
         
         logoutView.hidden = NO;
-        _i4logoutView.hidden = NO;
     }
     [loginView addSubview:loginPanel];
 }
