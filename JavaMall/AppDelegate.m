@@ -24,6 +24,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    //根据屏幕大小，等比例缩放下单界面左侧滑动UI
+      //如果是iphone4
+    if (kScreenHeight == 480) {
+        _autoSizeScaleX = 320/375.2f;
+        _autoSizeScaleY = 480/667.2f;
+    }
+      //iphone5
+    else if (kScreenHeight == 568) {
+        _autoSizeScaleX = 320/375.2f;
+        _autoSizeScaleY = 568/667.2f;
+    }
+     //iphone6 6plus
+    else{
+        _autoSizeScaleX = 1;
+        _autoSizeScaleY = 1;
+    }
+    
+    
     //设置SVProgressHUD的字体
     [SVProgressHUD setFont:[UIFont fontWithName:@"Helvetica Neue" size:14]];
     

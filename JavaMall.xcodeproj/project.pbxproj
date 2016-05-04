@@ -48,6 +48,8 @@
 		94B49C2F1CD0A38C006D6700 /* loginAD_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B49C2E1CD0A38C006D6700 /* loginAD_3.png */; };
 		94C6D2E61CAD2C9C00828E6B /* loginAD_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C6D2E51CAD2C9C00828E6B /* loginAD_1.png */; };
 		94C6D2EA1CAD2CA600828E6B /* loginAD_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C6D2E91CAD2CA600828E6B /* loginAD_2.png */; };
+		94E967A01CD302C000E5E4E4 /* goldUser.png in Resources */ = {isa = PBXBuildFile; fileRef = 94E9679F1CD302C000E5E4E4 /* goldUser.png */; };
+		94E967A41CD3169E00E5E4E4 /* goldMobile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94E967A31CD3169E00E5E4E4 /* goldMobile@2x.png */; };
 		94F505041CBF758D00A8161A /* ChartList.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F505031CBF758D00A8161A /* ChartList.m */; };
 		94F505061CBF75CA00A8161A /* ChartList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94F505051CBF75CA00A8161A /* ChartList.xib */; };
 		94F505081CBF880500A8161A /* greenBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F505071CBF880500A8161A /* greenBtn.png */; };
@@ -355,6 +357,8 @@
 		94B49C2E1CD0A38C006D6700 /* loginAD_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginAD_3.png; sourceTree = "<group>"; };
 		94C6D2E51CAD2C9C00828E6B /* loginAD_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginAD_1.png; sourceTree = "<group>"; };
 		94C6D2E91CAD2CA600828E6B /* loginAD_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginAD_2.png; sourceTree = "<group>"; };
+		94E9679F1CD302C000E5E4E4 /* goldUser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldUser.png; sourceTree = "<group>"; };
+		94E967A31CD3169E00E5E4E4 /* goldMobile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goldMobile@2x.png"; sourceTree = "<group>"; };
 		94F505021CBF758D00A8161A /* ChartList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartList.h; sourceTree = "<group>"; };
 		94F505031CBF758D00A8161A /* ChartList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartList.m; sourceTree = "<group>"; };
 		94F505051CBF75CA00A8161A /* ChartList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartList.xib; sourceTree = "<group>"; };
@@ -949,6 +953,8 @@
 		943180291CCF58AB0073EDFE /* 地址 */ = {
 			isa = PBXGroup;
 			children = (
+				94E967A31CD3169E00E5E4E4 /* goldMobile@2x.png */,
+				94E9679F1CD302C000E5E4E4 /* goldUser.png */,
 				D9AF8B071B4517BA00D22811 /* AddressCell.h */,
 				D9AF8B081B4517BA00D22811 /* AddressCell.m */,
 				D9AF8B041B4512CF00D22811 /* AddressViewController.h */,
@@ -997,6 +1003,17 @@
 				9480B6141CD2044200D5048A /* UserView.xib */,
 			);
 			name = "注册";
+			sourceTree = "<group>";
+		};
+		94E967A51CD33C8000E5E4E4 /* 订单 */ = {
+			isa = PBXGroup;
+			children = (
+				D9AF8B311B458D3C00D22811 /* MyOrderViewController.h */,
+				D9AF8B321B458D3C00D22811 /* MyOrderViewController.m */,
+				D986280B1B4D6EFB0006C9FD /* OrderDetailViewController.h */,
+				D986280C1B4D6EFB0006C9FD /* OrderDetailViewController.m */,
+			);
+			name = "订单";
 			sourceTree = "<group>";
 		};
 		D9132BB51B3C51F500509ECB /* 3rd */ = {
@@ -1413,6 +1430,7 @@
 				943180211CCEF7730073EDFE /* 登入 */,
 				943180231CCEF8000073EDFE /* MainTabbar */,
 				9496AF3E1CC8D79500B81D91 /* 优惠劵 */,
+				94E967A51CD33C8000E5E4E4 /* 订单 */,
 				943180221CCEF7A50073EDFE /* 废弃类 */,
 				D9605B041B31BA5A00D33537 /* BaseViewController.h */,
 				D9605B051B31BA5A00D33537 /* BaseViewController.m */,
@@ -1433,14 +1451,10 @@
 				D9AF8B0E1B45289300D22811 /* PaymentDeliveryViewController.m */,
 				D9AF8B231B454B8900D22811 /* SearchViewController.h */,
 				D9AF8B241B454B8900D22811 /* SearchViewController.m */,
-				D9AF8B311B458D3C00D22811 /* MyOrderViewController.h */,
-				D9AF8B321B458D3C00D22811 /* MyOrderViewController.m */,
 				D9A5F4E21B4B8B32002B57F6 /* CheckoutSuccessViewController.h */,
 				D9A5F4E31B4B8B32002B57F6 /* CheckoutSuccessViewController.m */,
 				D9A5F4ED1B4BD55C002B57F6 /* Constants.h */,
 				D9A5F4EE1B4BD55C002B57F6 /* Constants.m */,
-				D986280B1B4D6EFB0006C9FD /* OrderDetailViewController.h */,
-				D986280C1B4D6EFB0006C9FD /* OrderDetailViewController.m */,
 				D986280E1B4E24120006C9FD /* MyFavoriteViewController.h */,
 				D986280F1B4E24120006C9FD /* MyFavoriteViewController.m */,
 				D98628141B4E2B5A0006C9FD /* GoodsNavigationViewController.h */,
@@ -1761,7 +1775,6 @@
 				TargetAttributes = {
 					D9B08F9D1B19CB8900F7F003 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 9Z92Q2DDAJ;
 					};
 				};
 			};
@@ -1792,6 +1805,7 @@
 				D91059681B4EDE2D00451BFC /* Default-736h@3x.png in Resources */,
 				D98AD2A91B40015100658441 /* pd_collected@2x.png in Resources */,
 				D9132C521B3C51F500509ECB /* MultilevelCollectionViewCell.xib in Resources */,
+				94E967A01CD302C000E5E4E4 /* goldUser.png in Resources */,
 				D95AE2CA1B43DB3E003821EE /* cart_round_check1@2x.png in Resources */,
 				D9AF8B1F1B453F4E00D22811 /* my_address@2x.png in Resources */,
 				94C6D2EA1CAD2CA600828E6B /* loginAD_2.png in Resources */,
@@ -1881,6 +1895,7 @@
 				D9AF8B201B453F4E00D22811 /* my_favorite@2x.png in Resources */,
 				D95AE2CB1B43DB3E003821EE /* cart_round_check1@3x.png in Resources */,
 				D9AAFD681CA50DA800CCF6D5 /* wechat@2x.png in Resources */,
+				94E967A41CD3169E00E5E4E4 /* goldMobile@2x.png in Resources */,
 				94FC9EBF1CCA1CD200DFE71F /* borad.png in Resources */,
 				D95AE2C21B43D1E4003821EE /* cartNoContentIcon@3x.png in Resources */,
 				D98AD2A31B3FEC5600658441 /* jshop_list_back@3x.png in Resources */,
@@ -2138,7 +2153,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b5d63eeb-c6f7-4c87-89cc-688395e91da2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2183,7 +2198,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b5d63eeb-c6f7-4c87-89cc-688395e91da2";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2194,8 +2209,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2216,9 +2231,9 @@
 					"$(PROJECT_DIR)/JavaMall/3rd/Wechat",
 					"$(PROJECT_DIR)/JavaMall/3rd/Unionpay",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.58hht.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.58hht.runzhi;
 				PRODUCT_NAME = javamall;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b5d63eeb-c6f7-4c87-89cc-688395e91da2";
 			};
 			name = Debug;
 		};
@@ -2227,8 +2242,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2249,9 +2264,9 @@
 					"$(PROJECT_DIR)/JavaMall/3rd/Wechat",
 					"$(PROJECT_DIR)/JavaMall/3rd/Unionpay",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.58hht.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.58hht.runzhi;
 				PRODUCT_NAME = javamall;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b5d63eeb-c6f7-4c87-89cc-688395e91da2";
 			};
 			name = Release;
 		};

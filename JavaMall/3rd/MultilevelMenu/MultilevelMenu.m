@@ -19,6 +19,7 @@
 #import "UIColor+HexString.h"
 #import "Defines.h"
 #import "ChartList.h"
+#import "AppDelegate.h"
 
 
 #define kImageDefaultName @"tempShop"
@@ -53,6 +54,10 @@
 //@property (assign,nonatomic) CGRect frame;
 @property(assign,nonatomic) BOOL isReturnLastOffset;
 
+//屏幕比例系数
+@property(assign,nonatomic) CGFloat scaleX;
+@property(assign,nonatomic) CGFloat scaleY;
+
 @end
 @implementation MultilevelMenu{
     HttpClient *client;
@@ -67,7 +72,10 @@
  */
 -(id)initWithFrame:(CGRect)frame WithData:(NSArray *)data withSelectIndex:(void (^)(NSInteger, NSInteger, id))selectIndex{
     
-    
+    //获取各种屏幕的比例
+    AppDelegate *appdele = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    _scaleX = appdele.autoSizeScaleX;
+    _scaleY = appdele.autoSizeScaleY;
     
     if (self  == [super initWithFrame:frame]) {
         if (data.count==0) {
@@ -88,7 +96,7 @@
         _Height = frame.size.height;
         _Wight = frame.size.width;
         //左view
-        self.slideView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,kLeftWidth,frame.size.height)];
+        self.slideView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,kLeftWidth * _scaleX,frame.size.height)];
         self.slideView.backgroundColor =[UIColor whiteColor];
         //[self addSubview:self.slideView];
         //创建手势
@@ -127,8 +135,11 @@
             
             Menu *title = _allData[i];
             if (title) {
+                
+#pragma mark 一级设置
+                
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-                btn.frame = CGRectMake(2.5 , 2 + i * 50, kLeftWidth-6, 47);
+                btn.frame = CGRectMake(2.5 * _scaleX , (2 + i * 50) *_scaleY, (kLeftWidth-6) * _scaleX, 47 * _scaleY);
                 
                 [btn setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
                 //[btn setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
@@ -150,10 +161,9 @@
             }
         }
         
-        /**
-         左边的视图
-         */
-        self.leftTablew=[[UITableView alloc] initWithFrame:CGRectMake(0, 2+ 50 * _allData.count, kLeftWidth, frame.size.height - (50 * _allData.count) )];
+#pragma mark 二级设置
+        
+        self.leftTablew=[[UITableView alloc] initWithFrame:CGRectMake(0, (2+ 50 * _allData.count) * _scaleY, kLeftWidth * _scaleX, frame.size.height - (50 * _allData.count) *_scaleY)];
         self.leftTablew.dataSource=self;
         self.leftTablew.delegate=self;
         
@@ -182,11 +192,13 @@
     UIButton*btn3=(UIButton*)[self viewWithTag:12];
     UIButton*btn4=(UIButton*)[self viewWithTag:13];
     UIButton*btn5=(UIButton*)[self viewWithTag:14];
+    UIButton*btn6=(UIButton*)[self viewWithTag:15];
     btn1.selected=NO;
     btn2.selected=NO;
     btn3.selected=NO;
     btn4.selected=NO;
     btn5.selected=NO;
+    btn6.selected=NO;
     
     if (sender.tag==10) {
         btn1.selected=YES;
@@ -194,11 +206,13 @@
         btn3.selected=NO;
         btn4.selected=NO;
         btn5.selected=NO;
+        btn6.selected=NO;
         [btn1 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
         [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn5 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn6 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
         
     }
@@ -208,11 +222,13 @@
         btn3.selected=NO;
         btn4.selected=NO;
         btn5.selected=NO;
+        btn6.selected=NO;
         [btn2 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
         [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn5 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn6 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag==12) {
@@ -221,11 +237,13 @@
         btn3.selected=YES;
         btn4.selected=NO;
         btn5.selected=NO;
+        btn6.selected=NO;
         [btn3 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
         [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.2]];
         [btn5 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn6 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag == 13) {
@@ -234,11 +252,13 @@
         btn3.selected=NO;
         btn4.selected=YES;
         btn5.selected=NO;
+        btn6.selected=NO;
         [btn4 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
         [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn5 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn6 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
     }
     if (sender.tag == 14) {
@@ -247,11 +267,28 @@
         btn3.selected=NO;
         btn4.selected=NO;
         btn5.selected=YES;
+        btn6.selected=NO;
         [btn5 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
         [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn6 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        _btnTag = sender.tag - 10;
+    }
+    if (sender.tag == 15) {
+        btn1.selected=NO;
+        btn2.selected=NO;
+        btn3.selected=NO;
+        btn4.selected=NO;
+        btn5.selected=NO;
+        btn6.selected=YES;
+        [btn6 setBackgroundColor:[UIColor colorWithHexString:@"#24A676"]];
+        [btn2 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn3 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn1 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn4 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
+        [btn5 setBackgroundColor:[UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255. alpha:0.3]];
         _btnTag = sender.tag - 10;
     }
     [_allData removeAllObjects];
@@ -264,7 +301,7 @@
     NSLog(@"leftPan");
     [_SecondView removeFromSuperview];
     static CGPoint point;
-    point = CGPointMake(kLeftWidth/2, _Height/2);
+    point = CGPointMake(kLeftWidth/2*_scaleX, _Height/2);
     CGPoint offsetPoint = [pan translationInView:self];
     
    // _slideView.center = CGPointMake(point.x + offsetPoint.x, point.y);
@@ -272,17 +309,17 @@
     if (pan.state == UIGestureRecognizerStateChanged) {
         if ( offsetPoint.x < 0) {
             _slideView.center = CGPointMake(point.x + offsetPoint.x, point.y);
-            if (_slideView.center.x > kLeftWidth/2) {
+            if (_slideView.center.x > kLeftWidth/2*_scaleX) {
                 _slideView.center = point;
             }
         }
     }
     if (pan.state == UIGestureRecognizerStateEnded) {
-        if (_slideView.center.x > (kLeftWidth/2)-15){
+        if (_slideView.center.x > (kLeftWidth/2-15)*_scaleX){
             _slideView.center = point;
         }
-        else if (_slideView.center.x < (kLeftWidth/2)-15){
-            _slideView.center = CGPointMake(-kLeftWidth/2, _Height/2);
+        else if (_slideView.center.x < (kLeftWidth/2-15)*_scaleX){
+            _slideView.center = CGPointMake(-kLeftWidth/2*_scaleX, _Height/2);
         }
     }
 }
@@ -291,21 +328,21 @@
     
     static CGPoint currentpoint;
     currentpoint = _slideView.center;
-    CGPoint point = CGPointMake(-kLeftWidth/2, _Height/2);
-    CGPoint initpoint = CGPointMake(kLeftWidth/2, _Height/2);
+    CGPoint point = CGPointMake((-kLeftWidth/2) * _scaleX, _Height/2);
+    CGPoint initpoint = CGPointMake((kLeftWidth/2) * _scaleX, _Height/2);
     CGPoint offsetPoint = [pan translationInView:self];
     
     if (pan.state == UIGestureRecognizerStateChanged) {
         if ( offsetPoint.x > 0 && (_slideView.center.x != initpoint.x)) {
             _slideView.center = CGPointMake(point.x + offsetPoint.x, point.y);
-            if (_slideView.center.x > kLeftWidth/2) {
+            if (_slideView.center.x > (kLeftWidth/2) * _scaleX) {
                 _slideView.center = initpoint;
             }
             
          }
         if (offsetPoint.x > 0 && (_slideView.center.x < initpoint.x)) {
             _slideView.center = CGPointMake(currentpoint.x + offsetPoint.x, point.y);
-            if (_slideView.center.x > kLeftWidth/2) {
+            if (_slideView.center.x > (kLeftWidth/2) * _scaleX) {
                 _slideView.center = initpoint;
             }
             
@@ -318,16 +355,16 @@
     }
     
     if (pan.state == UIGestureRecognizerStateEnded) {
-        if (_slideView.center.x > (-kLeftWidth/2)+20){
+        if (_slideView.center.x > (-kLeftWidth/2 +20)* _scaleX){
             _slideView.center = initpoint;
         }
-        else if (_slideView.center.x < (-kLeftWidth/2)+20){
+        else if (_slideView.center.x < (-kLeftWidth/2+20)* _scaleX){
             _slideView.center = point;
         }
-        if (_slideView.center.x > (kLeftWidth/2)-15){
+        if (_slideView.center.x > (kLeftWidth/2 -15)* _scaleX){
             _slideView.center = initpoint;
         }
-        else if (_slideView.center.x < (kLeftWidth/2)-15){
+        else if (_slideView.center.x < (kLeftWidth/2 -15)* _scaleX){
             _slideView.center = point;
         }
     }
@@ -375,7 +412,9 @@
     UIButton*btn2=(UIButton*)[self viewWithTag:11];
     UIButton*btn3=(UIButton*)[self viewWithTag:12];
     UIButton*btn4=(UIButton*)[self viewWithTag:13];
-    if (btn1.selected == NO && btn2.selected == NO &&btn3.selected == NO &&btn4.selected == NO) {
+    UIButton*btn5=(UIButton*)[self viewWithTag:14];
+    UIButton*btn6=(UIButton*)[self viewWithTag:15];
+    if (btn1.selected == NO && btn2.selected == NO &&btn3.selected == NO &&btn4.selected == NO && btn5.selected == NO && btn6.selected == NO) {
         return 0; //初次进入不显示二级table
     }
     Menu *title=self.allData[_btnTag];
@@ -430,7 +469,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 50 * _scaleX;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -447,9 +486,11 @@
     Menu * title=self.allData[_btnTag];
     Menu * title2 = title.nextArray[indexPath.row];
     NSArray *data = title2.nextArray;
+
+#pragma mark 三级设置
     
     [_SecondView removeFromSuperview];//删除原来的table
-    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth, 50 * _allData.count, 90, 50 * data.count) WithData: data withChartDetail:^(Menu* info) {
+    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth * _scaleX,( 50 * _allData.count) * _scaleY, kLeftWidth * _scaleX, (50 * data.count) * _scaleX) WithData: data withChartDetail:^(Menu* info) {
                 NSLog(@"cid=%@",info.ID);
         //删除两个引导图画
         if (_slideBgimageView || _checkBgimageView) {
@@ -463,7 +504,7 @@
         [_SecondView removeFromSuperview];//删除原来的table
          //[self bringSubviewToFront:self.slideView];
         [UIView animateWithDuration:0.3f animations:^{
-            self.slideView.frame = CGRectMake(-kLeftWidth, 0, kLeftWidth, _Height);
+            self.slideView.frame = CGRectMake(-kLeftWidth * _scaleX, 0, kLeftWidth * _scaleX, _Height * -_scaleY);
         } completion:^(BOOL finished) {
             [self.chartBgView addSubview:_chartview];
             [self.chartBgView bringSubviewToFront:_slideView];

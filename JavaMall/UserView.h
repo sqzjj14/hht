@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UserView : UIView
+@property (weak, nonatomic) IBOutlet UIScrollView *userScrollView;
+@property (weak, nonatomic) IBOutlet UILabel *yesBtn;
 
 @end

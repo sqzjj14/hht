@@ -13,6 +13,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (assign,nonatomic) CGFloat autoSizeScaleX;
+@property (assign,nonatomic) CGFloat autoSizeScaleY;
+
 
 @end
 

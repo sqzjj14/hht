@@ -25,6 +25,7 @@
 @property(strong,nonatomic) UITapGestureRecognizer *keyboradTap;
 //@property(strong,nonatomic) UIImageView *imageView;
 @property(strong,nonatomic) imageDetailView *imageView;
+
 @end
 
 

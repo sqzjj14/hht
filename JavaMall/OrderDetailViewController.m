@@ -30,6 +30,7 @@
     UIView *productView;
     UIView *paymentView;
     UIView *receiptView;
+    UIView *couponView;
     UIView *amountView;
     UIView *operationView;
     
@@ -96,6 +97,7 @@
     [self initProduct];
     [self initPayment];
     //[self initReceipt];
+    [self initCoupon];
     [self initAmount];
     [self.view addSubview:scrollView];
     
@@ -192,7 +194,7 @@
         [count setTextColor:[UIColor blackColor]];
         [listView addSubview:count];
         
-        UILabel *price = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 60, 18, 50, 18)];
+        UILabel *price = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 73, 18, 65, 18)];
         price.text = [NSString stringWithFormat:@"￥%.2f",[[item objectForKey:@"price"] doubleValue]];
         price.font = [UIFont systemFontOfSize:12];
         [price setTextColor:[UIColor redColor]];
@@ -295,12 +297,32 @@
     [super setBorderWithView:receiptView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#edeef0"] borderWidth:0.5f];
     [scrollView addSubview:receiptView];
 }
-
+#pragma mark coupon视图创建
+- (void) initCoupon{
+    couponView = [[UIView alloc] initWithFrame:CGRectMake(0, 131 + itemArray.count * 55 + 56 + 5, kScreenWidth, 56)];
+    couponView.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 18, 100, 20)];
+    titleLabel.text = @"优惠劵";
+    titleLabel.font = [UIFont systemFontOfSize:14];
+    [titleLabel setTextColor:[UIColor darkGrayColor]];
+    [couponView addSubview:titleLabel];
+    
+    UILabel *couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 200, 20, 180, 15)];
+    couponLabel.text = [order objectForKey:@"coupon_type"];
+    couponLabel.font = [UIFont systemFontOfSize:12];
+    couponLabel.textAlignment = NSTextAlignmentRight;
+    [couponLabel setTextColor:[UIColor darkGrayColor]];
+    [couponView addSubview:couponLabel];
+    
+    [super setBorderWithView:receiptView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#edeef0"] borderWidth:0.5f];
+    [scrollView addSubview:couponView];
+}
 - (void) initAmount{
-    amountView = [[UIView alloc] initWithFrame:CGRectMake(0, 131 + itemArray.count * 55 + 56 * 2 + 10, kScreenWidth, 100)];
+    amountView = [[UIView alloc] initWithFrame:CGRectMake(0, 131 + itemArray.count * 55 + 56 * 2 + 10, kScreenWidth, 100 + 20)]; //20是优惠劵view
     amountView.backgroundColor = [UIColor whiteColor];
     
-    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 50)];
+    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 70)];
     
     UILabel *amoutTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 3, 100, 20)];
     amoutTitleLabel.text = @"商品总额";
@@ -326,9 +348,24 @@
     [shippingLabel setTextColor:[UIColor redColor]];
     [view1 addSubview:shippingLabel];
     [amountView addSubview:view1];
+    
+    //coupon
+    UILabel *couponTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 43, 100, 20)];
+    couponTitleLabel.text = @"+ 优惠劵";
+    couponTitleLabel.font = [UIFont systemFontOfSize:14];
+    [couponTitleLabel setTextColor:[UIColor darkGrayColor]];
+    [view1 addSubview:couponTitleLabel];
+    UILabel *couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 200, 43, 180, 20)];
+#pragma mark 新加代金劵参数
+    couponLabel.text = [NSString stringWithFormat:@"-￥%.2f", [[order objectForKey:@"coupon_amount"] doubleValue]];
+    couponLabel.font = [UIFont systemFontOfSize:12];
+    couponLabel.textAlignment = NSTextAlignmentRight;
+    [couponLabel setTextColor:[UIColor redColor]];
+    [view1 addSubview:couponLabel];
+    
     [super setBorderWithView:view1 top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#edeef0"] borderWidth:0.5f];
     
-    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 50, kScreenWidth, 50)];
+    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 70, kScreenWidth, 50)];
     UILabel *payTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 5, 100, 20)];
     payTitleLabel.text = @"实付款";
     payTitleLabel.font = [UIFont systemFontOfSize:14];

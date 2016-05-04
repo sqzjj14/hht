@@ -486,6 +486,7 @@
         [self presentViewController:[super controllerFromMainStroryBoard:@"Login"] animated:YES completion:nil];
         return;
     }
+#pragma mark 不满1000不能下单修改处
       if (_amout < 1000) {
           [SVProgressHUD setErrorImage:nil];
           [SVProgressHUD showErrorWithStatus:@"金额未满1000元无法下单！" maskType: SVProgressHUDMaskTypeBlack];

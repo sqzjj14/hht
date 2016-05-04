@@ -189,6 +189,8 @@
     [cell.editBtn addTarget:self action:@selector(edit:) forControlEvents:UIControlEventTouchUpInside];
     cell.deleteBtn.tag = indexPath.row;
     [cell.deleteBtn addTarget:self action:@selector(delete:) forControlEvents:UIControlEventTouchUpInside];
+    cell.userImage.image = [UIImage imageNamed:@"address_name_icon"];
+    cell.mobileImage.image = [UIImage imageNamed:@"address_phone_icon"];
     // --------changgeDefault
     
     cell.defaultBtn.tag = indexPath.row + 10;
@@ -199,6 +201,8 @@
     if([cellIdentifier isEqualToString:@"AddressCell2"]){
         if([[address objectForKey:@"def_addr"] intValue] == 1){
             _selectedBtnTag = indexPath.row + 10;
+            //cell.defaultBtn.backgroundColor = [UIColor colorWithRed:190/255.0 green:20/255.0 blue:44/255.0 alpha:1];
+            cell.defaultBtn.backgroundColor = [UIColor redColor];
         }else{
             cell.defaultBtn.backgroundColor = [UIColor lightGrayColor];
         }
@@ -217,13 +221,10 @@
     }
     
     // --------VIP------------
-    if ([[address objectForKey:@"VIP"]integerValue] == 1) {
+    if ([[address objectForKey:@"vip"]integerValue] == 1) {
         //设置金色头像和手机
         cell.userImage.image = [UIImage imageNamed:@"goldUser"];
-        cell.userImage.image = [UIImage imageNamed:@"goldMobile"];
-        //金头像特别的编辑模式
-        //记录vip的tag和 btn tag对比
-        cell.editBtn.tag = 10000;
+        cell.mobileImage.image = [UIImage imageNamed:@"goldMobile"];
     }
     
     return cell;
@@ -235,8 +236,9 @@
         return;
     }
     else{
+            NSString *addr_id = [addresses[btn.tag - 10]objectForKey:@"addr_id"];
             //getHttp
-            NSString *content = [client get:[BASE_URL stringByAppendingString:@"/api/mobile/address!list.do"]];
+            NSString *content = [client get:[NSString stringWithFormat:@"http://wap.58hht.com/api/shop/memberAddress!setDefAddr.do?addr_id=%@",addr_id]];
             
                 [SVProgressHUD dismiss];
                 
@@ -269,11 +271,12 @@
                         otherBtn.backgroundColor = [UIColor lightGrayColor];
                         btn.backgroundColor = [UIColor colorWithRed:190/255.0 green:20/255.0 blue:44/255.0 alpha:1];
                     }
-
+                   
                     
                 }
                 //记录新的选中tag
                 _selectedBtnTag = btn.tag;
+                [self loadAddressList];
             }
         }
 }
@@ -299,7 +302,7 @@
     addressEditViewController.addressDic = [NSMutableDictionary dictionaryWithDictionary:address];
     
     //VIP
-    if (editBtn.tag == 10000) {
+    if ([[address objectForKey:@"vip"]intValue] == 1) {
         addressEditViewController.type = @"VIP";
     }
     

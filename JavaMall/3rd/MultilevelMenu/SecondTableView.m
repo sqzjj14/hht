@@ -12,6 +12,7 @@
 #import "TwoCell.h"
 #import "Menu.h"
 #import "UIColor+HexString.h"
+#import "AppDelegate.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -22,6 +23,9 @@
 
 @property(strong,nonatomic) UIColor * leftBgColor;
 @property(strong,nonatomic) UIColor * leftSeparatorColor;
+
+@property(assign,nonatomic) CGFloat theX;
+@property(assign,nonatomic) CGFloat theY;
 @end
 
 
@@ -29,6 +33,10 @@
 
 -(id)initWithFrame:(CGRect)frame WithData:(NSArray*)data
    withChartDetail:(void(^)(id info))ChartDetail{
+    
+    AppDelegate *appdele = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    _theX = appdele.autoSizeScaleX;
+    _theY = appdele.autoSizeScaleY;
     
     self.leftBgColor= UIColorFromRGB(0xF3F4F6);
     self.leftSeparatorColor=UIColorFromRGB(0xE5E5E5);
@@ -110,7 +118,7 @@
    // cell.backgroundColor = UIColorFromRGB(0xF3F4F6);
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 50 * _theX;
 }
 
 @end

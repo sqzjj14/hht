@@ -190,7 +190,7 @@
         [count setTextColor:[UIColor blackColor]];
         [listView addSubview:count];
         
-        UILabel *price = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 60, 18, 50, 18)];
+        UILabel *price = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 70, 18, 80, 18)];
         price.text = [NSString stringWithFormat:@"￥%.2f", [[item objectForKey:@"price"] doubleValue]];
         price.font = [UIFont systemFontOfSize:12];
         [price setTextColor:[UIColor redColor]];

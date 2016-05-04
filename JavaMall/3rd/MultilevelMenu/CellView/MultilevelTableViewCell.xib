@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,7 +17,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="whiteBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="sCK-j6-my5">
                         <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJ2-ih-FZh">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJ2-ih-FZh">
                         <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -25,8 +25,16 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="eJ2-ih-FZh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1Zc-nz-XEd"/>
+                    <constraint firstAttribute="bottom" secondItem="eJ2-ih-FZh" secondAttribute="bottom" constant="1" id="2FZ-qd-eOf"/>
+                    <constraint firstItem="sCK-j6-my5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="C8p-AX-RPN"/>
+                    <constraint firstItem="sCK-j6-my5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Dh5-IW-Ijq"/>
+                    <constraint firstAttribute="trailing" secondItem="sCK-j6-my5" secondAttribute="trailing" id="K48-aI-XeK"/>
                     <constraint firstAttribute="bottom" secondItem="sCK-j6-my5" secondAttribute="bottom" constant="1" id="K9f-AX-hBm"/>
+                    <constraint firstAttribute="trailing" secondItem="eJ2-ih-FZh" secondAttribute="trailing" id="Mqc-O9-NNa"/>
                     <constraint firstAttribute="trailing" secondItem="sCK-j6-my5" secondAttribute="trailing" id="NKf-sy-RKJ"/>
+                    <constraint firstItem="eJ2-ih-FZh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ne6-7i-33r"/>
+                    <constraint firstAttribute="bottom" secondItem="sCK-j6-my5" secondAttribute="bottom" constant="1" id="YGr-e9-57p"/>
                     <constraint firstItem="sCK-j6-my5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ee3-nC-8f9"/>
                     <constraint firstItem="sCK-j6-my5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ial-Ug-g1F"/>
                 </constraints>

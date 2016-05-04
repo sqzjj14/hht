@@ -27,6 +27,10 @@
 @property (nonatomic,strong) NSMutableDictionary *selectCouponDic;
 @property (nonatomic,copy) NSString *couponPrice; //优惠劵的里价格！！
 
+//姓名 手机 未设置
+@property (nonatomic,copy) NSString *UnSetName;
+@property (nonatomic,copy) NSString *UnSetMobile;
+
 @end
 
 @implementation CheckoutViewController{
@@ -125,7 +129,7 @@
     [SVProgressHUD showWithStatus:@"载入中..." maskType:SVProgressHUDMaskTypeBlack];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                    ^{
-                       NSString *content = [client get:[BASE_URL stringByAppendingString:@"/api/mobile/address!defaultAddress.do"]];
+                       NSString *content = [client get:[BASE_URL stringByAppendingString:@"/api/shop/memberAddress!list.do"]];
                        dispatch_async(dispatch_get_main_queue(), ^{
                            
                            if([content length] == 0){
@@ -168,21 +172,42 @@
         [addressView addSubview:createAddressBtn];
     }else{
         UIImageView *nameImage = [[UIImageView alloc] initWithFrame:CGRectMake(8, 20, 14, 14)];
-        nameImage.image = [UIImage imageNamed:@"address_name_icon.png"];
+        
+        //vip设置
+        if ([[address objectForKey:@"vip"]intValue] ==1) {
+            nameImage.image = [UIImage imageNamed:@"goldUser"];
+        }
+        else{
+            nameImage.image = [UIImage imageNamed:@"address_name_icon.png"];
+        }
+        
         [addressView addSubview:nameImage];
         
         UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(nameImage.frame.origin.x + 18, 14, 100, 25)];
         nameLabel.text = [address objectForKey:@"name"];
+        //判断是否设置过名字
+        _UnSetName = nameLabel.text;
         nameLabel.font = [UIFont systemFontOfSize:12];
         [nameLabel setTextColor:[UIColor darkGrayColor]];
         [addressView addSubview:nameLabel];
         
         UIImageView *mobileImage = [[UIImageView alloc] initWithFrame:CGRectMake(100, 20, 14, 14)];
-        mobileImage.image = [UIImage imageNamed:@"address_phone_icon.png"];
+        
+        //vip设置
+        if ([[address objectForKey:@"vip"]intValue] ==1) {
+            mobileImage.image = [UIImage imageNamed:@"goldMobile"];
+        }
+        else{
+            mobileImage.image = [UIImage imageNamed:@"address_phone_icon.png"];
+        }
+        
+        
         [addressView addSubview:mobileImage];
         
         UILabel *mobileLabel = [[UILabel alloc] initWithFrame:CGRectMake(mobileImage.frame.origin.x + 18, 14, 200, 25)];
         mobileLabel.text = [address objectForKey:@"mobile"];
+        //判断是否设置过电话
+        _UnSetMobile = mobileLabel.text;
         mobileLabel.font = [UIFont systemFontOfSize:12];
         [mobileLabel setTextColor:[UIColor darkGrayColor]];
         [addressView addSubview:mobileLabel];
@@ -664,6 +689,16 @@
     if(payment == nil){
         [SVProgressHUD setErrorImage:nil];
         [SVProgressHUD showErrorWithStatus:@"请选择支付方式！" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
+    if([_UnSetName isEqualToString:@"未设置"]){
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"请填写联系人姓名！" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
+    if([_UnSetMobile isEqualToString:@"未设置"]){
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"请填写联系电话！" maskType:SVProgressHUDMaskTypeBlack];
         return;
     }
     [SVProgressHUD showWithStatus:@"正在提交订单..." maskType:SVProgressHUDMaskTypeBlack];

@@ -53,6 +53,8 @@
 //关闭用户协议手势
 @property (nonatomic,strong)UITapGestureRecognizer *usertap;
 @property (nonatomic,strong)UserView *userView;
+//商户号
+@property (weak, nonatomic) IBOutlet UITextField *business;
 @end
 
 @implementation RegisterViewController{
@@ -89,6 +91,7 @@
     [password addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [repassword addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
      [_identifyingCodeTF addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
+     [_business addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
     
     //添加手势，点击屏幕其他区域关闭键盘的操作
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
@@ -105,6 +108,8 @@
     
     // test
     //[self initCouponView];
+    NSLog(@"x=%f",_userView.userScrollView.contentOffset.x);
+    NSLog(@"y=%f",_userView.userScrollView.contentOffset.y);
 
 }
 
@@ -155,8 +160,8 @@
 - (void) viewDidLayoutSubviews{
     headerView.backgroundColor = [UIColor colorWithHexString:@"#FAFAFA"];
     [super setBorderWithView:headerView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#cdcdcd"] borderWidth:1];
-    [super setBorderWithView:usernameView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#cdcdcd"] borderWidth:0.5f];
-    [super setBorderWithView:passwordView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#cdcdcd"] borderWidth:0.5f];
+    //[super setBorderWithView:usernameView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#cdcdcd"] borderWidth:0.5f];
+   // [super setBorderWithView:passwordView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#cdcdcd"] borderWidth:0.5f];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -190,6 +195,7 @@
     [self.password resignFirstResponder];
     [self.repassword resignFirstResponder];
     [self.identifyingCodeTF resignFirstResponder];
+    [self.business resignFirstResponder];
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
     [UIView setAnimationDuration:animationDuration];
@@ -198,6 +204,7 @@
 #pragma mark 键盘的方法就是以上了～
 #pragma mark 创建用户协议视图
 - (IBAction)creatUserView:(UIButton *)sender {
+    [self hidenKeyboard];
     _userView = [[NSBundle mainBundle]loadNibNamed:@"UserView" owner:nil options:nil][0];
     _userView.backgroundColor = [UIColor whiteColor];
     _userView.layer.shadowOffset = CGSizeMake(1, 1);
@@ -214,6 +221,12 @@
         make.bottom.equalTo(self.view.mas_bottom).with.offset(-100);
         
     }];
+    //yesBtn
+ //   _userView.yesBtn.layer.shadowOffset = CGSizeMake(1, 1);
+//    _userView.yesBtn.layer.shadowColor = [UIColor redColor].CGColor;
+//    _userView.yesBtn.layer.shadowOpacity = 0.5;
+//    _userView.yesBtn.layer.cornerRadius = 2 ;
+//    _userView.yesBtn.layer.shadowRadius=5;
     //tap
     _usertap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cencelUser:)];
     _usertap.numberOfTapsRequired = 1;
@@ -223,10 +236,10 @@
 -(void)cencelUser:(UITapGestureRecognizer*)tap{
     [_userView removeFromSuperview];
     [self.view removeGestureRecognizer:tap];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 #pragma mark 注册的判断
 - (IBAction)registerUser:(id)sender {
+    [self hidenKeyboard];
     NSString *Code = [NSString stringWithFormat:@"%d",_identifyingCode];
     NSLog(@"%@",_identifyingCodeTF.text);
     if(![_identifyingCodeTF.text isEqualToString: Code]){
@@ -244,6 +257,11 @@
 //        [SVProgressHUD showErrorWithStatus:@"用户名的长度为4-20个字符！" maskType:SVProgressHUDMaskTypeBlack];
 //        return;
   //  }
+    if(_business.text.length == 0){
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"用商户名不能为空！" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
     if (![self isMobileNumber:username.text]) {
         [SVProgressHUD setErrorImage:nil];
         [SVProgressHUD showErrorWithStatus:@"请输入正确的手机号码！" maskType:SVProgressHUDMaskTypeBlack];

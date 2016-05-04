@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *addressView;
 @property (weak, nonatomic) IBOutlet UIView *passwordView;
 @property (weak, nonatomic) IBOutlet UIView *logoutView;
+@property (weak, nonatomic) IBOutlet UILabel *i4logoutView;
 //优惠劵
 @property (weak, nonatomic) IBOutlet UIView *couponView;
 
@@ -67,6 +68,10 @@
     UITapGestureRecognizer *logoutTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(logout:)];
     [logoutTapGesture setNumberOfTapsRequired:1];
     [logoutView addGestureRecognizer:logoutTapGesture];
+    
+    UITapGestureRecognizer *rightLogoutGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(logout:)];
+    [rightLogoutGesture setNumberOfTapsRequired:1];
+    [_i4logoutView addGestureRecognizer:rightLogoutGesture];
     
     UITapGestureRecognizer *orderTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(order:)];
     [orderTapGesture setNumberOfTapsRequired:1];
@@ -114,6 +119,7 @@
         [loginPanel addSubview:loginBtn];
         
         logoutView.hidden = YES;
+        _i4logoutView.hidden = YES;
     }else{
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
@@ -136,6 +142,7 @@
         [loginPanel addSubview:levelLabel];
         
         logoutView.hidden = NO;
+        _i4logoutView.hidden = NO;
     }
     [loginView addSubview:loginPanel];
 }
@@ -252,6 +259,7 @@
     [super setBorderWithView:passwordView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#cdcdcd"] borderWidth:0.5f];
     [super setBorderWithView:logoutView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#cdcdcd"] borderWidth:0.5f];
     [super setBorderWithView:editView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#cdcdcd"] borderWidth:0.5f];
+    [super setBorderWithView:_couponView top:NO left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#cdcdcd"] borderWidth:0.5f];
 }
 
 - (void)didReceiveMemoryWarning {

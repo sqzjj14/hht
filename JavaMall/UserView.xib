@@ -28,7 +28,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fp-Hu-LkC">
                                             <rect key="frame" x="8" y="36" width="259" height="500"/>
-                                            <mutableString key="text">  一 入会资格：从事花卉经营工作的个     人或单位 
+                                            <string key="text">  一 入会资格：从事花卉经营工作的个     人或单位 
   二 会费：免会员费
   三 交易规则
   1.采用网上交易系统，凭本人会员号及密码上网交易，不议价；花卉通提供具有竞争优势的批发价，不赚取价差，仅收取10%的服务费。
@@ -45,15 +45,19 @@
   （2）客户填写的资料绝对保密，不对外公开。
   （3）“*”表示所在项为必填项。
   本会员须知解释权为花卉通所有
-</mutableString>
+</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="同意" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tO9-Xg-UBq">
-                                            <rect key="frame" x="88" y="550" width="100" height="40"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="同意" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tO9-Xg-UBq">
+                                            <rect key="frame" x="88" y="509" width="100" height="40"/>
                                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="HMw-vj-fPz"/>
+                                                <constraint firstAttribute="width" constant="100" id="M90-f6-PLE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </label>
@@ -65,7 +69,9 @@
                                         <constraint firstAttribute="height" constant="600" id="8aZ-gl-yJV"/>
                                         <constraint firstAttribute="trailing" secondItem="PdA-Es-1w7" secondAttribute="trailing" id="EMB-CJ-qPe"/>
                                         <constraint firstAttribute="trailing" secondItem="1Fp-Hu-LkC" secondAttribute="trailing" constant="8" id="J5L-mJ-y5V"/>
+                                        <constraint firstItem="tO9-Xg-UBq" firstAttribute="leading" secondItem="5FU-bp-bYR" secondAttribute="leading" constant="88" id="Sx3-2v-FCD"/>
                                         <constraint firstItem="tO9-Xg-UBq" firstAttribute="centerX" secondItem="5FU-bp-bYR" secondAttribute="centerX" id="cCM-L3-Of7"/>
+                                        <constraint firstAttribute="trailing" secondItem="tO9-Xg-UBq" secondAttribute="trailing" constant="87" id="cJy-0c-uiu"/>
                                         <constraint firstItem="1Fp-Hu-LkC" firstAttribute="top" secondItem="PdA-Es-1w7" secondAttribute="bottom" constant="8" id="hmo-eS-YYg"/>
                                         <constraint firstItem="PdA-Es-1w7" firstAttribute="leading" secondItem="5FU-bp-bYR" secondAttribute="leading" id="wUb-fj-I0B"/>
                                         <constraint firstItem="tO9-Xg-UBq" firstAttribute="top" secondItem="1Fp-Hu-LkC" secondAttribute="bottom" constant="14" id="zbN-cG-Fn6"/>

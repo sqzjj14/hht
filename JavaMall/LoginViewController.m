@@ -206,7 +206,7 @@
                            }
                            if([[result objectForKey:@"result"] intValue] == 2){
                                [SVProgressHUD setErrorImage:nil];
-                               [SVProgressHUD showErrorWithStatus:@"请耐心等待审核" maskType:SVProgressHUDMaskTypeBlack];
+                               [SVProgressHUD showErrorWithStatus:@"请耐心等待24小时审核" maskType:SVProgressHUDMaskTypeBlack];
                                return;
                            }
                            

@@ -95,11 +95,12 @@
     //添加手势，点击屏幕其他区域关闭键盘的操作
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     gesture.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:gesture];
     
 #pragma mark VIP客服才可以选择，用type属性
     _arrowImage.hidden = YES;
     if ([_type isEqualToString:@"VIP"]) {
-        [self.view addGestureRecognizer:gesture];
+        [regionView addGestureRecognizer:tapGesture];
         _arrowImage.hidden = NO;
     }
 
@@ -405,6 +406,16 @@
     if(name.text.length == 0){
         [SVProgressHUD setErrorImage:nil];
         [SVProgressHUD showErrorWithStatus:@"收货人姓名不能为空！" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
+    if([name.text isEqualToString:@"未设置"]){
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"请设置姓名！" maskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
+    if([mobile.text isEqualToString:@"未设置"]){
+        [SVProgressHUD setErrorImage:nil];
+        [SVProgressHUD showErrorWithStatus:@"请设置手机号码！" maskType:SVProgressHUDMaskTypeBlack];
         return;
     }
     if(mobile.text.length == 0){
