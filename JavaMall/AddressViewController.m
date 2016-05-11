@@ -21,7 +21,7 @@
 @property (nonatomic,strong) NSMutableArray *BtnArr;
 //选中的def_Btn tag
 @property (nonatomic,assign) NSInteger selectedBtnTag;
-//是否是vip客服
+//是否是vip客服服
 @property (nonatomic,assign) NSInteger VIPSelected;
 - (IBAction)back:(id)sender;
 
@@ -86,12 +86,12 @@
     [addButton setTitle:@"+ 新建地址" forState:UIControlStateNormal];
     [addButton.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
     [addButton addTarget:self action:@selector(add:) forControlEvents:UIControlEventTouchUpInside];
-   // [addView addSubview:addButton];
+    [addView addSubview:addButton];
     
     UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, 44, 0);
     tableView.contentInset = insets;
     
-    //[self.view addSubview:addView];
+    [self.view addSubview:addView];
 
 }
 
@@ -99,7 +99,7 @@
  *  载入地址列表
  */
 - (void) loadAddressList{
-    [SVProgressHUD showWithStatus:@"载入中..." maskType:SVProgressHUDMaskTypeBlack];
+   // [SVProgressHUD showWithStatus:@"载入中..." maskType:SVProgressHUDMaskTypeBlack];
     [addresses removeAllObjects];
     [tableView reloadData];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
@@ -182,9 +182,15 @@
     
     AddressCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
+    //拼接地址
+    NSString *addregionStr = [address objectForKey:@"province"];
+    addregionStr = [addregionStr stringByAppendingString:[address objectForKey:@"city"]];
+    addregionStr = [addregionStr stringByAppendingString:[address objectForKey:@"region"]];
+    addregionStr = [addregionStr stringByAppendingString:[address objectForKey:@"addr"]];
+
     cell.name.text = [address objectForKey:@"name"];
     cell.mobile.text = [address objectForKey:@"mobile"];
-    cell.address.text = [address objectForKey:@"addr"];
+    cell.address.text = addregionStr;
     cell.editBtn.tag = indexPath.row;
     [cell.editBtn addTarget:self action:@selector(edit:) forControlEvents:UIControlEventTouchUpInside];
     cell.deleteBtn.tag = indexPath.row;
@@ -318,16 +324,16 @@
     UIButton *deleteBtn = (UIButton *)sender;
     
     [SVProgressHUD setErrorImage:nil];
-    [SVProgressHUD showErrorWithStatus:@"基地地址无法删除！" maskType:SVProgressHUDMaskTypeBlack];
-    return;
-//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"您确认要删除这个地址吗？"
-//                                                             delegate:self
-//                                                    cancelButtonTitle:@"取消"
-//                                               destructiveButtonTitle:@"确定"
-//                                                    otherButtonTitles:nil
-//                                  ];
-//    actionSheet.tag = deleteBtn.tag;
-//    [actionSheet showInView:self.view];
+    [SVProgressHUD showErrorWithStatus:@"您确认要删除这个地址吗？" maskType:SVProgressHUDMaskTypeBlack];
+   
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"您确认要删除这个地址吗？"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"取消"
+                                               destructiveButtonTitle:@"确定"
+                                                    otherButtonTitles:nil
+                                  ];
+    actionSheet.tag = deleteBtn.tag;
+    [actionSheet showInView:self.view];
 }
 
 /**

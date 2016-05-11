@@ -23,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *regionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *arrowImage;
+
+@property (nonatomic,strong) NSMutableArray *testDataSource;//临时测试数据源，测试固定6个地址
+@property (nonatomic,strong) NSMutableDictionary *testRegionID;
 - (IBAction)back:(id)sender;
 
 @end
@@ -53,6 +56,16 @@
     [super viewDidLoad];
     //StatusBar背景色
     [super setStatusBarBackgroudColor:[UIColor colorWithHexString:@"#FAFAFA"]];
+    
+    //-----构建临时数据源
+    _testDataSource = [[NSMutableArray alloc]init];
+    _testRegionID = [[NSMutableDictionary alloc]init];
+    [_testDataSource addObject:@"深圳市福田区-莲花山花卉世界"];//4003
+    [_testDataSource addObject:@"深圳市龙岗区-东部花卉世界"];//4004
+    [_testDataSource addObject:@"深圳市南山区-百旺花卉中心"];//4005
+    [_testDataSource addObject:@"深圳市南山区-深港花卉中心"];//4006
+    [_testDataSource addObject:@"深圳市南山区-荷兰花卉小镇"];//4007
+    [_testDataSource addObject:@"深圳市龙岗区-布吉花卉世界"];//4008
     
     client = [[HttpClient alloc] init];
     provinceArray = [NSMutableArray arrayWithCapacity:0];
@@ -90,7 +103,7 @@
     //tap手势
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectRegion:)];
     [tapGesture setNumberOfTapsRequired:1];
-    //[regionView addGestureRecognizer:tapGesture];
+    [regionView addGestureRecognizer:tapGesture];
     
     //添加手势，点击屏幕其他区域关闭键盘的操作
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
@@ -98,11 +111,11 @@
     [self.view addGestureRecognizer:gesture];
     
 #pragma mark VIP客服才可以选择，用type属性
-    _arrowImage.hidden = YES;
-    if ([_type isEqualToString:@"VIP"]) {
-        [regionView addGestureRecognizer:tapGesture];
-        _arrowImage.hidden = NO;
-    }
+    //_arrowImage.hidden = YES;
+//    if ([_type isEqualToString:@"VIP"]) {
+//        [regionView addGestureRecognizer:tapGesture];
+//        //_arrowImage.hidden = NO;
+//    }
 
     
     [self loadData:0 type:0];
@@ -205,7 +218,7 @@
  */
 - (void) initPicker{
     
-    //遮罩层
+    //遮罩层 (背景颜色)
     maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight - 64)];
     maskView.backgroundColor = [UIColor blackColor];
     maskView.alpha = 0;
@@ -255,35 +268,54 @@
 
 #pragma mark - UIPicker Delegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 3;
+    if ([_type isEqualToString:@"VIP"]) {
+        return 3;
+    }
+    return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    if (component == 0) {
-        //return provinceArray.count;
-        return 1;
-    } else if (component == 1) {
-        return cityArray.count;
-    } else {
-        return countyArray.count;
+    if ([_type isEqualToString:@"VIP"]) {
+        if (component == 0) {
+            //return provinceArray.count;
+            return 1;
+        } else if (component == 1) {
+            return cityArray.count;
+        } else {
+            return countyArray.count;
+        }
+    }
+    
+    else{
+        return 6;
     }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    if (component == 0) {
-        NSDictionary *province = [provinceArray objectAtIndex:19];
-        return [province objectForKey:@"local_name"];
-    } else if (component == 1) {
-        NSDictionary *city = [cityArray objectAtIndex:row];
-        return [city objectForKey:@"local_name"];
-    } else {
-        NSDictionary *county = [countyArray objectAtIndex:row];
-        return [county objectForKey:@"local_name"];
+    
+    if ([_type isEqualToString:@"VIP"]) {
+        if (component == 0) {
+            NSDictionary *province = [provinceArray objectAtIndex:19];
+            return [province objectForKey:@"local_name"];
+        } else if (component == 1) {
+            NSDictionary *city = [cityArray objectAtIndex:row];
+            return [city objectForKey:@"local_name"];
+        } else {
+            NSDictionary *county = [countyArray objectAtIndex:row];
+            return [county objectForKey:@"local_name"];
+        }
+    }
+    else {
+    
+        return _testDataSource[row];
     }
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
-    return kScreenWidth / 3;
+    if ([_type isEqualToString:@"VIP"]) {
+        return kScreenWidth / 3;
+    }
+        return kScreenWidth;
 }
 
 - (void)pickerView:(UIPickerView *)_pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -295,11 +327,14 @@
     //        [_pickerView selectedRowInComponent:2];
     //        return;
     //    }
-    if (component == 1) {
-        NSDictionary *city = [cityArray objectAtIndex:row];
-        [self loadData:[[city objectForKey:@"region_id"] intValue] type:2];
-        return;
+    if ([_type isEqualToString:@"VIP"]) {
+        if (component == 1) {
+            NSDictionary *city = [cityArray objectAtIndex:row];
+            [self loadData:[[city objectForKey:@"region_id"] intValue] type:2];
+            return;
+        }
     }
+    
 }
 
 //- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
@@ -365,37 +400,77 @@
  */
 - (void)selectRegion:(UITapGestureRecognizer *)gesture{
     [self hideKeyboard];
-    
-    maskView.alpha = 0;
-    [self.view addSubview:maskView];
-    [self.view addSubview:pickerSelectView];
-    addView.hidden = YES;
-    [UIView animateWithDuration:0.3 animations:^{
-        maskView.alpha = 0.3;
-        pickerSelectView.frame = CGRectMake(0, kScreenHeight - 240, kScreenWidth, 240);
-    }];
-    
+    if ([_type isEqualToString:@"VIP"]) {
+        NSLog(@"touch VIP");
+        maskView.alpha = 0;
+        [self.view addSubview:maskView];
+        [self.view addSubview:pickerSelectView];
+        addView.hidden = YES;
+        [UIView animateWithDuration:0.3 animations:^{
+            maskView.alpha = 0.3;
+            pickerSelectView.frame = CGRectMake(0, kScreenHeight - 240, kScreenWidth, 240);
+        }];
+    }
+    //常态
+    else{
+        NSLog(@"normol");
+        maskView.alpha = 0;
+        [self.view addSubview:maskView];
+        [self.view addSubview:pickerSelectView];
+        addView.hidden = YES;
+        [UIView animateWithDuration:0.3 animations:^{
+            maskView.alpha = 0.3;
+            pickerSelectView.frame = CGRectMake(0, kScreenHeight - 240, kScreenWidth, 240);
+        }];
+    }
 }
+
 
 /*
  * 选择区域完成
  */
 - (IBAction)selectRegionOK:(id)sender {
-    provinceRegion = [provinceArray objectAtIndex:[pickerView selectedRowInComponent:0]];
-    cityRegion = [cityArray objectAtIndex:[pickerView selectedRowInComponent:1]];
-    countyRegion = [countyArray objectAtIndex:[pickerView selectedRowInComponent:2]];
-    NSString *region = @"";
-    if(provinceRegion != nil){
-         // region = [region stringByAppendingString:[provinceRegion objectForKey:@"local_name"]];
-      region = @"广东";
+    if ([_type isEqualToString:@"VIP"]) {
+        provinceRegion = [provinceArray objectAtIndex:[pickerView selectedRowInComponent:0]];
+        cityRegion = [cityArray objectAtIndex:[pickerView selectedRowInComponent:1]];
+        countyRegion = [countyArray objectAtIndex:[pickerView selectedRowInComponent:2]];
+        NSString *region = @"";
+        if(provinceRegion != nil){
+            // region = [region stringByAppendingString:[provinceRegion objectForKey:@"local_name"]];
+            region = @"广东";
+        }
+        if(cityRegion != nil){
+            region = [region stringByAppendingString:[cityRegion objectForKey:@"local_name"]];
+        }
+        if(countyRegion != nil){
+            region = [region stringByAppendingString:[countyRegion objectForKey:@"local_name"]];
+        }
+        regionLabel.text = region;
     }
-    if(cityRegion != nil){
-        region = [region stringByAppendingString:[cityRegion objectForKey:@"local_name"]];
+    else{
+        regionLabel.text = _testDataSource[[pickerView selectedRowInComponent:0]];
+        [_testRegionID removeAllObjects];
+        if ([pickerView selectedRowInComponent:0] == 0) {
+            [_testRegionID setValue:@"4003" forKey:@"region_id"];
+        }
+        if ([pickerView selectedRowInComponent:0] == 1) {
+            [_testRegionID setValue:@"4004" forKey:@"region_id"];
+        }
+        if ([pickerView selectedRowInComponent:0] == 2) {
+            [_testRegionID setValue:@"4005" forKey:@"region_id"];
+        }
+        if ([pickerView selectedRowInComponent:0] == 3) {
+            [_testRegionID setValue:@"4006" forKey:@"region_id"];
+        }
+        if ([pickerView selectedRowInComponent:0] == 4) {
+            [_testRegionID setValue:@"4007" forKey:@"region_id"];
+        }
+        if ([pickerView selectedRowInComponent:0] == 5) {
+            [_testRegionID setValue:@"4008" forKey:@"region_id"];
+        }
+        
     }
-    if(countyRegion != nil){
-        region = [region stringByAppendingString:[countyRegion objectForKey:@"local_name"]];
-    }
-    regionLabel.text = region;
+    
     [self hidePicker];
 }
 
@@ -433,11 +508,14 @@
         [SVProgressHUD showErrorWithStatus:@"收货人姓名不能为空！" maskType:SVProgressHUDMaskTypeBlack];
         return;
     }
-    if(provinceRegion == nil || cityRegion == nil || countyRegion == nil){
-        [SVProgressHUD setErrorImage:nil];
-        [SVProgressHUD showErrorWithStatus:@"请选择所在地区！" maskType:SVProgressHUDMaskTypeBlack];
-        return;
+    if ([_type isEqualToString:@"VIP"]) {
+        if(provinceRegion == nil || cityRegion == nil || countyRegion == nil){
+            [SVProgressHUD setErrorImage:nil];
+            [SVProgressHUD showErrorWithStatus:@"请选择所在地区！" maskType:SVProgressHUDMaskTypeBlack];
+            return;
+        }
     }
+    
     if(address.text.length == 0){
         [SVProgressHUD setErrorImage:nil];
         [SVProgressHUD showErrorWithStatus:@"详细地址不能为空！" maskType:SVProgressHUDMaskTypeBlack];
@@ -448,14 +526,29 @@
                    ^{
                        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:6];
                        [params setValue:name.text forKey:@"name"];
-                      // [params setValue:[provinceRegion objectForKey:@"region_id"]
-                                 //forKey:@"province_id"];
-                       [params setValue:@"20" forKey:@"province_id"];
-                       [params setValue:[cityRegion objectForKey:@"region_id"] forKey:@"city_id"];
-                       [params setValue:[countyRegion objectForKey:@"region_id"] forKey:@"region_id"];
                        [params setValue:address.text forKey:@"addr"];
                        [params setValue:mobile.text forKey:@"mobile"];
                        
+                       if ([_type isEqualToString:@"VIP"]) {
+                           // [params setValue:[provinceRegion objectForKey:@"region_id"]
+                           //forKey:@"province_id"];
+                           [params setValue:@"20" forKey:@"province_id"];
+                           [params setValue:[cityRegion objectForKey:@"region_id"] forKey:@"city_id"];
+                           [params setValue:[countyRegion objectForKey:@"region_id"] forKey:@"region_id"];
+                       }
+                       else {
+                           if (![_testRegionID valueForKey:@"region_id"]) {
+                               [params setValue:[countyRegion objectForKey:@"region_id"] forKey:@"region_id"];
+                           }
+                           else{
+                               [params setValue:[_testRegionID valueForKey:@"region_id"] forKey:@"region_id"];
+                           }
+                           [params setValue:@"20" forKey:@"province_id"];
+                           [params setValue:@"290" forKey:@"city_id"];
+                          
+                           
+                       }
+                      
                        //判断是编辑状态还是添加状态
                        NSString *action = addressDic == nil ? @"add" : @"edit";
                        if(addressDic != nil){

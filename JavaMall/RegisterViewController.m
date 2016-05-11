@@ -293,7 +293,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                    ^{
                        HttpClient *client = [[HttpClient alloc] init];
-                       NSString *content = [client get:[BASE_URL stringByAppendingFormat:@"/api/mobile/member!register.do?username=%@&password=%@", username.text, password.text]];
+                       NSString *content = [client get:[BASE_URL stringByAppendingFormat:@"/api/mobile/member!register.do?username=%@&password=%@&merchant_name=%@", username.text, password.text,_business.text]];
                        dispatch_async(dispatch_get_main_queue(), ^{
                            [SVProgressHUD dismiss];
                            

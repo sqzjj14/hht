@@ -2153,7 +2153,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "";
-				PROVISIONING_PROFILE = "b5d63eeb-c6f7-4c87-89cc-688395e91da2";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2198,7 +2198,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "";
-				PROVISIONING_PROFILE = "b5d63eeb-c6f7-4c87-89cc-688395e91da2";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2209,8 +2209,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2231,9 +2231,9 @@
 					"$(PROJECT_DIR)/JavaMall/3rd/Wechat",
 					"$(PROJECT_DIR)/JavaMall/3rd/Unionpay",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.58hht.runzhi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.58hht.www;
 				PRODUCT_NAME = javamall;
-				PROVISIONING_PROFILE = "b5d63eeb-c6f7-4c87-89cc-688395e91da2";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -2242,8 +2242,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gang Liu (R9LST9H7ZY)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2264,9 +2264,9 @@
 					"$(PROJECT_DIR)/JavaMall/3rd/Wechat",
 					"$(PROJECT_DIR)/JavaMall/3rd/Unionpay",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.58hht.runzhi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.58hht.www;
 				PRODUCT_NAME = javamall;
-				PROVISIONING_PROFILE = "b5d63eeb-c6f7-4c87-89cc-688395e91da2";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
