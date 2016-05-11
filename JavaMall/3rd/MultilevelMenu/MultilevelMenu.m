@@ -57,6 +57,10 @@
 //屏幕比例系数
 @property(assign,nonatomic) CGFloat scaleX;
 @property(assign,nonatomic) CGFloat scaleY;
+//二级的高度
+@property(assign,nonatomic) CGFloat secondHight;
+//三级动态高度
+@property(assign,nonatomic) CGFloat thirdHight;
 
 @end
 @implementation MultilevelMenu{
@@ -164,6 +168,7 @@
 #pragma mark 二级设置
         
         self.leftTablew=[[UITableView alloc] initWithFrame:CGRectMake(0, (2+ 50 * _allData.count) * _scaleY, kLeftWidth * _scaleX, frame.size.height - (50 * _allData.count) *_scaleY)];
+        _secondHight = frame.size.height - (50 * _allData.count) *_scaleY;
         self.leftTablew.dataSource=self;
         self.leftTablew.delegate=self;
         
@@ -486,11 +491,17 @@
     Menu * title=self.allData[_btnTag];
     Menu * title2 = title.nextArray[indexPath.row];
     NSArray *data = title2.nextArray;
+    if (data.count > 4) {
+        _thirdHight = _secondHight;
+    }
+    else{
+        _thirdHight = data.count * 50 * _scaleY;
+    }
 
 #pragma mark 三级设置
     
     [_SecondView removeFromSuperview];//删除原来的table
-    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth * _scaleX,( 50 * _allData.count) * _scaleY, kLeftWidth * _scaleX, (50 * data.count) * _scaleX) WithData: data withChartDetail:^(Menu* info) {
+    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth * _scaleX,( 50 * _allData.count) * _scaleY, kLeftWidth * _scaleX, _thirdHight) WithData: data withChartDetail:^(Menu* info) {
                 NSLog(@"cid=%@",info.ID);
         //删除两个引导图画
         if (_slideBgimageView || _checkBgimageView) {

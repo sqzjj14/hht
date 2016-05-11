@@ -370,7 +370,7 @@
  *  创建支付配送视图
  */
 - (void) initPaymentView{
-    paymnetView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 5, kScreenWidth, 56)];
+    paymnetView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 5, kScreenWidth, 71)];
     paymnetView.backgroundColor = [UIColor whiteColor];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 18, 100, 20)];
@@ -399,6 +399,15 @@
     shipPriceLabel.textAlignment = NSTextAlignmentRight;
     [shipPriceLabel setTextColor:[UIColor redColor]];
     [paymnetView addSubview:shipPriceLabel];
+    
+    //服务费
+    UILabel *servicePriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 220, 50, 180, 15)];
+    servicePriceLabel.text = @"平台服务费：10% (推广期免收)";
+    servicePriceLabel.font = [UIFont systemFontOfSize:12];
+    servicePriceLabel.textAlignment = NSTextAlignmentRight;
+    [servicePriceLabel setTextColor:[UIColor redColor]];
+    [paymnetView addSubview:servicePriceLabel];
+    
     
     UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenWidth - 20, 20, 9, 15)];
     arrowImage.image = [UIImage imageNamed:@"jshop_list_back.png"];
@@ -470,7 +479,7 @@
  */
 - (void) initCouponView{
     
-    couponView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 56 + 5, kScreenWidth, 56)];
+    couponView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 71 + 5, kScreenWidth, 56)];
     couponView.backgroundColor = [UIColor whiteColor];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 18, 100, 20)];
@@ -541,7 +550,7 @@
  *  创建订单备注视图
  */
 - (void) initRemarkView{
-    remarkView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 56 * 2 + 10, kScreenWidth, 68)];
+    remarkView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 71 + 56 + 10, kScreenWidth, 68)];
     remarkView.backgroundColor = [UIColor whiteColor];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, 100, 20)];

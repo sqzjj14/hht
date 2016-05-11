@@ -231,6 +231,7 @@
         //设置金色头像和手机
         cell.userImage.image = [UIImage imageNamed:@"goldUser"];
         cell.mobileImage.image = [UIImage imageNamed:@"goldMobile"];
+        cell.deleteBtn.hidden = YES;
     }
     
     return cell;
