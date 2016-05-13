@@ -524,6 +524,7 @@
 
     [self addSubview:_SecondView];
     [self bringSubviewToFront:_SecondView];
+    
 
     
 }
