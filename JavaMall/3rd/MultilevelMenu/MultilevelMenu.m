@@ -474,7 +474,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50 * _scaleX;
+    return 50 * _scaleY;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -491,17 +491,37 @@
     Menu * title=self.allData[_btnTag];
     Menu * title2 = title.nextArray[indexPath.row];
     NSArray *data = title2.nextArray;
-    if (data.count > 4) {
-        _thirdHight = _secondHight;
-    }
-    else{
-        _thirdHight = data.count * 50 * _scaleY;
-    }
+//    if (data.count > 4) {
+//        _thirdHight = _secondHight;
+//    }
+//    else{
+//        _thirdHight = data.count * 50 * _scaleY;
+//    }
 
 #pragma mark 三级设置
+    //判断是不是最后四个cell (最后四个cell不会置顶)
+    NSInteger remainCount = title.nextArray.count- indexPath.row;
+    NSLog(@"remainCount = %ld  row = %ld",remainCount,indexPath.row);
+    CGFloat orginY;
+    if (remainCount == 1) {
+         orginY = (_allData.count - data.count + 1 + 4) * 50 * _scaleY;
+    }
+    else if (remainCount == 2){
+         orginY = (_allData.count - data.count + 1 + 3) * 50 * _scaleY;
+    }
+    else if (remainCount == 3){
+         orginY = (_allData.count - data.count + 1 + 2) * 50 * _scaleY;
+    }
+    else if (remainCount == 4){
+         orginY = (_allData.count - data.count + 1 + 1) * 50 * _scaleY;
+    }
+    else{
+         orginY = (_allData.count - data.count + 1) * 50 * _scaleY;
+    }
     
+    _thirdHight = data.count * 50 * _scaleY;
     [_SecondView removeFromSuperview];//删除原来的table
-    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth * _scaleX,( 50 * _allData.count) * _scaleY, kLeftWidth * _scaleX, _thirdHight) WithData: data withChartDetail:^(Menu* info) {
+    _SecondView = [[SecondTableView alloc]initWithFrame:CGRectMake(kLeftWidth * _scaleX,orginY, kLeftWidth * _scaleX, _thirdHight) WithData: data withChartDetail:^(Menu* info) {
                 NSLog(@"cid=%@",info.ID);
         //删除两个引导图画
         if (_slideBgimageView || _checkBgimageView) {

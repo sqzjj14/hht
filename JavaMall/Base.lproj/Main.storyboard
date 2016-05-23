@@ -1205,7 +1205,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Elx-QM-fuG">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Elx-QM-fuG">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxy-g8-37h">
@@ -1386,6 +1386,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Q2b-R7-xZT"/>
+                    <navigationItem key="navigationItem" id="CpS-1D-aIC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backBtn" destination="nxy-g8-37h" id="YQD-q8-LeI"/>
@@ -1398,7 +1399,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNe-HG-iOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="915"/>
+            <point key="canvasLocation" x="-251" y="943"/>
+        </scene>
+        <!--car-->
+        <scene sceneID="EwI-Ks-GwA">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="3AW-bL-aHJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="car" id="Iw0-9O-FCp"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZrV-5i-auw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YyC-Vj-Cbn" kind="relationship" relationship="rootViewController" id="ESX-KG-Tvu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OtF-0S-MSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-740.5" y="942.5"/>
         </scene>
         <!--Checkout View Controller-->
         <scene sceneID="TA2-8l-KWl">
@@ -4801,7 +4820,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="WFg-hH-KRU" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="YyC-Vj-Cbn" kind="relationship" relationship="viewControllers" id="PYu-Cw-QYh"/>
+                        <segue destination="3AW-bL-aHJ" kind="relationship" relationship="viewControllers" id="H4s-pJ-SUU"/>
                         <segue destination="CEh-Ag-XkS" kind="relationship" relationship="viewControllers" id="e4Q-4l-x62"/>
                     </connections>
                 </tabBarController>

@@ -15,7 +15,7 @@
 #import "UnionpayRSA.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UIAlertViewDelegate>
 
 @end
 
@@ -23,17 +23,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //检测版本更新
+    [self updateVersion];
     
     //根据屏幕大小，等比例缩放下单界面左侧滑动UI
       //如果是iphone4
     if (kScreenHeight == 480) {
         _autoSizeScaleX = 320/375.2f;
-        _autoSizeScaleY = 480/667.2f;
+        _autoSizeScaleY = 367/554.2f;
     }
       //iphone5
     else if (kScreenHeight == 568) {
         _autoSizeScaleX = 320/375.2f;
-        _autoSizeScaleY = 568/667.2f;
+        _autoSizeScaleY = 445/554.2f;
     }
      //iphone6 6plus
     else{
@@ -76,7 +78,38 @@
     }
     return NO;
 }
-
+#pragma mark －版本更新提示－
+- (void)updateVersion{
+    //获取发布版本的Version
+    NSString *string = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://itunes.apple.com/lookup?id=1098073214"] encoding:NSUTF8StringEncoding error:nil];
+    
+    if (string!=nil && string.length > 0 && [string rangeOfString:@"version"].length ==7 ) {
+        
+        //获取当前版本
+        NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        //appStore版本
+        NSString *appStoreVersion = [string substringFromIndex:[string rangeOfString:@"\"version\":"].location+10];
+        appStoreVersion = [[appStoreVersion substringToIndex:[appStoreVersion rangeOfString:@"," ].location]stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+        
+        if (![currentVersion isEqualToString:appStoreVersion]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"花卉通新版本 %@ 已发布",appStoreVersion] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+            alert.delegate =self;
+            [alert addButtonWithTitle:@"前往更新"];
+            [alert show];
+            alert.tag = 20;
+        }
+        else{
+            [[[UIAlertView alloc]initWithTitle:nil message:@"已是最新版本" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles: nil]show];
+        }
+    }
+}
+#pragma mark -UIAlertView代理方法-
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1 && alertView.tag == 20) {
+        NSString *url = @"https://itunes.apple.com/cn/app/hua-hui-tong/id1098073214?mt=8";
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

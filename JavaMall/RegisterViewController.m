@@ -252,11 +252,7 @@
         [SVProgressHUD showErrorWithStatus:@"用户名不能为空！" maskType:SVProgressHUDMaskTypeBlack];
         return;
     }
-//    if(username.text.length < 4 || username.text.length > 20){
-//        [SVProgressHUD setErrorImage:nil];
-//        [SVProgressHUD showErrorWithStatus:@"用户名的长度为4-20个字符！" maskType:SVProgressHUDMaskTypeBlack];
-//        return;
-  //  }
+
     if(_business.text.length == 0){
         [SVProgressHUD setErrorImage:nil];
         [SVProgressHUD showErrorWithStatus:@"用商户名不能为空！" maskType:SVProgressHUDMaskTypeBlack];

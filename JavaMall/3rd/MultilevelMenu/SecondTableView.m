@@ -118,7 +118,7 @@
    // cell.backgroundColor = UIColorFromRGB(0xF3F4F6);
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50 * _theX;
+    return 50 * _theY;
 }
 
 @end

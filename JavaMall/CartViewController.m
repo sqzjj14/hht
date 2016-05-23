@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *operationViewVertical;
 @property (nonatomic,assign) NSInteger amout;
+//购物车结算限制价格
+@property(nonatomic,assign) NSInteger limitPrice;
 
 @end
 
@@ -233,6 +235,7 @@
                            }
                            
                            NSDictionary *result = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+                           
                            NSDictionary *data = [result objectForKey:@"data"];
                            
                            if(data == nil){
@@ -242,6 +245,9 @@
                            }
                            
                            NSArray *goodsList = [data objectForKey:@"goodslist"];
+                           
+                           _limitPrice = [[data objectForKey:@"limitPrice"]integerValue];;
+                           
                            if(goodsList == nil || goodsList.count == 0){
                                [SVProgressHUD dismiss];
                                [self nodata:YES];
@@ -486,13 +492,15 @@
         [self presentViewController:[super controllerFromMainStroryBoard:@"Login"] animated:YES completion:nil];
         return;
     }
-#pragma mark 不满1000不能下单修改处
-      if (_amout < 1000) {
+#pragma mark 不满金额不能下单修改处
+      if (_amout < _limitPrice) {
           [SVProgressHUD setErrorImage:nil];
-          [SVProgressHUD showErrorWithStatus:@"金额未满1000元无法下单！" maskType: SVProgressHUDMaskTypeBlack];
+          [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"未满%ld元无法下单",(long)_limitPrice] maskType: SVProgressHUDMaskTypeBlack];
           return;
       }
-    [self presentViewController:[super controllerFromMainStroryBoard:@"Checkout"] animated:YES completion:nil];
+    UIViewController *vc = [super controllerFromMainStroryBoard:@"Checkout"];
+   // vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*

@@ -245,7 +245,7 @@
     else{
             NSString *addr_id = [addresses[btn.tag - 10]objectForKey:@"addr_id"];
             //getHttp
-            NSString *content = [client get:[NSString stringWithFormat:@"http://wap.58hht.com/api/shop/memberAddress!setDefAddr.do?addr_id=%@",addr_id]];
+            NSString *content = [client get:[NSString stringWithFormat:@"http://wap.58hht.com/api/shop/memberAddress!setDefAddress.do?addr_id=%@",addr_id]];
             
                 [SVProgressHUD dismiss];
                 

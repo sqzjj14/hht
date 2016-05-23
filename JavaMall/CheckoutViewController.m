@@ -98,7 +98,7 @@
  *  创建结算视图
  */
 - (void) initCheckoutView{
-    UIView *checkoutView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight - 44, kScreenWidth, 44)];
+    UIView *checkoutView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight - 44 -49, kScreenWidth, 44)];
     [checkoutView setBackgroundColor:[UIColor colorWithHexString:@"#303030"]];
     [checkoutView setAlpha:0.8f];
     
@@ -402,7 +402,8 @@
     
     //服务费
     UILabel *servicePriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 220, 50, 180, 15)];
-    servicePriceLabel.text = @"平台服务费：10% (推广期免收)";
+    servicePriceLabel.text =
+    [NSString stringWithFormat:@"平台服务费10%%：%1.f(推广期免收)",amount/10];
     servicePriceLabel.font = [UIFont systemFontOfSize:12];
     servicePriceLabel.textAlignment = NSTextAlignmentRight;
     [servicePriceLabel setTextColor:[UIColor redColor]];
@@ -788,6 +789,7 @@
 }
 
 - (IBAction)back:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
