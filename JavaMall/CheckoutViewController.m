@@ -370,7 +370,7 @@
  *  创建支付配送视图
  */
 - (void) initPaymentView{
-    paymnetView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 5, kScreenWidth, 71)];
+    paymnetView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 5, kScreenWidth, 71 + 15)];
     paymnetView.backgroundColor = [UIColor whiteColor];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 18, 100, 20)];
@@ -393,15 +393,17 @@
     [shipLabel setTextColor:[UIColor darkGrayColor]];
     [paymnetView addSubview:shipLabel];
     
-    UILabel *shipPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 200, 35, 160, 15)];
-    shipPriceLabel.text = [NSString stringWithFormat:@"物流配送费：￥%.2f", [[shipping objectForKey:@"price"] doubleValue]];
+    UILabel *shipPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 260, 35, 220, 30)];
+    // shipPriceLabel.text = [NSString stringWithFormat:@"物流配送费：￥%.2f", [[shipping objectForKey:@"price"] doubleValue]];
+    shipPriceLabel.text = @"为回馈客户,凡在本平台交易的花卉订单,物流费按实际金额八折优惠!（线下收取）";
     shipPriceLabel.font = [UIFont systemFontOfSize:12];
+    shipPriceLabel.numberOfLines = 2;
     shipPriceLabel.textAlignment = NSTextAlignmentRight;
     [shipPriceLabel setTextColor:[UIColor redColor]];
     [paymnetView addSubview:shipPriceLabel];
     
     //服务费
-    UILabel *servicePriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 220, 50, 180, 15)];
+    UILabel *servicePriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 220, 65, 180, 15)];
     servicePriceLabel.text =
     [NSString stringWithFormat:@"平台服务费10%%：%1.f(推广期免收)",amount/10];
     servicePriceLabel.font = [UIFont systemFontOfSize:12];
@@ -480,7 +482,7 @@
  */
 - (void) initCouponView{
     
-    couponView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 71 + 5, kScreenWidth, 56)];
+    couponView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 71 + 5 + 15, kScreenWidth, 56)];
     couponView.backgroundColor = [UIColor whiteColor];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 18, 100, 20)];
@@ -551,7 +553,7 @@
  *  创建订单备注视图
  */
 - (void) initRemarkView{
-    remarkView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 71 + 56 + 10, kScreenWidth, 68)];
+    remarkView = [[UIView alloc] initWithFrame:CGRectMake(0, 91 + products.count * 55 + 71 + 56 + 10 +15, kScreenWidth, 68)];
     remarkView.backgroundColor = [UIColor whiteColor];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, 100, 20)];
