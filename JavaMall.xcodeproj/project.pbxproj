@@ -31,6 +31,8 @@
 		940D004B1CC5E55D004F3E23 /* tabBar_category_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 940D004A1CC5E55D004F3E23 /* tabBar_category_normal@2x.png */; };
 		940D004D1CC5E585004F3E23 /* tabBar_category_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 940D004C1CC5E585004F3E23 /* tabBar_category_press@2x.png */; };
 		941260D21CBCB4230086FBBD /* ChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 941260D11CBCB4230086FBBD /* ChartModel.m */; };
+		941463C41D0130ED003CF91B /* 二维码.png in Resources */ = {isa = PBXBuildFile; fileRef = 941463C31D0130ED003CF91B /* 二维码.png */; };
+		941463C61D013D5A003CF91B /* 支付宝二维码.png in Resources */ = {isa = PBXBuildFile; fileRef = 941463C51D013D5A003CF91B /* 支付宝二维码.png */; };
 		942452461CACB23400A9EC30 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452451CACB23400A9EC30 /* libc++.tbd */; };
 		942452481CACB26600A9EC30 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452471CACB26600A9EC30 /* libsqlite3.0.tbd */; };
 		9424524A1CACB26F00A9EC30 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 942452491CACB26F00A9EC30 /* libz.tbd */; };
@@ -337,6 +339,8 @@
 		940D004C1CC5E585004F3E23 /* tabBar_category_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar_category_press@2x.png"; sourceTree = "<group>"; };
 		941260D01CBCB4230086FBBD /* ChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartModel.h; sourceTree = "<group>"; };
 		941260D11CBCB4230086FBBD /* ChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartModel.m; sourceTree = "<group>"; };
+		941463C31D0130ED003CF91B /* 二维码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "二维码.png"; sourceTree = "<group>"; };
+		941463C51D013D5A003CF91B /* 支付宝二维码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "支付宝二维码.png"; sourceTree = "<group>"; };
 		942452451CACB23400A9EC30 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		942452471CACB26600A9EC30 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		942452491CACB26F00A9EC30 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -1479,6 +1483,8 @@
 		D9B08FCD1B19CC0E00F7F003 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				941463C51D013D5A003CF91B /* 支付宝二维码.png */,
+				941463C31D0130ED003CF91B /* 二维码.png */,
 				94B49C2E1CD0A38C006D6700 /* loginAD_3.png */,
 				9496AF391CC8D2F900B81D91 /* coupon@2x.png */,
 				94C6D2E91CAD2CA600828E6B /* loginAD_2.png */,
@@ -1818,6 +1824,7 @@
 				9431802B1CCF60040073EDFE /* couponAD.jpg in Resources */,
 				9424524C1CACB94A00A9EC30 /* LOGO.png in Resources */,
 				D9132C6A1B3C51F500509ECB /* WebViewJavascriptBridge.js.txt in Resources */,
+				941463C61D013D5A003CF91B /* 支付宝二维码.png in Resources */,
 				D9A5F4E61B4B8D54002B57F6 /* checkout_success@2x.png in Resources */,
 				D95AE2CC1B43DB3E003821EE /* cart_round_check2@2x.png in Resources */,
 				D98AD2A81B40015100658441 /* pd_collect@2x.png in Resources */,
@@ -1889,6 +1896,7 @@
 				D99E65691B3AF5940030383F /* jshop_searchbar_search@3x.png in Resources */,
 				D9132C4A1B3C51F500509ECB /* MJRefresh.bundle in Resources */,
 				9424524E1CACB96900A9EC30 /* hht_head_background_login@2x.jpg in Resources */,
+				941463C41D0130ED003CF91B /* 二维码.png in Resources */,
 				94F5050A1CBF882800A8161A /* whiteBtn.png in Resources */,
 				D9AF8C921B47FD3A00D22811 /* order_address_edit@2x.png in Resources */,
 				D95AE2A21B4167EF003821EE /* syncart_middle_btn_enable@2x.png in Resources */,

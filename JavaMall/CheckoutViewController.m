@@ -412,13 +412,13 @@
     [paymnetView addSubview:servicePriceLabel];
     
     
-    UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenWidth - 20, 20, 9, 15)];
+    UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenWidth - 20, 35, 9, 15)];
     arrowImage.image = [UIImage imageNamed:@"jshop_list_back.png"];
-    //[paymnetView addSubview:arrowImage];
+    [paymnetView addSubview:arrowImage];
     
     UITapGestureRecognizer *specTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectPayment:)];
     [specTapGesture setNumberOfTapsRequired:1];
-    //[paymnetView addGestureRecognizer:specTapGesture];
+    [paymnetView addGestureRecognizer:specTapGesture];
 
     
     [super setBorderWithView:paymnetView top:YES left:NO bottom:YES right:NO borderColor:[UIColor colorWithHexString:@"#edeef0"] borderWidth:0.5f];
@@ -764,7 +764,14 @@
                                checkoutSuccessViewController.order = order;
                                checkoutSuccessViewController.payment = payment;
                                [self presentViewController:checkoutSuccessViewController animated:YES completion:nil];
-                           }else if([[payment objectForKey:@"type"] isEqualToString:@"alipayMobilePlugin"] ||
+                           }else if ([[payment objectForKey:@"type"] isEqualToString:@"alipayperson"]){
+                               CheckoutSuccessViewController *checkoutSuccessViewController = (CheckoutSuccessViewController *) [super controllerFromMainStroryBoard:@"CheckoutSuccess"];
+                               checkoutSuccessViewController.order = order;
+                               checkoutSuccessViewController.payment = payment;
+                               checkoutSuccessViewController.type = @"个人支付宝";
+                               [self presentViewController:checkoutSuccessViewController animated:YES completion:nil];
+                           }
+                           else if([[payment objectForKey:@"type"] isEqualToString:@"alipayMobilePlugin"] ||
                                     [[payment objectForKey:@"type"] isEqualToString:@"wechatMobilePlugin"] ||
                                     [[payment objectForKey:@"type"] isEqualToString:@"unionpayMobilePlugin"]){
                                PaymentViewController *paymentViewController = (PaymentViewController *) [super controllerFromMainStroryBoard:@"Payment"];

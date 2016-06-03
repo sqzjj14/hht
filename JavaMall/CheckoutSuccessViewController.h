@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSDictionary *order;
 @property (nonatomic, strong) NSDictionary *payment;
 
+//判定是否是个人支付宝交易类型
+@property (nonatomic,copy)NSString *type;
 @end
