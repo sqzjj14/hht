@@ -52,12 +52,12 @@
     [_imageV addGestureRecognizer:longTap];
     _imageV.userInteractionEnabled = YES;
     
-    if ([_type isEqualToString:@"alipayperson"]) {
+    if ([_type isEqualToString:@"alipayPerson"]) {
         _imageV.image = [UIImage imageNamed:@"支付宝二维码"];
        // _lab1.text = @"";
         _lab2.text = @"2.开打支付宝钱包－点击右上角""+""－扫一扫";
-        _lab3.text = @"3.扫描页面－点击右上角“”……“”－从相册选取二维码";
-        _lab4.text = @"填写对应的订单金额并付款";
+        _lab3.text = @"3.扫描页面－点击右上角”…”－从相册选取二维码";
+        _lab4.text = @"4.填写对应的订单金额并付款";
     }
 }
 -(void)imglongTapClick:(UILongPressGestureRecognizer *)gesture

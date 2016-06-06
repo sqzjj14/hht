@@ -764,11 +764,11 @@
                                checkoutSuccessViewController.order = order;
                                checkoutSuccessViewController.payment = payment;
                                [self presentViewController:checkoutSuccessViewController animated:YES completion:nil];
-                           }else if ([[payment objectForKey:@"type"] isEqualToString:@"alipayperson"]){
+                           }else if ([[payment objectForKey:@"type"] isEqualToString:@"alipayPerson"]){
                                CheckoutSuccessViewController *checkoutSuccessViewController = (CheckoutSuccessViewController *) [super controllerFromMainStroryBoard:@"CheckoutSuccess"];
                                checkoutSuccessViewController.order = order;
                                checkoutSuccessViewController.payment = payment;
-                               checkoutSuccessViewController.type = @"个人支付宝";
+                               checkoutSuccessViewController.type = @"alipayPerson";
                                [self presentViewController:checkoutSuccessViewController animated:YES completion:nil];
                            }
                            else if([[payment objectForKey:@"type"] isEqualToString:@"alipayMobilePlugin"] ||
